@@ -2,5 +2,117 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Scene.cpp">
+      <Filter>Processor\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGame.cpp">
+      <Filter>Processor\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneResult.cpp">
+      <Filter>Processor\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>Processor\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneCharacterSelect.cpp">
+      <Filter>Processor\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Processor.cpp">
+      <Filter>Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="Network.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Viewer.cpp">
+      <Filter>Viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewSceneCharacterSelect.cpp">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewSceneGame.cpp">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewSceneResult.cpp">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewSceneTitle.cpp">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Processor\Scene\SceneManager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scene.h">
+      <Filter>Processor\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneGame.h">
+      <Filter>Processor\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneResult.h">
+      <Filter>Processor\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>Processor\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneCharacterSelect.h">
+      <Filter>Processor\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Processor.h">
+      <Filter>Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="Network.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Viewer.h">
+      <Filter>Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewSceneCharacterSelect.h">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewSceneGame.h">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewSceneResult.h">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewSceneTitle.h">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Processor\Scene\SceneManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Processor">
+      <UniqueIdentifier>{96e7177f-db94-40ba-be38-6b876e49c781}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Processor\Scene">
+      <UniqueIdentifier>{b859ccb4-4c8e-4493-8e8a-3e2e6187d9a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Viewer">
+      <UniqueIdentifier>{71fc3467-f883-4d32-b12b-e6ad03f1799a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{fba4fdb9-4d0e-40ff-9e05-7f8b671b11dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Processor\Character">
+      <UniqueIdentifier>{1d9fc2f7-c674-4f84-8086-97eaedb30c60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Processor\Field">
+      <UniqueIdentifier>{c81fc8b2-301f-42f2-847c-aac5eca6db39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Viewer\ViewField">
+      <UniqueIdentifier>{0e2aa911-b578-4ac2-877f-2c0a504f1aac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Viewer\ViewCharacter">
+      <UniqueIdentifier>{df370c33-9799-421d-84eb-e702f9050de4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Viewer\ViewScene">
+      <UniqueIdentifier>{5b10e425-33cd-468d-bbf3-fef9fc8a2594}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Processor\Scene\SceneManager">
+      <UniqueIdentifier>{5f66ea36-58ce-4825-a1f5-17e0e89bbba4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
