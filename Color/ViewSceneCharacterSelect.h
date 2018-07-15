@@ -1,17 +1,20 @@
 #pragma once
+#include "Scene.h"
 #include "smart_ptr.h"
 
-PTR ( ViewSceneCharacterSelect );
-PTR ( Drawer );
+PTR( ViewSceneCharacterSelect );
+PTR( SceneCharacterSelect );
+PTR( Drawer );
 
-class ViewSceneCharacterSelect {
+class ViewSceneCharacterSelect : public Scene {
 public:
-	ViewSceneCharacterSelect ( );
-	virtual ~ViewSceneCharacterSelect ( );
+	ViewSceneCharacterSelect( SceneCharacterSelectPtr character_select );
+	virtual ~ViewSceneCharacterSelect( );
 
 public:
-	void update ( );
+	void update( );
 
 private:
 	DrawerPtr _drawer;
+	SceneCharacterSelectPtr _scene_character_select;
 };

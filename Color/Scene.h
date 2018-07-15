@@ -1,7 +1,7 @@
 #pragma once
 #include "smart_ptr.h"
 
-PTR ( Scene );
+PTR( Scene );
 
 enum SCENE {
 	SCENE_CONTINUE,
@@ -14,13 +14,13 @@ enum SCENE {
 
 class Scene {
 public:
-	Scene ( );
-	virtual ~Scene ( );
+	Scene( );
+	virtual ~Scene( );
 
 public:
-	virtual void update ( ) = 0;
-	void setNextScene ( SCENE next_scene );
-	SCENE getNextScene ( ) const;
+	virtual void update( ) = 0;
+	void setNextScene( SCENE next_scene );
+	SCENE getNextScene( ) const;
 
 private:
 	SCENE _next_scene;

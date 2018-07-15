@@ -1,18 +1,21 @@
 #pragma once
+#include "Scene.h"
 #include "smart_ptr.h"
 
-PTR ( ViewSceneResult );
-PTR ( Drawer );
+PTR( ViewSceneResult );
+PTR( SceneResult );
+PTR( Drawer );
 
-class ViewSceneResult {
+class ViewSceneResult : public Scene {
 public:
-	ViewSceneResult ( );
-	virtual ~ViewSceneResult ( );
+	ViewSceneResult( SceneResultPtr result );
+	virtual ~ViewSceneResult( );
 
 public:
-	void update ( );
+	void update( );
 
 private:
 	DrawerPtr _drawer;
+	SceneResultPtr _scene_result;
 };
 

@@ -2,23 +2,22 @@
 #include "Scene.h"
 #include "smart_ptr.h"
 
-PTR ( ViewSceneTitle );
-PTR ( SceneTitle );
-PTR ( Keyboard );
-PTR ( Mouse );
+PTR( SceneTitle );
+PTR( Keyboard );
+PTR( Mouse );
 
 class SceneTitle : public Scene {
 public:
-	SceneTitle ( );
-	virtual ~SceneTitle ( );
+	SceneTitle( );
+	virtual ~SceneTitle( );
 
 public:
-	void initialize ( );
-	void update ( );
+	void initialize( );
+	void update( );
 
 private:
+	int test;
+
 	KeyboardPtr _keyboard;
 	MousePtr _mouse;
-	ViewSceneTitlePtr _view_title;
 };
-
