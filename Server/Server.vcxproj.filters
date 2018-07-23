@@ -12,7 +12,12 @@
     <ClCompile Include="ViewerForServer.cpp">
       <Filter>Viewer</Filter>
     </ClCompile>
-    <ClCompile Include="Sheet.cpp" />
+    <ClCompile Include="Sheet.cpp">
+      <Filter>Viewer\Table</Filter>
+    </ClCompile>
+    <ClCompile Include="Table.cpp">
+      <Filter>Viewer\Table</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServerController.h" />
@@ -25,7 +30,12 @@
     <ClInclude Include="ViewerForServer.h">
       <Filter>Viewer</Filter>
     </ClInclude>
-    <ClInclude Include="Sheet.h" />
+    <ClInclude Include="Sheet.h">
+      <Filter>Viewer\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="Table.h">
+      <Filter>Viewer\Table</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Network">
@@ -36,6 +46,9 @@
     </Filter>
     <Filter Include="Viewer">
       <UniqueIdentifier>{e47dfb7b-f946-46cf-b493-4cac18a37e43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Viewer\Table">
+      <UniqueIdentifier>{4921a9b4-0e07-4937-bb2c-68b3bbda8191}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

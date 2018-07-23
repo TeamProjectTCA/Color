@@ -15,9 +15,10 @@ int main( ) {
 	manager->setScreenSize( WIDTH, HEIGHT );
 	manager->setWindowSize( WINDOW_WIDTH, WINDOW_HEIGHT );
 
+	SceneManagerPtr scene_manager( new SceneManager( ) );
+
 	DrawerPtr drawer( new Drawer( "Resources/Image" ) );
 	SoundPtr soundplayer( new Sound( "Resources/Sound" ) );
-	SceneManagerPtr scene_manager( new SceneManager( ) );
 	KeyboardPtr keyboard( new Keyboard( ) );
 	MousePtr mouse( new Mouse( ) );
 

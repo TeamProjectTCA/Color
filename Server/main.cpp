@@ -5,10 +5,12 @@
 #include "ServerController.h"
 
 int main( ) {
+	ManagerPtr manager = Manager::getInstance( );
+	manager->setScreenSize( 1280, 720 );
+
 	ClientToServerDataPtr recvdata( new ClientToServerData );
 	ServerControllerPtr controller( new ServerController( recvdata ) );
 
-	ManagerPtr manager = Manager::getInstance( );
 	manager->add( Drawer::getTag( ), DrawerPtr( new Drawer( "Resources/Image" ) ) );
 	manager->add( Server::getTag( ), ServerPtr( new Server( recvdata ) ) );
 

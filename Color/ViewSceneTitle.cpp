@@ -12,8 +12,8 @@ ViewSceneTitle::ViewSceneTitle( SceneTitlePtr title ) :
 	_scene_title( title ) {
 	_drawer = Drawer::getTask( );
 
-	_bg_image = _drawer->getImage( BACKGROUND_IMAGE );
-	_title_image = _drawer->getImage( TITLE_IMAGE );
+	//_bg_image = _drawer->getImage( BACKGROUND_IMAGE );
+	//_title_image = _drawer->getImage( TITLE_IMAGE );
 }
 
 ViewSceneTitle::~ViewSceneTitle( ) {
@@ -27,9 +27,9 @@ void ViewSceneTitle::update( ) {
 }
 
 void ViewSceneTitle::drawTitleLogo( ) const {
-	_drawer->drawRotaGraph( WIDTH / 2, HEIGHT / 4, 1, 0, _title_image, true );
+	//_drawer->drawRotaGraph( WIDTH / 2, HEIGHT / 4, 1, 0, _title_image, true );
 }
 
 void ViewSceneTitle::drawBackGround( ) const {
-	_drawer->drawRotaGraph( WIDTH / 2, HEIGHT / 2, 1, 0, _bg_image, true );
+	//_drawer->drawRotaGraph( WIDTH / 2, HEIGHT / 2, 1, 0, _bg_image, true );
 }

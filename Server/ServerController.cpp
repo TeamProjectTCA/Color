@@ -22,4 +22,5 @@ ServerController::~ServerController( ) {
 }
 
 void ServerController::update( ) {
+	_viewer->update( );
 }
