@@ -155,22 +155,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CharacterSelectProcessor.cpp" />
     <ClCompile Include="Field.cpp" />
+    <ClCompile Include="GameProcessor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Network.cpp" />
     <ClCompile Include="Processor.cpp" />
+    <ClCompile Include="ResultProcessor.cpp" />
     <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="SceneCharacterSelect.cpp" />
-    <ClCompile Include="SceneGame.cpp" />
+    <ClCompile Include="CharacterSelect.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="SceneResult.cpp" />
-    <ClCompile Include="SceneTitle.cpp" />
+    <ClCompile Include="Result.cpp" />
+    <ClCompile Include="Title.cpp" />
+    <ClCompile Include="TitleProcessor.cpp" />
     <ClCompile Include="Viewer.cpp" />
-    <ClCompile Include="ViewField.cpp" />
-    <ClCompile Include="ViewSceneCharacterSelect.cpp" />
-    <ClCompile Include="ViewSceneGame.cpp" />
-    <ClCompile Include="ViewSceneResult.cpp" />
-    <ClCompile Include="ViewSceneTitle.cpp" />
+    <ClCompile Include="FieldViewer.cpp" />
+    <ClCompile Include="CharacterSelectViewer.cpp" />
+    <ClCompile Include="GameViewer.cpp" />
+    <ClCompile Include="ResultViewer.cpp" />
+    <ClCompile Include="TitleViewer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Fundation2017\Fundation2017.vcxproj">
@@ -178,21 +182,25 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CharacterSelectProcessor.h" />
     <ClInclude Include="Field.h" />
+    <ClInclude Include="GameProcessor.h" />
     <ClInclude Include="Network.h" />
     <ClInclude Include="Processor.h" />
+    <ClInclude Include="ResultProcessor.h" />
     <ClInclude Include="Scene.h" />
-    <ClInclude Include="SceneCharacterSelect.h" />
-    <ClInclude Include="SceneGame.h" />
+    <ClInclude Include="CharacterSelect.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="SceneResult.h" />
-    <ClInclude Include="SceneTitle.h" />
+    <ClInclude Include="Result.h" />
+    <ClInclude Include="Title.h" />
+    <ClInclude Include="TitleProcessor.h" />
     <ClInclude Include="Viewer.h" />
-    <ClInclude Include="ViewField.h" />
-    <ClInclude Include="ViewSceneCharacterSelect.h" />
-    <ClInclude Include="ViewSceneGame.h" />
-    <ClInclude Include="ViewSceneResult.h" />
-    <ClInclude Include="ViewSceneTitle.h" />
+    <ClInclude Include="FieldViewer.h" />
+    <ClInclude Include="CharacterSelectViewer.h" />
+    <ClInclude Include="GameViewer.h" />
+    <ClInclude Include="ResultViewer.h" />
+    <ClInclude Include="TitleViewer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

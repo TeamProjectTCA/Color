@@ -25,4 +25,3 @@ public:
 private:
 	SCENE _next_scene;
 };
-

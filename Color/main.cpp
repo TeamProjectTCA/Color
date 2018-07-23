@@ -7,13 +7,10 @@
 
 const int WIDTH = 1280;
 const int HEIGHT = 720;
-const int WINDOW_WIDTH = 1280;
-const int WINDOW_HEIGHT = 720;
 
 int main( ) {
 	ManagerPtr manager = Manager::getInstance( );
 	manager->setScreenSize( WIDTH, HEIGHT );
-	manager->setWindowSize( WINDOW_WIDTH, WINDOW_HEIGHT );
 
 	SceneManagerPtr scene_manager( new SceneManager( ) );
 

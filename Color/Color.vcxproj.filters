@@ -3,19 +3,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Scene.cpp">
-      <Filter>Processor\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneGame.cpp">
-      <Filter>Processor\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneResult.cpp">
-      <Filter>Processor\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneTitle.cpp">
-      <Filter>Processor\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneCharacterSelect.cpp">
-      <Filter>Processor\Scene</Filter>
+      <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="Processor.cpp">
       <Filter>Processor</Filter>
@@ -26,43 +14,55 @@
     <ClCompile Include="Viewer.cpp">
       <Filter>Viewer</Filter>
     </ClCompile>
-    <ClCompile Include="ViewSceneCharacterSelect.cpp">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewSceneGame.cpp">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewSceneResult.cpp">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewSceneTitle.cpp">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClCompile>
     <ClCompile Include="SceneManager.cpp">
-      <Filter>Processor\Scene\SceneManager</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewField.cpp">
-      <Filter>Viewer\ViewField</Filter>
+      <Filter>Scene\SceneManager</Filter>
     </ClCompile>
     <ClCompile Include="Field.cpp">
       <Filter>Processor\Field</Filter>
     </ClCompile>
+    <ClCompile Include="TitleViewer.cpp">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelect.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Result.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Title.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="FieldViewer.cpp">
+      <Filter>Viewer\ViewField</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelectViewer.cpp">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameViewer.cpp">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClCompile>
+    <ClCompile Include="ResultViewer.cpp">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleProcessor.cpp">
+      <Filter>Processor\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelectProcessor.cpp">
+      <Filter>Processor\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameProcessor.cpp">
+      <Filter>Processor\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ResultProcessor.cpp">
+      <Filter>Processor\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
-      <Filter>Processor\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneGame.h">
-      <Filter>Processor\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneResult.h">
-      <Filter>Processor\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneTitle.h">
-      <Filter>Processor\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneCharacterSelect.h">
-      <Filter>Processor\Scene</Filter>
+      <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="Processor.h">
       <Filter>Processor</Filter>
@@ -73,34 +73,55 @@
     <ClInclude Include="Viewer.h">
       <Filter>Viewer</Filter>
     </ClInclude>
-    <ClInclude Include="ViewSceneCharacterSelect.h">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewSceneGame.h">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewSceneResult.h">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewSceneTitle.h">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClInclude>
     <ClInclude Include="SceneManager.h">
-      <Filter>Processor\Scene\SceneManager</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewField.h">
-      <Filter>Viewer\ViewField</Filter>
+      <Filter>Scene\SceneManager</Filter>
     </ClInclude>
     <ClInclude Include="Field.h">
       <Filter>Processor\Field</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleViewer.h">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelect.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Result.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Title.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="FieldViewer.h">
+      <Filter>Viewer\ViewField</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelectViewer.h">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameViewer.h">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClInclude>
+    <ClInclude Include="ResultViewer.h">
+      <Filter>Viewer\ViewScene</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleProcessor.h">
+      <Filter>Processor\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameProcessor.h">
+      <Filter>Processor\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelectProcessor.h">
+      <Filter>Processor\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ResultProcessor.h">
+      <Filter>Processor\Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Processor">
       <UniqueIdentifier>{96e7177f-db94-40ba-be38-6b876e49c781}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Processor\Scene">
-      <UniqueIdentifier>{b859ccb4-4c8e-4493-8e8a-3e2e6187d9a5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Viewer">
       <UniqueIdentifier>{71fc3467-f883-4d32-b12b-e6ad03f1799a}</UniqueIdentifier>
@@ -123,8 +144,14 @@
     <Filter Include="Viewer\ViewScene">
       <UniqueIdentifier>{5b10e425-33cd-468d-bbf3-fef9fc8a2594}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Processor\Scene\SceneManager">
+    <Filter Include="Scene">
+      <UniqueIdentifier>{b859ccb4-4c8e-4493-8e8a-3e2e6187d9a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\SceneManager">
       <UniqueIdentifier>{5f66ea36-58ce-4825-a1f5-17e0e89bbba4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Processor\Scene">
+      <UniqueIdentifier>{040402a7-0283-4c01-9507-b85aae9bb832}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

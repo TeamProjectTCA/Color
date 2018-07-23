@@ -2,13 +2,14 @@
 #include <array>
 #include "smart_ptr.h"
 
-PTR( ViewField );
+PTR( FieldViewer );
 PTR( Drawer );
+PTR( Image );
 
-class ViewField {
+class FieldViewer {
 public:
-	ViewField( );
-	virtual ~ViewField( );
+	FieldViewer( );
+	virtual ~FieldViewer( );
 
 public:
 	void update( );
@@ -19,6 +20,6 @@ private:
 private:
 	DrawerPtr _drawer;
 
-	std::array< int, 2 > _mas_handle;
+	std::array< ImagePtr, 2 > _mas_handle;
 };
 
