@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ServerController.cpp" />
+    <ClCompile Include="NWManagerForServer.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessorForServer.cpp">
+      <Filter>Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewerForServer.cpp">
+      <Filter>Viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="Sheet.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ServerController.h" />
+    <ClInclude Include="NWManagerForServer.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessorForServer.h">
+      <Filter>Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewerForServer.h">
+      <Filter>Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="Sheet.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Network">
+      <UniqueIdentifier>{f2504bd4-a117-4cce-b900-81c4dee91ffe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Processor">
+      <UniqueIdentifier>{db195089-5c5c-497c-8485-8081288ee059}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Viewer">
+      <UniqueIdentifier>{e47dfb7b-f946-46cf-b493-4cac18a37e43}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

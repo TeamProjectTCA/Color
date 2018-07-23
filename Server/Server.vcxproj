@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{2BCBCD53-C05E-4FE9-A555-BD0503D7C8DC}</ProjectGuid>
+    <ProjectGuid>{E718A7E3-1FBE-45EF-878B-0B0611E4BBC0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Color</RootNamespace>
+    <RootNamespace>Server</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -70,10 +70,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -82,12 +82,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;$(SolutionDir)../Fundation2017;$(SolutionDir)Common</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -98,12 +98,12 @@
       <AdditionalLibraryDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;$(SolutionDir)../Fundation2017;$(SolutionDir)Common</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;$(SolutionDir)../Fundation2017;$(SolutionDir)Common</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -155,44 +155,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Field.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Network.cpp" />
-    <ClCompile Include="Processor.cpp" />
-    <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="SceneCharacterSelect.cpp" />
-    <ClCompile Include="SceneGame.cpp" />
-    <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="SceneResult.cpp" />
-    <ClCompile Include="SceneTitle.cpp" />
-    <ClCompile Include="Viewer.cpp" />
-    <ClCompile Include="ViewField.cpp" />
-    <ClCompile Include="ViewSceneCharacterSelect.cpp" />
-    <ClCompile Include="ViewSceneGame.cpp" />
-    <ClCompile Include="ViewSceneResult.cpp" />
-    <ClCompile Include="ViewSceneTitle.cpp" />
+    <ClCompile Include="NWManagerForServer.cpp" />
+    <ClCompile Include="ProcessorForServer.cpp" />
+    <ClCompile Include="ServerController.cpp" />
+    <ClCompile Include="Sheet.cpp" />
+    <ClCompile Include="ViewerForServer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Fundation2017\Fundation2017.vcxproj">
       <Project>{2c901e7f-ca6d-47c4-8b5b-89bbea8b61b7}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\Common\Common.vcxproj">
+      <Project>{eeae8449-2f44-44df-9bbf-1576644bd357}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Field.h" />
-    <ClInclude Include="Network.h" />
-    <ClInclude Include="Processor.h" />
-    <ClInclude Include="Scene.h" />
-    <ClInclude Include="SceneCharacterSelect.h" />
-    <ClInclude Include="SceneGame.h" />
-    <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="SceneResult.h" />
-    <ClInclude Include="SceneTitle.h" />
-    <ClInclude Include="Viewer.h" />
-    <ClInclude Include="ViewField.h" />
-    <ClInclude Include="ViewSceneCharacterSelect.h" />
-    <ClInclude Include="ViewSceneGame.h" />
-    <ClInclude Include="ViewSceneResult.h" />
-    <ClInclude Include="ViewSceneTitle.h" />
+    <ClInclude Include="NWManagerForServer.h" />
+    <ClInclude Include="ProcessorForServer.h" />
+    <ClInclude Include="ServerController.h" />
+    <ClInclude Include="Sheet.h" />
+    <ClInclude Include="ViewerForServer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
