@@ -13,7 +13,11 @@ public:
 	virtual ~ConnectorForServer( );
 
 public:
+	void initialize( );
 	void update( );
+
+public:
+	std::string getMachinesIp( int idx ) const;
 
 private:
 	void checkConnect( );

@@ -17,10 +17,15 @@ ServerController::ServerController( ClientToServerDataConstPtr recvdata ) {
 
 	_processor       = ProcessorForServerPtr( new ProcessorForServer( senddata_udp, log ) );
 	_network_manager = NWManagerForServerPtr( new NWManagerForServer( recvdata, senddata_udp, _processor, log ) );
-	_viewer          = ViewerForServerPtr   ( new ViewerForServer( _processor, log ) );
+	_viewer          = ViewerForServerPtr   ( new ViewerForServer( _processor, _network_manager, log ) );
 }
 
 ServerController::~ServerController( ) {
+}
+
+void ServerController::initialize( ) {
+	_network_manager->initialize( );
+	_viewer->initialize( );
 }
 
 void ServerController::update( ) {

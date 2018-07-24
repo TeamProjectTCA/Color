@@ -9,8 +9,17 @@ _log( log ) {
 ConnectorForServer::~ConnectorForServer( ) {
 }
 
+void ConnectorForServer::initialize( ) {
+	ServerPtr server = Server::getTask( );
+	server->createIP( );
+}
+
 void ConnectorForServer::update( ) {
 	checkConnect( );
+}
+
+std::string ConnectorForServer::getMachinesIp( int idx ) const {
+	return _machines[ idx ];
 }
 
 void ConnectorForServer::checkConnect( ) {

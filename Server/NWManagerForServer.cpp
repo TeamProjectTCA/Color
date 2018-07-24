@@ -14,6 +14,14 @@ _processor( processor ) {
 NWManagerForServer::~NWManagerForServer( ) {
 }
 
+void NWManagerForServer::initialize( ) {
+	_connector->initialize( );
+}
+
 void NWManagerForServer::update( ) {
 	_connector->update( );
+}
+
+ConnectorForServerConstPtr NWManagerForServer::getConnectorPtr( ) const {
+	return _connector;
 }

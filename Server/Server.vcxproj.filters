@@ -24,6 +24,9 @@
     <ClCompile Include="Log.cpp">
       <Filter>Processor</Filter>
     </ClCompile>
+    <ClCompile Include="ViewConnectorForServer.cpp">
+      <Filter>Viewer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServerController.h" />
@@ -47,6 +50,9 @@
     </ClInclude>
     <ClInclude Include="Log.h">
       <Filter>Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewConnectorForServer.h">
+      <Filter>Viewer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

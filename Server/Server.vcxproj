@@ -163,6 +163,7 @@
     <ClCompile Include="ServerController.cpp" />
     <ClCompile Include="Sheet.cpp" />
     <ClCompile Include="Table.cpp" />
+    <ClCompile Include="ViewConnectorForServer.cpp" />
     <ClCompile Include="ViewerForServer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +182,7 @@
     <ClInclude Include="ServerController.h" />
     <ClInclude Include="Sheet.h" />
     <ClInclude Include="Table.h" />
+    <ClInclude Include="ViewConnectorForServer.h" />
     <ClInclude Include="ViewerForServer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

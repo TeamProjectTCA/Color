@@ -14,7 +14,11 @@ public:
 	virtual ~NWManagerForServer( );
 
 public:
+	void initialize( );
 	void update( );
+
+public:
+	ConnectorForServerConstPtr getConnectorPtr( ) const;
 
 private:
 	ClientToServerDataConstPtr _recvdata;

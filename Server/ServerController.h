@@ -19,6 +19,7 @@ public:
 	virtual ~ServerController( );
 
 public:
+	void initialize( );
 	void update( );
 
 private:
