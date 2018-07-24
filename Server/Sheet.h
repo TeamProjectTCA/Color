@@ -7,7 +7,7 @@ PTR( Sheet );
 
 class Sheet {
 public:
-	Sheet( const int ROW_NUM );
+	Sheet( const int ROW_NUM, bool draw_horizontal = true );
 	virtual ~Sheet( );
 
 public:
@@ -18,6 +18,7 @@ public:
 public:
 	float getWidth( ) const;
 	float getHeight( ) const;
+	std::string getValue( int col, int row ) const;
 
 public:
 	void draw( ) const;
@@ -27,6 +28,7 @@ private:
 	void drawValue( ) const;
 
 private:
+	bool _draw_horizontal;
 	int _row;
 	int _col;
 

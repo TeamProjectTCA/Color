@@ -27,13 +27,13 @@ void TitleViewer::update( ) {
 void TitleViewer::drawTitleLogo( ) const {
 	Vector logo_pos = _scene_title->getLogoPos( );
 	_title_image->setCentral( true );
-	_title_image->setPos( logo_pos.x, logo_pos.y );
+	_title_image->setPos( ( int )logo_pos.x, ( int )logo_pos.y );
 	_title_image->draw( );
 }
 
 void TitleViewer::drawBackGround( ) const {
 	Vector bg_pos = _scene_title->getBgPos( );
 	_bg_image->setCentral( true );
-	_bg_image->setPos( bg_pos.x, bg_pos.y );
+	_bg_image->setPos( ( int )bg_pos.x, ( int )bg_pos.y );
 	_bg_image->draw( );
 }

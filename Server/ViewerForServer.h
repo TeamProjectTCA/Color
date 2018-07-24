@@ -4,10 +4,11 @@
 PTR( ViewerForServer );
 PTR( ProcessorForServer );
 PTR( Table );
+PTR( Log );
 
 class ViewerForServer {
 public:
-	ViewerForServer( ProcessorForServerConstPtr processor );
+	ViewerForServer( ProcessorForServerConstPtr processor, LogConstPtr log );
 	virtual ~ViewerForServer( );
 
 public:

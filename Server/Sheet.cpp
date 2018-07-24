@@ -4,7 +4,8 @@
 const unsigned int SHOW_COLOR = 0xffffff;
 const float ROW_PITCH = 25.0f;
 
-Sheet::Sheet( const int ROW_NUM ) :
+Sheet::Sheet( const int ROW_NUM, bool draw_horizontal ) :
+_draw_horizontal( draw_horizontal ),
 _row( ROW_NUM ),
 _col( 0 ),
 _x( 0 ),
@@ -47,6 +48,11 @@ float Sheet::getHeight( ) const {
 	return _height;
 }
 
+std::string Sheet::getValue( int col, int row ) const {
+	std::string value = _value[ row ][ col ];
+	return value;
+}
+
 void Sheet::draw( ) const {
 	drawFrame( );
 	drawValue( );
@@ -80,10 +86,15 @@ void Sheet::drawFrame( ) const {
 	const float RIGHT      = _x + _width;
 	const int X_LINE_NUM = _row + 1;
 
-	for ( int i = 0; i < X_LINE_NUM; i++ ) {
-		float sy = _y + i * ROW_PITCH;
-		float ey = sy;
-		drawer->drawLine( LEFT, sy, RIGHT, ey, SHOW_COLOR );
+	if ( _draw_horizontal ) {
+		for ( int i = 0; i < X_LINE_NUM; i++ ) {
+			float sy = _y + i * ROW_PITCH;
+			float ey = sy;
+			drawer->drawLine( LEFT, sy, RIGHT, ey, SHOW_COLOR );
+		}
+	} else {
+		drawer->drawLine( LEFT, _y, RIGHT, _y, SHOW_COLOR );
+		drawer->drawLine( LEFT, _y + _height, RIGHT, _y + _height, SHOW_COLOR );
 	}
 
 	// ècê¸

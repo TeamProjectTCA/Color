@@ -18,6 +18,12 @@
     <ClCompile Include="Table.cpp">
       <Filter>Viewer\Table</Filter>
     </ClCompile>
+    <ClCompile Include="ConnectorForServer.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Processor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServerController.h" />
@@ -35,6 +41,12 @@
     </ClInclude>
     <ClInclude Include="Table.h">
       <Filter>Viewer\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="ConnectorForServer.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Processor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

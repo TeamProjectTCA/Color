@@ -5,15 +5,21 @@ PTR( NWManagerForServer );
 PTR( ClientToServerData );
 PTR( ServerToClientDataUdp );
 PTR( ProcessorForServer );
+PTR( Log );
+PTR( ConnectorForServer );
 
 class NWManagerForServer {
 public:
-	NWManagerForServer( ClientToServerDataConstPtr recvdata, ServerToClientDataUdpPtr senddata_udp, ProcessorForServerPtr processor );
+	NWManagerForServer( ClientToServerDataConstPtr recvdata, ServerToClientDataUdpPtr senddata_udp, ProcessorForServerPtr processor, LogPtr log );
 	virtual ~NWManagerForServer( );
+
+public:
+	void update( );
 
 private:
 	ClientToServerDataConstPtr _recvdata;
 	ServerToClientDataUdpPtr _senddata_udp;
 	ProcessorForServerPtr _processor;
+	ConnectorForServerPtr _connector;
 };
 

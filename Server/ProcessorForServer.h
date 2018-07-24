@@ -3,10 +3,11 @@
 
 PTR( ProcessorForServer );
 PTR( ServerToClientDataUdp );
+PTR( Log );
 
 class ProcessorForServer {
 public:
-	ProcessorForServer( ServerToClientDataUdpPtr senddata_udp );
+	ProcessorForServer( ServerToClientDataUdpPtr senddata_udp, LogPtr log );
 	virtual ~ProcessorForServer( );
 
 private:
