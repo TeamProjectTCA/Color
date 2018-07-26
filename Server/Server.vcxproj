@@ -155,6 +155,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Command.cpp" />
+    <ClCompile Include="CommandWord.cpp" />
     <ClCompile Include="ConnectorForServer.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
@@ -163,6 +165,7 @@
     <ClCompile Include="ServerController.cpp" />
     <ClCompile Include="Sheet.cpp" />
     <ClCompile Include="Table.cpp" />
+    <ClCompile Include="ViewCommand.cpp" />
     <ClCompile Include="ViewConnectorForServer.cpp" />
     <ClCompile Include="ViewerForServer.cpp" />
   </ItemGroup>
@@ -175,6 +178,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="CommandWord.h" />
     <ClInclude Include="ConnectorForServer.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="NWManagerForServer.h" />
@@ -182,6 +187,7 @@
     <ClInclude Include="ServerController.h" />
     <ClInclude Include="Sheet.h" />
     <ClInclude Include="Table.h" />
+    <ClInclude Include="ViewCommand.h" />
     <ClInclude Include="ViewConnectorForServer.h" />
     <ClInclude Include="ViewerForServer.h" />
   </ItemGroup>

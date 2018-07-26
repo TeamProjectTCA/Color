@@ -27,6 +27,15 @@
     <ClCompile Include="ViewConnectorForServer.cpp">
       <Filter>Viewer</Filter>
     </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Processor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandWord.cpp">
+      <Filter>Processor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewCommand.cpp">
+      <Filter>Viewer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServerController.h" />
@@ -54,6 +63,15 @@
     <ClInclude Include="ViewConnectorForServer.h">
       <Filter>Viewer</Filter>
     </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Processor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandWord.h">
+      <Filter>Processor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewCommand.h">
+      <Filter>Viewer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Network">
@@ -67,6 +85,9 @@
     </Filter>
     <Filter Include="Viewer\Table">
       <UniqueIdentifier>{4921a9b4-0e07-4937-bb2c-68b3bbda8191}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Processor\Command">
+      <UniqueIdentifier>{b838c61b-36dc-4179-9c02-261886e65488}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

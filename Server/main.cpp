@@ -3,6 +3,7 @@
 #include "Server.h"
 #include "ClientToServerData.h"
 #include "ServerController.h"
+#include "Keyboard.h"
 
 int main( ) {
 	ManagerPtr manager = Manager::getInstance( );
@@ -13,6 +14,7 @@ int main( ) {
 
 	manager->add( Drawer::getTag( ), DrawerPtr( new Drawer( "Resources/Image" ) ) );
 	manager->add( Server::getTag( ), ServerPtr( new Server( recvdata ) ) );
+	manager->add( Keyboard::getTag( ), KeyboardPtr( new Keyboard( ) ) );
 
 	manager->add( ServerController::getTag( ), controller );
 
