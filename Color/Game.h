@@ -5,6 +5,8 @@
 PTR( Game );
 PTR( GameProcessor );
 PTR( GameViewer );
+PTR( NetworkManager );
+PTR( ServerToClientDataUdp );
 
 class Game : public Scene {
 public:
@@ -12,9 +14,12 @@ public:
 	~Game( );
 
 public:
+	void initialize( );
 	void update( );
 
 private:
-	GameProcessorPtr _process;
-	GameViewerPtr _viewer;
+	GameProcessorPtr         _process;
+	GameViewerPtr            _viewer;
+	NetworkManagerPtr        _network;
+	ServerToClientDataUdpPtr _recvdata;
 };

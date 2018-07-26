@@ -5,15 +5,6 @@
     <ClCompile Include="Scene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Processor.cpp">
-      <Filter>Processor</Filter>
-    </ClCompile>
-    <ClCompile Include="Network.cpp">
-      <Filter>Network</Filter>
-    </ClCompile>
-    <ClCompile Include="Viewer.cpp">
-      <Filter>Viewer</Filter>
-    </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>Scene\SceneManager</Filter>
     </ClCompile>
@@ -59,19 +50,16 @@
     <ClCompile Include="ResultProcessor.cpp">
       <Filter>Processor\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Connector.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkManager.cpp">
+      <Filter>Network\NewworkManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
       <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Processor.h">
-      <Filter>Processor</Filter>
-    </ClInclude>
-    <ClInclude Include="Network.h">
-      <Filter>Network</Filter>
-    </ClInclude>
-    <ClInclude Include="Viewer.h">
-      <Filter>Viewer</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>Scene\SceneManager</Filter>
@@ -118,6 +106,12 @@
     <ClInclude Include="ResultProcessor.h">
       <Filter>Processor\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="Connector.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkManager.h">
+      <Filter>Network\NewworkManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Processor">
@@ -152,6 +146,9 @@
     </Filter>
     <Filter Include="Processor\Scene">
       <UniqueIdentifier>{040402a7-0283-4c01-9507-b85aae9bb832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\NewworkManager">
+      <UniqueIdentifier>{ea28f25d-8a02-41d9-9634-333fae767efe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

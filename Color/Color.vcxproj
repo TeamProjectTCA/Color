@@ -156,11 +156,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CharacterSelectProcessor.cpp" />
+    <ClCompile Include="Connector.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="GameProcessor.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Network.cpp" />
-    <ClCompile Include="Processor.cpp" />
+    <ClCompile Include="NetworkManager.cpp" />
     <ClCompile Include="ResultProcessor.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="CharacterSelect.cpp" />
@@ -169,7 +169,6 @@
     <ClCompile Include="Result.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="TitleProcessor.cpp" />
-    <ClCompile Include="Viewer.cpp" />
     <ClCompile Include="FieldViewer.cpp" />
     <ClCompile Include="CharacterSelectViewer.cpp" />
     <ClCompile Include="GameViewer.cpp" />
@@ -183,10 +182,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CharacterSelectProcessor.h" />
+    <ClInclude Include="Connector.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="GameProcessor.h" />
-    <ClInclude Include="Network.h" />
-    <ClInclude Include="Processor.h" />
+    <ClInclude Include="NetworkManager.h" />
     <ClInclude Include="ResultProcessor.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="CharacterSelect.h" />
@@ -195,7 +194,6 @@
     <ClInclude Include="Result.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="TitleProcessor.h" />
-    <ClInclude Include="Viewer.h" />
     <ClInclude Include="FieldViewer.h" />
     <ClInclude Include="CharacterSelectViewer.h" />
     <ClInclude Include="GameViewer.h" />
