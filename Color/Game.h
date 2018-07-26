@@ -10,8 +10,8 @@ PTR( ServerToClientDataUdp );
 
 class Game : public Scene {
 public:
-	Game( );
-	~Game( );
+	Game( ServerToClientDataUdpConstPtr recvdata );
+	virtual ~Game( );
 
 public:
 	void initialize( );
@@ -21,5 +21,5 @@ private:
 	GameProcessorPtr         _process;
 	GameViewerPtr            _viewer;
 	NetworkManagerPtr        _network;
-	ServerToClientDataUdpPtr _recvdata;
+	ServerToClientDataUdpConstPtr _recvdata;
 };

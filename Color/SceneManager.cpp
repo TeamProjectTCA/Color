@@ -14,7 +14,8 @@ std::string SceneManager::getTag( ) {
 	return "SCENE_MANAGER";
 }
 
-SceneManager::SceneManager( ) {
+SceneManager::SceneManager( ServerToClientDataUdpConstPtr recvdata ) :
+_recvdata( recvdata ) {
 }
 
 SceneManager::~SceneManager( ) {
@@ -48,7 +49,7 @@ void SceneManager::changeScene( ) {
 		break;
 
 	case SCENE_GAME:
-		_scene = GamePtr( new Game( ) );
+		_scene = GamePtr( new Game( _recvdata ) );
 		break;
 
 	case SCENE_RESULT:
