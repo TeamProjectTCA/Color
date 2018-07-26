@@ -4,6 +4,7 @@
 #include "SceneManager.h"
 #include "Keyboard.h"
 #include "Mouse.h"
+#include "ServerToClientDataUdp.h"
 
 const int WIDTH = 1280;
 const int HEIGHT = 720;
@@ -12,7 +13,9 @@ int main( ) {
 	ManagerPtr manager = Manager::getInstance( );
 	manager->setScreenSize( WIDTH, HEIGHT );
 
-	SceneManagerPtr scene_manager( new SceneManager( ) );
+
+	ServerToClientDataUdpPtr recv_data( new ServerToClientDataUdp( ) );
+	SceneManagerPtr scene_manager( new SceneManager( recv_data ) );
 
 	DrawerPtr drawer( new Drawer( "Resources/Image" ) );
 	SoundPtr soundplayer( new Sound( "Resources/Sound" ) );
