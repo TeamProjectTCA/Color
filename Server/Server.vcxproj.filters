@@ -36,6 +36,9 @@
     <ClCompile Include="ViewCommand.cpp">
       <Filter>Viewer</Filter>
     </ClCompile>
+    <ClCompile Include="CommandListener.cpp">
+      <Filter>Processor\Command</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServerController.h" />
@@ -71,6 +74,9 @@
     </ClInclude>
     <ClInclude Include="ViewCommand.h">
       <Filter>Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandListener.h">
+      <Filter>Processor\Command</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

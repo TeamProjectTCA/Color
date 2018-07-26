@@ -13,6 +13,11 @@ public:
 public:
 	void add( std::string command );
 
+public:
+	int getTokenCount( ) const;
+	std::string getTokenString( int idx ) const;
+	int getTokenValue( int idx ) const;
+
 private:
 	std::vector< std::string > _word;
 };

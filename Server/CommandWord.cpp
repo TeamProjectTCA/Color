@@ -22,3 +22,15 @@ void CommandWord::add( std::string command ) {
 
 	_word.push_back( command );
 }
+
+int CommandWord::getTokenCount( ) const {
+	return ( int )_word.size( );
+}
+
+std::string CommandWord::getTokenString( int idx ) const {
+	return _word[ idx ];
+}
+
+int CommandWord::getTokenValue( int idx ) const {
+	return std::atoi( _word[ idx ].c_str( ) );
+}

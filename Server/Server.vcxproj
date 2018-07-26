@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Command.cpp" />
+    <ClCompile Include="CommandListener.cpp" />
     <ClCompile Include="CommandWord.cpp" />
     <ClCompile Include="ConnectorForServer.cpp" />
     <ClCompile Include="Log.cpp" />
@@ -179,6 +180,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Command.h" />
+    <ClInclude Include="CommandListener.h" />
     <ClInclude Include="CommandWord.h" />
     <ClInclude Include="ConnectorForServer.h" />
     <ClInclude Include="Log.h" />

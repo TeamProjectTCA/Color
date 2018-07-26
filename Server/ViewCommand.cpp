@@ -3,7 +3,7 @@
 #include "Sheet.h"
 
 const int TAG_PITCH = 100;
-const int VALUE_PITCH = 200;
+const int VALUE_PITCH = 300;
 
 ViewCommand::ViewCommand( CommandConstPtr command ) :
 _command( command ) {

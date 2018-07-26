@@ -2,7 +2,7 @@
 #include "Sheet.h"
 
 const short int ROW_NUM = 18;
-const short int COL_PITCH = 300;
+const short int COL_PITCH = 400;
 
 Log::Log( ) {
 	_sheet = SheetPtr( new Sheet( ROW_NUM, false ) );
