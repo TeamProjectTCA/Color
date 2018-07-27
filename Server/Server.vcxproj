@@ -166,9 +166,11 @@
     <ClCompile Include="ServerController.cpp" />
     <ClCompile Include="Sheet.cpp" />
     <ClCompile Include="Table.cpp" />
+    <ClCompile Include="Test.cpp" />
     <ClCompile Include="ViewCommand.cpp" />
     <ClCompile Include="ViewConnectorForServer.cpp" />
     <ClCompile Include="ViewerForServer.cpp" />
+    <ClCompile Include="ViewLog.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Fundation2017\Fundation2017.vcxproj">
@@ -189,9 +191,11 @@
     <ClInclude Include="ServerController.h" />
     <ClInclude Include="Sheet.h" />
     <ClInclude Include="Table.h" />
+    <ClInclude Include="Test.h" />
     <ClInclude Include="ViewCommand.h" />
     <ClInclude Include="ViewConnectorForServer.h" />
     <ClInclude Include="ViewerForServer.h" />
+    <ClInclude Include="ViewLog.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

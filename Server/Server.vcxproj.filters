@@ -39,6 +39,10 @@
     <ClCompile Include="CommandListener.cpp">
       <Filter>Processor\Command</Filter>
     </ClCompile>
+    <ClCompile Include="Test.cpp" />
+    <ClCompile Include="ViewLog.cpp">
+      <Filter>Viewer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServerController.h" />
@@ -77,6 +81,10 @@
     </ClInclude>
     <ClInclude Include="CommandListener.h">
       <Filter>Processor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Test.h" />
+    <ClInclude Include="ViewLog.h">
+      <Filter>Viewer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

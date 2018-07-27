@@ -2,6 +2,7 @@
 #include "Keyboard.h"
 #include "CommandWord.h"
 #include "CommandListener.h"
+#include "Log.h"
 
 const short int CONTINUITY_TIME = 30;
 const short int MAX_CHARACTER = 30;
@@ -44,8 +45,22 @@ void Command::update( ) {
 
 void Command::executeCommand( ) {
 	for ( CommandListenerPtr listener : _listener ) {
-		listener->command( _word );
+		CommandListener::RESULT result = listener->command( _word );
+		switch ( result ) {
+		case CommandListener::RESULT_DONE:
+			return;
+
+		case CommandListener::RESULT_ERROR:
+			_log->add( listener->getErrorLog( ) );
+			return;
+
+		case CommandListener::RESULT_THROW:
+			break;
+		}
 	}
+
+	// throw
+	_log->add( _word->makeUnknownError( ) );
 }
 
 void Command::addListener( CommandListenerPtr listener ) {

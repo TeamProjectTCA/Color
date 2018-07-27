@@ -2,8 +2,8 @@
 #include "Command.h"
 #include "Sheet.h"
 
-const int TAG_PITCH = 100;
-const int VALUE_PITCH = 300;
+const int TAG_PITCH = 80;
+const int VALUE_PITCH = 420;
 
 ViewCommand::ViewCommand( CommandConstPtr command ) :
 _command( command ) {
@@ -16,7 +16,11 @@ _command( command ) {
 ViewCommand::~ViewCommand( ) {
 }
 
-void ViewCommand::updataSheet( ) {
+void ViewCommand::initialize( ) {
+	updateSheet( );
+}
+
+void ViewCommand::updateSheet( ) {
 	_sheet->write( 1, 0, _command->getInputString( ) );
 }
 

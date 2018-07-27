@@ -1,26 +1,24 @@
 #pragma once
 #include "smart_ptr.h"
 
-PTR( ViewCommand );
-PTR( Command );
+PTR( ViewLog );
+PTR( Log );
 PTR( Sheet );
 
-class ViewCommand {
+class ViewLog {
 public:
-	ViewCommand( CommandConstPtr command );
-	virtual ~ViewCommand( );
+	ViewLog( LogConstPtr log );
+	virtual ~ViewLog( );
 
 public:
 	void initialize( );
 
 public:
 	void updateSheet( );
-
-public:
 	SheetPtr getSheet( ) const;
 
 private:
-	CommandConstPtr _command;
 	SheetPtr _sheet;
+	LogConstPtr _log;
 };
 

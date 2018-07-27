@@ -9,6 +9,7 @@ PTR( Log );
 PTR( Command );
 PTR( ViewConnectorForServer );
 PTR( ViewCommand );
+PTR( ViewLog );
 
 class ViewerForServer {
 public:
@@ -23,5 +24,6 @@ private:
 	TablePtr _table;
 	ViewConnectorForServerPtr _connector;
 	ViewCommandPtr _command;
+	ViewLogPtr _log;
 };
 

@@ -48,11 +48,6 @@ float Sheet::getHeight( ) const {
 	return _height;
 }
 
-std::string Sheet::getValue( int col, int row ) const {
-	std::string value = _value[ row ][ col ];
-	return value;
-}
-
 void Sheet::draw( ) const {
 	drawFrame( );
 	drawValue( );

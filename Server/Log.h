@@ -1,9 +1,9 @@
 #pragma once
 #include "smart_ptr.h"
 #include <string>
+#include <array>
 
 PTR( Log );
-PTR( Sheet );
 
 class Log {
 public:
@@ -12,9 +12,13 @@ public:
 
 public:
 	void add( std::string log );
-	SheetPtr getSheet( ) const;
+
+public:
+	int getRow( ) const;
+	std::string getLog( int idx ) const;
 
 private:
-	SheetPtr _sheet;
+	static const int ROW = 25;
+	std::array< std::string, ROW > _log;
 };
 

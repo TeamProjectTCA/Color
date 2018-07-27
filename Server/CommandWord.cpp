@@ -1,5 +1,7 @@
 #include "CommandWord.h"
 
+const char ERROR[ ] = "<<<ERROR>>>";
+
 CommandWord::CommandWord( ) {
 }
 
@@ -33,4 +35,34 @@ std::string CommandWord::getTokenString( int idx ) const {
 
 int CommandWord::getTokenValue( int idx ) const {
 	return std::atoi( _word[ idx ].c_str( ) );
+}
+
+std::string CommandWord::makeUnknownError( ) const {
+	std::string error;
+	error = error + ERROR + " [";
+
+	for ( std::string word : _word ) {
+		error += " ";
+		error += word;
+	}
+
+	error += " ] is Unknown Command";
+	return error;
+}
+
+std::string CommandWord::makeError( int error_idx, std::string cause ) const {
+	if ( error_idx >= _word.size( ) ) {
+		std::string idx_over;
+		idx_over = idx_over + ERROR + " error_idx is over range";
+		return idx_over;
+	}
+
+	std::string error = ERROR;
+	for ( int i = 0; i < error_idx; i++ ) {
+		error += " ";
+		error += getTokenString( i );
+	}
+
+	error += cause;
+	return error;
 }

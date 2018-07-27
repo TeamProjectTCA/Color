@@ -18,7 +18,6 @@ public:
 public:
 	float getWidth( ) const;
 	float getHeight( ) const;
-	std::string getValue( int col, int row ) const;
 
 public:
 	void draw( ) const;

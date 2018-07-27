@@ -7,7 +7,7 @@
 
 int main( ) {
 	ManagerPtr manager = Manager::getInstance( );
-	manager->setScreenSize( 1280, 720 );
+	manager->setWindowSize( 1280, 720 );
 
 	ClientToServerDataPtr recvdata( new ClientToServerData );
 	ServerControllerPtr controller( new ServerController( recvdata ) );
@@ -17,6 +17,5 @@ int main( ) {
 	manager->add( Keyboard::getTag( ), KeyboardPtr( new Keyboard( ) ) );
 
 	manager->add( ServerController::getTag( ), controller );
-
 	return 0;
 }
