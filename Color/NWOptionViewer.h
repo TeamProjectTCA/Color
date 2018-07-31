@@ -13,6 +13,10 @@ public:
 	void update( );
 
 private:
+	void drawNowIP( ) const;
+	void drawNewIP( ) const;
+
+private:
 	NWOptionProcessorConstPtr _processor;
 };
 

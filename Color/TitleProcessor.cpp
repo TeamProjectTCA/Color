@@ -7,10 +7,6 @@ const int WIDTH = 1280;
 const int HEIGHT = 720;
 
 TitleProcessor::TitleProcessor( ) {
-	_scene_manager = SceneManager::getTask( );
-	_keyboard = Keyboard::getTask( );
-	_mouse = Mouse::getTask( );
-
 	_bg_pos = Vector( WIDTH / 2, HEIGHT / 2 );
 	_logo_pos = Vector( WIDTH / 2, HEIGHT / 4 );
 }
@@ -20,8 +16,16 @@ TitleProcessor::~TitleProcessor( ) {
 }
 
 void TitleProcessor::update( ) {
-	if ( _keyboard->getKeyDown( "z" ) ) {
-		_scene_manager->setNextScene( SCENE_CHARACTERSELECT );
+	KeyboardPtr keyboard = Keyboard::getTask( );
+
+	if ( keyboard->getKeyDown( "z" ) ) {
+		SceneManagerPtr sence_manager = SceneManager::getTask( );
+		sence_manager->setNextScene( SCENE_CHARACTERSELECT );
+	}
+
+	if ( keyboard->getKeyDown( "o" ) ) {
+		SceneManagerPtr sence_manager = SceneManager::getTask( );
+		sence_manager->setNextScene( SCENE_NWOPTION );
 	}
 }
 

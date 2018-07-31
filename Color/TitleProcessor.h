@@ -3,9 +3,6 @@
 #include "Vector.h"
 
 PTR( TitleProcessor );
-PTR( SceneManager );
-PTR( Mouse );
-PTR( Keyboard );
 
 class TitleProcessor {
 public:
@@ -22,8 +19,4 @@ public:
 private:
 	Vector _bg_pos;
 	Vector _logo_pos;
-
-	SceneManagerPtr _scene_manager;
-	KeyboardPtr _keyboard;
-	MousePtr _mouse;
 };
