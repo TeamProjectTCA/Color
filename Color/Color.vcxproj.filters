@@ -65,6 +65,18 @@
     <ClCompile Include="Title.cpp">
       <Filter>Scene\Title</Filter>
     </ClCompile>
+    <ClCompile Include="StartButtonViewer.cpp">
+      <Filter>Button\StartButton</Filter>
+    </ClCompile>
+    <ClCompile Include="StartButton.cpp">
+      <Filter>Button\StartButton</Filter>
+    </ClCompile>
+    <ClCompile Include="OptionButtonViewer.cpp">
+      <Filter>Button\OptionButton</Filter>
+    </ClCompile>
+    <ClCompile Include="OptionButton.cpp">
+      <Filter>Button\OptionButton</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -130,6 +142,18 @@
     <ClInclude Include="Title.h">
       <Filter>Scene\Title</Filter>
     </ClInclude>
+    <ClInclude Include="StartButton.h">
+      <Filter>Button\StartButton</Filter>
+    </ClInclude>
+    <ClInclude Include="StartButtonViewer.h">
+      <Filter>Button\StartButton</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionButtonViewer.h">
+      <Filter>Button\OptionButton</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionButton.h">
+      <Filter>Button\OptionButton</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -170,6 +194,15 @@
     </Filter>
     <Filter Include="Scene\Game\Network\NewworkManager">
       <UniqueIdentifier>{ea28f25d-8a02-41d9-9634-333fae767efe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Button">
+      <UniqueIdentifier>{269c9bea-0e38-4603-9a02-1566ea10a0f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Button\StartButton">
+      <UniqueIdentifier>{f04083af-af3f-4cd7-94e4-a0d4bb7473b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Button\OptionButton">
+      <UniqueIdentifier>{a9657296-4b29-4079-8a73-298526614e70}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

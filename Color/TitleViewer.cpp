@@ -1,13 +1,17 @@
 #include "TitleViewer.h"
 #include "TitleProcessor.h"
+#include "StartButtonViewer.h"
+#include "OptionButtonViewer.h"
 #include "Drawer.h"
 #include "Image.h"
 
 const char BACKGROUND_IMAGE[ ] = "Title/back_001.png";
 const char TITLE_IMAGE[ ] = "Title/title.png";
 
-TitleViewer::TitleViewer( TitleProcessorPtr title ) :
-_scene_title( title ) {
+TitleViewer::TitleViewer( TitleProcessorPtr title, StartButtonViewerPtr start_button, OptionButtonViewerPtr option_button ) :
+_scene_title( title ),
+_view_start_button( start_button ),
+_view_option_button( option_button ){
 	_drawer = Drawer::getTask( );
 
 	_bg_image = _drawer->getImage( BACKGROUND_IMAGE );
@@ -21,6 +25,9 @@ void TitleViewer::update( ) {
 	_drawer->drawString( 10, 10, "SceneTitle", 0xff0000 );
 	drawBackGround( );
 	drawTitleLogo( );
+
+	_view_start_button->update( );
+	_view_option_button->update( );
 	_drawer->flip( );
 }
 

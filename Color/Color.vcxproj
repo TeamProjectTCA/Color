@@ -155,6 +155,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="OptionButton.cpp" />
+    <ClCompile Include="OptionButtonViewer.cpp" />
+    <ClCompile Include="StartButtonViewer.cpp" />
     <ClCompile Include="CharacterSelectProcessor.cpp" />
     <ClCompile Include="Connector.cpp" />
     <ClCompile Include="Field.cpp" />
@@ -171,6 +174,7 @@
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Result.cpp" />
     <ClCompile Include="Title.cpp" />
+    <ClCompile Include="StartButton.cpp" />
     <ClCompile Include="TitleProcessor.cpp" />
     <ClCompile Include="FieldViewer.cpp" />
     <ClCompile Include="CharacterSelectViewer.cpp" />
@@ -187,6 +191,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="OptionButton.h" />
+    <ClInclude Include="OptionButtonViewer.h" />
+    <ClInclude Include="StartButtonViewer.h" />
     <ClInclude Include="CharacterSelectProcessor.h" />
     <ClInclude Include="Connector.h" />
     <ClInclude Include="Field.h" />
@@ -202,6 +209,7 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Result.h" />
     <ClInclude Include="Title.h" />
+    <ClInclude Include="StartButton.h" />
     <ClInclude Include="TitleProcessor.h" />
     <ClInclude Include="FieldViewer.h" />
     <ClInclude Include="CharacterSelectViewer.h" />

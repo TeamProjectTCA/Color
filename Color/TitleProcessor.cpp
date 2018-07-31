@@ -1,14 +1,20 @@
 #include "TitleProcessor.h"
+#include "Manager.h"
 #include "SceneManager.h"
+#include "StartButton.h"
+#include "OptionButton.h"
 #include "Keyboard.h"
 #include "Mouse.h"
 
-const int WIDTH = 1280;
-const int HEIGHT = 720;
+TitleProcessor::TitleProcessor( StartButtonPtr start_button, OptionButtonPtr option_button ):
+_start_button( start_button ),
+_option_button( option_button ) {
+	ManagerPtr manager = Manager::getInstance( );
+	int width = manager->getScreenWidth( );
+	int height = manager->getScreenHeight( );
 
-TitleProcessor::TitleProcessor( ) {
-	_bg_pos = Vector( WIDTH / 2, HEIGHT / 2 );
-	_logo_pos = Vector( WIDTH / 2, HEIGHT / 4 );
+	_bg_pos = Vector( width / 2, height / 2 );
+	_logo_pos = Vector( width / 2, height / 4 );
 }
 
 
@@ -16,6 +22,9 @@ TitleProcessor::~TitleProcessor( ) {
 }
 
 void TitleProcessor::update( ) {
+	_start_button->update( );
+	_option_button->update( );
+
 	KeyboardPtr keyboard = Keyboard::getTask( );
 
 	if ( keyboard->getKeyDown( "z" ) ) {
@@ -29,10 +38,10 @@ void TitleProcessor::update( ) {
 	}
 }
 
-Vector TitleProcessor::getBgPos( ) {
+Vector TitleProcessor::getBgPos( ) const {
 	return _bg_pos;
 }
 
-Vector TitleProcessor::getLogoPos( ) {
+Vector TitleProcessor::getLogoPos( ) const {
 	return _logo_pos;
 }
