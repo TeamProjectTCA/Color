@@ -14,12 +14,11 @@ public:
 	virtual ~Game( );
 
 public:
-	void initialize( );
 	void update( );
 
 private:
-	GameProcessorPtr         _process;
-	GameViewerPtr            _viewer;
-	NetworkManagerPtr        _network;
+	GameProcessorPtr _process;
+	GameViewerPtr _viewer;
+	NetworkManagerPtr _network;
 	ServerToClientDataUdpConstPtr _recvdata;
 };

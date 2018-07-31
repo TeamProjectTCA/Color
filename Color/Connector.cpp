@@ -1,13 +1,13 @@
 #include "Connector.h"
+#include "Client.h"
+#include "SceneManager.h"
+
+const char CONNECTING[ ] = "CONNECTING";
 
 Connector::Connector( ) {
-	_scene_manager = SceneManager::getTask( );
 }
 
 Connector::~Connector( ) {
-}
-
-void Connector::initialize( ) {
 }
 
 void Connector::update( ) {
@@ -16,9 +16,17 @@ void Connector::update( ) {
 
 void Connector::checkConnect( ) {
 	ClientPtr client = Client::getTask( );
+	std::string state = client->getPhase( );
 
-	if ( client->getPhase( ) == "CONNECTING" ) {
-		client->setConnectFlag( false );
-		_scene_manager->setNextScene( SCENE_TITLE );
+	if ( state == _past_state ) {
+		return;
 	}
+	_past_state = state;
+
+	if ( state == CONNECTING ) {
+		return;
+	}
+
+	SceneManagerPtr scene_manager = SceneManager::getTask( );
+	scene_manager->setNextScene( SCENE_TITLE );
 }

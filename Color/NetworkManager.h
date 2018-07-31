@@ -1,7 +1,5 @@
 #pragma once
 #include "smart_ptr.h"
-#include "Base.h"
-#include <string>
 
 PTR( NetworkManager );
 PTR( ServerToClientDataUdp );
@@ -15,7 +13,9 @@ public:
 	virtual ~NetworkManager( );
 
 public:
-	void initialize( );
+	void finalize( );
+
+public:
 	void update( );
 
 private:

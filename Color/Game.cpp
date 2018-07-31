@@ -12,10 +12,7 @@ _recvdata( recvdata ) {
 }
 
 Game::~Game( ) {
-}
-
-void Game::initialize( ) {
-	_network->initialize( );
+	_network->finalize( );
 }
 
 void Game::update( ) {
