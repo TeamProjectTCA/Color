@@ -3,157 +3,172 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Scene.cpp">
-      <Filter>Scene</Filter>
+      <Filter>SceneManager</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
-      <Filter>Scene\SceneManager</Filter>
+      <Filter>SceneManager\SceneManager</Filter>
     </ClCompile>
     <ClCompile Include="Field.cpp">
-      <Filter>Processor\Field</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleViewer.cpp">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClCompile>
-    <ClCompile Include="CharacterSelect.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Result.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Title.cpp">
-      <Filter>Scene</Filter>
+      <Filter>%3f\Field</Filter>
     </ClCompile>
     <ClCompile Include="FieldViewer.cpp">
-      <Filter>Viewer\ViewField</Filter>
-    </ClCompile>
-    <ClCompile Include="CharacterSelectViewer.cpp">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClCompile>
-    <ClCompile Include="GameViewer.cpp">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClCompile>
-    <ClCompile Include="ResultViewer.cpp">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleProcessor.cpp">
-      <Filter>Processor\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="CharacterSelectProcessor.cpp">
-      <Filter>Processor\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="GameProcessor.cpp">
-      <Filter>Processor\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="ResultProcessor.cpp">
-      <Filter>Processor\Scene</Filter>
+      <Filter>%3f\ViewField</Filter>
     </ClCompile>
     <ClCompile Include="Connector.cpp">
-      <Filter>Network</Filter>
+      <Filter>Scene\Game\Network</Filter>
     </ClCompile>
     <ClCompile Include="NetworkManager.cpp">
-      <Filter>Network\NewworkManager</Filter>
+      <Filter>Scene\Game\Network\NewworkManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleProcessor.cpp">
+      <Filter>Scene\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleViewer.cpp">
+      <Filter>Scene\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="NWOptionProcessor.cpp">
+      <Filter>Scene\NWOption</Filter>
+    </ClCompile>
+    <ClCompile Include="NWOptionViewer.cpp">
+      <Filter>Scene\NWOption</Filter>
+    </ClCompile>
+    <ClCompile Include="GameProcessor.cpp">
+      <Filter>Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameViewer.cpp">
+      <Filter>Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="ResultViewer.cpp">
+      <Filter>Scene\Result</Filter>
+    </ClCompile>
+    <ClCompile Include="ResultProcessor.cpp">
+      <Filter>Scene\Result</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelectProcessor.cpp">
+      <Filter>Scene\CharacterSelect</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelectViewer.cpp">
+      <Filter>Scene\CharacterSelect</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelect.cpp">
+      <Filter>Scene\CharacterSelect</Filter>
     </ClCompile>
     <ClCompile Include="NWOption.cpp">
-      <Filter>Scene</Filter>
+      <Filter>Scene\NWOption</Filter>
+    </ClCompile>
+    <ClCompile Include="Result.cpp">
+      <Filter>Scene\Result</Filter>
+    </ClCompile>
+    <ClCompile Include="Title.cpp">
+      <Filter>Scene\Title</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
-      <Filter>Scene</Filter>
+      <Filter>SceneManager</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
-      <Filter>Scene\SceneManager</Filter>
+      <Filter>SceneManager\SceneManager</Filter>
     </ClInclude>
     <ClInclude Include="Field.h">
-      <Filter>Processor\Field</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleViewer.h">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClInclude>
-    <ClInclude Include="CharacterSelect.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Result.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Title.h">
-      <Filter>Scene</Filter>
+      <Filter>%3f\Field</Filter>
     </ClInclude>
     <ClInclude Include="FieldViewer.h">
-      <Filter>Viewer\ViewField</Filter>
-    </ClInclude>
-    <ClInclude Include="CharacterSelectViewer.h">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClInclude>
-    <ClInclude Include="GameViewer.h">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClInclude>
-    <ClInclude Include="ResultViewer.h">
-      <Filter>Viewer\ViewScene</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleProcessor.h">
-      <Filter>Processor\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="GameProcessor.h">
-      <Filter>Processor\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="CharacterSelectProcessor.h">
-      <Filter>Processor\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="ResultProcessor.h">
-      <Filter>Processor\Scene</Filter>
+      <Filter>%3f\ViewField</Filter>
     </ClInclude>
     <ClInclude Include="Connector.h">
-      <Filter>Network</Filter>
+      <Filter>Scene\Game\Network</Filter>
     </ClInclude>
     <ClInclude Include="NetworkManager.h">
-      <Filter>Network\NewworkManager</Filter>
+      <Filter>Scene\Game\Network\NewworkManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleProcessor.h">
+      <Filter>Scene\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleViewer.h">
+      <Filter>Scene\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="NWOptionProcessor.h">
+      <Filter>Scene\NWOption</Filter>
+    </ClInclude>
+    <ClInclude Include="NWOptionViewer.h">
+      <Filter>Scene\NWOption</Filter>
+    </ClInclude>
+    <ClInclude Include="GameProcessor.h">
+      <Filter>Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameViewer.h">
+      <Filter>Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="ResultViewer.h">
+      <Filter>Scene\Result</Filter>
+    </ClInclude>
+    <ClInclude Include="ResultProcessor.h">
+      <Filter>Scene\Result</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelectProcessor.h">
+      <Filter>Scene\CharacterSelect</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelectViewer.h">
+      <Filter>Scene\CharacterSelect</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelect.h">
+      <Filter>Scene\CharacterSelect</Filter>
     </ClInclude>
     <ClInclude Include="NWOption.h">
-      <Filter>Scene</Filter>
+      <Filter>Scene\NWOption</Filter>
+    </ClInclude>
+    <ClInclude Include="Result.h">
+      <Filter>Scene\Result</Filter>
+    </ClInclude>
+    <ClInclude Include="Title.h">
+      <Filter>Scene\Title</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Processor">
-      <UniqueIdentifier>{96e7177f-db94-40ba-be38-6b876e49c781}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Viewer">
-      <UniqueIdentifier>{71fc3467-f883-4d32-b12b-e6ad03f1799a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Network">
-      <UniqueIdentifier>{fba4fdb9-4d0e-40ff-9e05-7f8b671b11dd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Processor\Character">
-      <UniqueIdentifier>{1d9fc2f7-c674-4f84-8086-97eaedb30c60}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Processor\Field">
-      <UniqueIdentifier>{c81fc8b2-301f-42f2-847c-aac5eca6db39}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Viewer\ViewField">
-      <UniqueIdentifier>{0e2aa911-b578-4ac2-877f-2c0a504f1aac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Viewer\ViewCharacter">
-      <UniqueIdentifier>{df370c33-9799-421d-84eb-e702f9050de4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Viewer\ViewScene">
-      <UniqueIdentifier>{5b10e425-33cd-468d-bbf3-fef9fc8a2594}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene">
+      <UniqueIdentifier>{9408e5cd-a982-4711-9c4d-aa81def0c4bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Title">
+      <UniqueIdentifier>{1e2caa69-7fb4-4417-8a18-dd576cf99680}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\NWOption">
+      <UniqueIdentifier>{be7c2751-e509-4a2d-aa2e-716876e1aefc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Game">
+      <UniqueIdentifier>{7618e9f9-261a-471e-ac79-de77189b0772}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Result">
+      <UniqueIdentifier>{9c20b92a-6898-4c8e-9293-10fe8250bb47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\CharacterSelect">
+      <UniqueIdentifier>{7191bb1b-0413-4aa5-8c7a-ebf1a7269a3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SceneManager">
       <UniqueIdentifier>{b859ccb4-4c8e-4493-8e8a-3e2e6187d9a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\SceneManager">
+    <Filter Include="SceneManager\SceneManager">
       <UniqueIdentifier>{5f66ea36-58ce-4825-a1f5-17e0e89bbba4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Processor\Scene">
-      <UniqueIdentifier>{040402a7-0283-4c01-9507-b85aae9bb832}</UniqueIdentifier>
+    <Filter Include="%3f">
+      <UniqueIdentifier>{71fc3467-f883-4d32-b12b-e6ad03f1799a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Network\NewworkManager">
+    <Filter Include="%3f\ViewField">
+      <UniqueIdentifier>{0e2aa911-b578-4ac2-877f-2c0a504f1aac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="%3f\Field">
+      <UniqueIdentifier>{c81fc8b2-301f-42f2-847c-aac5eca6db39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Game\Network">
+      <UniqueIdentifier>{fba4fdb9-4d0e-40ff-9e05-7f8b671b11dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Game\Network\NewworkManager">
       <UniqueIdentifier>{ea28f25d-8a02-41d9-9634-333fae767efe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
