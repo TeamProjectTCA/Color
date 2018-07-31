@@ -5,7 +5,6 @@
 #include "Manager.h"
 
 const int MAX_LENGTH = 15;
-const char BACK[ ] = "BACK";
 
 NWOptionProcessor::NWOptionProcessor( ) :
 _new_ip_pos( Vector( ) ),
@@ -46,7 +45,7 @@ void NWOptionProcessor::update( ) {
 void NWOptionProcessor::write( ) {
 	KeyboardPtr keyboard = Keyboard::getTask( );
 
-	if ( keyboard->getKeyDown( BACK ) && !_new_ip.empty( ) ) {
+	if ( keyboard->getKeyDown( "BACK" ) && !_new_ip.empty( ) ) {
 		_new_ip.pop_back( );
 		return;
 	}
