@@ -33,7 +33,6 @@ private:
 	void changeScene( );
 
 private:
-	SCENE _next_scene;
 	ScenePtr _scene;
 	ServerToClientDataUdpConstPtr _recvdata;
 };

@@ -2,6 +2,7 @@
 #include "SceneManager.h"
 #include "Scene.h"
 #include "Title.h"
+#include "NWOption.h"
 #include "CharacterSelect.h"
 #include "Game.h"
 #include "Result.h"
@@ -42,6 +43,10 @@ void SceneManager::changeScene( ) {
 	switch ( _scene->getNextScene( ) ) {
 	case SCENE_TITLE:
 		_scene = TitlePtr( new Title( ) );
+		break;
+
+	case SCENE_NWOPTION:
+		_scene = NWOptionPtr( new NWOption( ) );
 		break;
 
 	case SCENE_CHARACTERSELECT:

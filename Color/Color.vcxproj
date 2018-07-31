@@ -161,6 +161,7 @@
     <ClCompile Include="GameProcessor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NetworkManager.cpp" />
+    <ClCompile Include="NWOption.cpp" />
     <ClCompile Include="ResultProcessor.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="CharacterSelect.cpp" />
@@ -189,6 +190,7 @@
     <ClInclude Include="Field.h" />
     <ClInclude Include="GameProcessor.h" />
     <ClInclude Include="NetworkManager.h" />
+    <ClInclude Include="NWOption.h" />
     <ClInclude Include="ResultProcessor.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="CharacterSelect.h" />

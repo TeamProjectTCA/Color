@@ -56,6 +56,9 @@
     <ClCompile Include="NetworkManager.cpp">
       <Filter>Network\NewworkManager</Filter>
     </ClCompile>
+    <ClCompile Include="NWOption.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -111,6 +114,9 @@
     </ClInclude>
     <ClInclude Include="NetworkManager.h">
       <Filter>Network\NewworkManager</Filter>
+    </ClInclude>
+    <ClInclude Include="NWOption.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
