@@ -11,9 +11,6 @@
     <ClCompile Include="Connector.cpp">
       <Filter>Scene\Game\Network</Filter>
     </ClCompile>
-    <ClCompile Include="NetworkManager.cpp">
-      <Filter>Scene\Game\Network\NewworkManager</Filter>
-    </ClCompile>
     <ClCompile Include="TitleProcessor.cpp">
       <Filter>Scene\Title</Filter>
     </ClCompile>
@@ -89,6 +86,15 @@
     <ClCompile Include="Field.cpp">
       <Filter>Scene\Game\Process\Area\Field</Filter>
     </ClCompile>
+    <ClCompile Include="Chara.cpp">
+      <Filter>Scene\Game\Process</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewChara.cpp">
+      <Filter>Scene\Game\View</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkManager.cpp">
+      <Filter>Scene\Game\Network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -99,9 +105,6 @@
     </ClInclude>
     <ClInclude Include="Connector.h">
       <Filter>Scene\Game\Network</Filter>
-    </ClInclude>
-    <ClInclude Include="NetworkManager.h">
-      <Filter>Scene\Game\Network\NewworkManager</Filter>
     </ClInclude>
     <ClInclude Include="TitleProcessor.h">
       <Filter>Scene\Title</Filter>
@@ -178,6 +181,15 @@
     <ClInclude Include="Field.h">
       <Filter>Scene\Game\Process\Area\Field</Filter>
     </ClInclude>
+    <ClInclude Include="Chara.h">
+      <Filter>Scene\Game\Process</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewChara.h">
+      <Filter>Scene\Game\View</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkManager.h">
+      <Filter>Scene\Game\Network</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -206,9 +218,6 @@
     </Filter>
     <Filter Include="Scene\Game\Network">
       <UniqueIdentifier>{fba4fdb9-4d0e-40ff-9e05-7f8b671b11dd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Game\Network\NewworkManager">
-      <UniqueIdentifier>{ea28f25d-8a02-41d9-9634-333fae767efe}</UniqueIdentifier>
     </Filter>
     <Filter Include="Button">
       <UniqueIdentifier>{269c9bea-0e38-4603-9a02-1566ea10a0f1}</UniqueIdentifier>

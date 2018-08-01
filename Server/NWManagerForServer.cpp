@@ -20,6 +20,9 @@ void NWManagerForServer::initialize( ) {
 
 void NWManagerForServer::update( ) {
 	_connector->update( );
+
+	ServerPtr server = Server::getTask( );
+	server->sendUdp( _senddata_udp );
 }
 
 ConnectorForServerConstPtr NWManagerForServer::getConnectorPtr( ) const {

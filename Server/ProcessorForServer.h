@@ -5,6 +5,7 @@ PTR( ProcessorForServer );
 PTR( ServerToClientDataUdp );
 PTR( Log );
 PTR( Command );
+PTR( Player );
 
 class ProcessorForServer {
 public:
@@ -15,7 +16,16 @@ public:
 	void update( );
 
 private:
+	void packageData( );
+
+public:
+	PlayerConstPtr getPlayer0Ptr( ) const;
+	PlayerConstPtr getPlayer1Ptr( ) const;
+
+private:
 	ServerToClientDataUdpPtr _senddata_udp;
 	CommandPtr _command;
+	PlayerPtr _player0;
+	PlayerPtr _player1;
 };
 

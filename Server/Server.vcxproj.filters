@@ -7,41 +7,46 @@
       <Filter>Network</Filter>
     </ClCompile>
     <ClCompile Include="ProcessorForServer.cpp">
-      <Filter>Processor</Filter>
+      <Filter>Process</Filter>
     </ClCompile>
     <ClCompile Include="ViewerForServer.cpp">
-      <Filter>Viewer</Filter>
+      <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="Sheet.cpp">
-      <Filter>Viewer\Table</Filter>
+      <Filter>View\Table</Filter>
     </ClCompile>
     <ClCompile Include="Table.cpp">
-      <Filter>Viewer\Table</Filter>
+      <Filter>View\Table</Filter>
     </ClCompile>
     <ClCompile Include="ConnectorForServer.cpp">
       <Filter>Network</Filter>
     </ClCompile>
     <ClCompile Include="Log.cpp">
-      <Filter>Processor</Filter>
+      <Filter>Process</Filter>
     </ClCompile>
     <ClCompile Include="ViewConnectorForServer.cpp">
-      <Filter>Viewer</Filter>
+      <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="Command.cpp">
-      <Filter>Processor\Command</Filter>
+      <Filter>Process\Command</Filter>
     </ClCompile>
     <ClCompile Include="CommandWord.cpp">
-      <Filter>Processor\Command</Filter>
+      <Filter>Process\Command</Filter>
     </ClCompile>
     <ClCompile Include="ViewCommand.cpp">
-      <Filter>Viewer</Filter>
+      <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="CommandListener.cpp">
-      <Filter>Processor\Command</Filter>
+      <Filter>Process\Command</Filter>
     </ClCompile>
-    <ClCompile Include="Test.cpp" />
     <ClCompile Include="ViewLog.cpp">
-      <Filter>Viewer</Filter>
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Process</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewPlayer.cpp">
+      <Filter>View</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -50,58 +55,63 @@
       <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="ProcessorForServer.h">
-      <Filter>Processor</Filter>
+      <Filter>Process</Filter>
     </ClInclude>
     <ClInclude Include="ViewerForServer.h">
-      <Filter>Viewer</Filter>
+      <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="Sheet.h">
-      <Filter>Viewer\Table</Filter>
+      <Filter>View\Table</Filter>
     </ClInclude>
     <ClInclude Include="Table.h">
-      <Filter>Viewer\Table</Filter>
+      <Filter>View\Table</Filter>
     </ClInclude>
     <ClInclude Include="ConnectorForServer.h">
       <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="Log.h">
-      <Filter>Processor</Filter>
+      <Filter>Process</Filter>
     </ClInclude>
     <ClInclude Include="ViewConnectorForServer.h">
-      <Filter>Viewer</Filter>
+      <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="Command.h">
-      <Filter>Processor\Command</Filter>
+      <Filter>Process\Command</Filter>
     </ClInclude>
     <ClInclude Include="CommandWord.h">
-      <Filter>Processor\Command</Filter>
+      <Filter>Process\Command</Filter>
     </ClInclude>
     <ClInclude Include="ViewCommand.h">
-      <Filter>Viewer</Filter>
+      <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="CommandListener.h">
-      <Filter>Processor\Command</Filter>
+      <Filter>Process\Command</Filter>
     </ClInclude>
-    <ClInclude Include="Test.h" />
     <ClInclude Include="ViewLog.h">
-      <Filter>Viewer</Filter>
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Process</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewPlayer.h">
+      <Filter>View</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Network">
       <UniqueIdentifier>{f2504bd4-a117-4cce-b900-81c4dee91ffe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Processor">
+    <Filter Include="Process">
       <UniqueIdentifier>{db195089-5c5c-497c-8485-8081288ee059}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Viewer">
+    <Filter Include="Process\Command">
+      <UniqueIdentifier>{b838c61b-36dc-4179-9c02-261886e65488}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View">
       <UniqueIdentifier>{e47dfb7b-f946-46cf-b493-4cac18a37e43}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Viewer\Table">
+    <Filter Include="View\Table">
       <UniqueIdentifier>{4921a9b4-0e07-4937-bb2c-68b3bbda8191}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Processor\Command">
-      <UniqueIdentifier>{b838c61b-36dc-4179-9c02-261886e65488}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

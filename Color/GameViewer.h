@@ -6,6 +6,7 @@ PTR( GameViewer );
 PTR( GameProcessor );
 PTR( ViewField );
 PTR( ViewPlayerUI );
+PTR( ViewChara );
 
 class GameViewer {
 public:
@@ -17,6 +18,8 @@ public:
 
 private:
 	ViewFieldPtr _field;
+	ViewPlayerUIPtr _player0_ui;
 	ViewPlayerUIPtr _player1_ui;
-	ViewPlayerUIPtr _player2_ui;
+	ViewCharaPtr _player0;
+	ViewCharaPtr _player1;
 };

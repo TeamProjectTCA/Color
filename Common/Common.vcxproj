@@ -177,10 +177,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClientToServerData.h" />
+    <ClInclude Include="FieldProperty.h" />
     <ClInclude Include="ServerToClientDataUdp.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ClientToServerData.cpp" />
+    <ClCompile Include="FieldProperty.cpp" />
     <ClCompile Include="ServerToClientDataUdp.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

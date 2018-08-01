@@ -1,16 +1,13 @@
 #pragma once
 #include "smart_ptr.h"
 #include "Area.h"
+#include "FieldProperty.h"
 #include <array>
 
 PTR( Field );
 PTR( Tile );
 
 class Field : public Area {
-public:
-	static const int FIELD_COL = 6;
-	static const int FIELD_ROW = 6;
-
 public:
 	Field( const Vector ORIGIN_POS );
 	virtual ~Field( );
@@ -20,6 +17,6 @@ public:
 	Vector getTilePos( int x, int y ) const;
 
 private:
-	std::array< std::array< TilePtr, FIELD_COL >, FIELD_ROW > _tile;
+	std::array< std::array< TilePtr, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > _tile;
 };
 

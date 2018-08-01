@@ -159,6 +159,7 @@
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="OptionButton.cpp" />
     <ClCompile Include="OptionButtonViewer.cpp" />
+    <ClCompile Include="Chara.cpp" />
     <ClCompile Include="PlayerUI.cpp" />
     <ClCompile Include="StartButtonViewer.cpp" />
     <ClCompile Include="CharacterSelectProcessor.cpp" />
@@ -184,12 +185,10 @@
     <ClCompile Include="ResultViewer.cpp" />
     <ClCompile Include="TitleViewer.cpp" />
     <ClCompile Include="ViewField.cpp" />
+    <ClCompile Include="ViewChara.cpp" />
     <ClCompile Include="ViewPlayerUI.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Fundation2017\Fundation2017.vcxproj">
-      <Project>{2c901e7f-ca6d-47c4-8b5b-89bbea8b61b7}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\Common\Common.vcxproj">
       <Project>{eeae8449-2f44-44df-9bbf-1576644bd357}</Project>
     </ProjectReference>
@@ -199,6 +198,7 @@
     <ClInclude Include="Field.h" />
     <ClInclude Include="OptionButton.h" />
     <ClInclude Include="OptionButtonViewer.h" />
+    <ClInclude Include="Chara.h" />
     <ClInclude Include="PlayerUI.h" />
     <ClInclude Include="StartButtonViewer.h" />
     <ClInclude Include="CharacterSelectProcessor.h" />
@@ -223,6 +223,7 @@
     <ClInclude Include="ResultViewer.h" />
     <ClInclude Include="TitleViewer.h" />
     <ClInclude Include="ViewField.h" />
+    <ClInclude Include="ViewChara.h" />
     <ClInclude Include="ViewPlayerUI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
