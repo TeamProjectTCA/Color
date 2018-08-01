@@ -12,7 +12,6 @@ _recvdata( recvdata ) {
 }
 
 Game::~Game( ) {
-	_network->finalize( );
 }
 
 void Game::update( ) {

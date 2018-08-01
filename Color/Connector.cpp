@@ -3,8 +3,10 @@
 #include "SceneManager.h"
 
 const char CONNECTING[ ] = "CONNECTING";
+const char READY[ ] = "READY";
 
-Connector::Connector( ) {
+Connector::Connector( ) :
+_past_state( READY ) {
 }
 
 Connector::~Connector( ) {

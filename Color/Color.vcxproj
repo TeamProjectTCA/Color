@@ -155,12 +155,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Area.cpp" />
+    <ClCompile Include="Field.cpp" />
     <ClCompile Include="OptionButton.cpp" />
     <ClCompile Include="OptionButtonViewer.cpp" />
+    <ClCompile Include="PlayerUI.cpp" />
     <ClCompile Include="StartButtonViewer.cpp" />
     <ClCompile Include="CharacterSelectProcessor.cpp" />
     <ClCompile Include="Connector.cpp" />
-    <ClCompile Include="Field.cpp" />
     <ClCompile Include="GameProcessor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NetworkManager.cpp" />
@@ -176,11 +178,12 @@
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="StartButton.cpp" />
     <ClCompile Include="TitleProcessor.cpp" />
-    <ClCompile Include="FieldViewer.cpp" />
     <ClCompile Include="CharacterSelectViewer.cpp" />
     <ClCompile Include="GameViewer.cpp" />
     <ClCompile Include="ResultViewer.cpp" />
     <ClCompile Include="TitleViewer.cpp" />
+    <ClCompile Include="ViewField.cpp" />
+    <ClCompile Include="ViewPlayerUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Fundation2017\Fundation2017.vcxproj">
@@ -191,12 +194,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Area.h" />
+    <ClInclude Include="Field.h" />
     <ClInclude Include="OptionButton.h" />
     <ClInclude Include="OptionButtonViewer.h" />
+    <ClInclude Include="PlayerUI.h" />
     <ClInclude Include="StartButtonViewer.h" />
     <ClInclude Include="CharacterSelectProcessor.h" />
     <ClInclude Include="Connector.h" />
-    <ClInclude Include="Field.h" />
     <ClInclude Include="GameProcessor.h" />
     <ClInclude Include="NetworkManager.h" />
     <ClInclude Include="NWOption.h" />
@@ -211,11 +216,12 @@
     <ClInclude Include="Title.h" />
     <ClInclude Include="StartButton.h" />
     <ClInclude Include="TitleProcessor.h" />
-    <ClInclude Include="FieldViewer.h" />
     <ClInclude Include="CharacterSelectViewer.h" />
     <ClInclude Include="GameViewer.h" />
     <ClInclude Include="ResultViewer.h" />
     <ClInclude Include="TitleViewer.h" />
+    <ClInclude Include="ViewField.h" />
+    <ClInclude Include="ViewPlayerUI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

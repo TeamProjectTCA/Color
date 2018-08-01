@@ -10,7 +10,7 @@ NWOptionProcessor::NWOptionProcessor( ) :
 _new_ip_pos( Vector( ) ),
 _now_ip_pos( Vector( ) ) {
 	ClientPtr client = Client::getTask( );
-	//_now_ip = client->getServerIP( );
+	_now_ip = client->getServerIP( );
 
 	ManagerPtr manager = Manager::getInstance( );
 	int width  = manager->getScreenWidth( );
@@ -34,7 +34,7 @@ void NWOptionProcessor::update( ) {
 	if ( keyboard->getKeyDown( "ENTER" ) ) {
 		if ( !_new_ip.empty( ) ) {
 			ClientPtr client = Client::getTask( );
-			//client->readIP( _new_ip );
+			client->readIP( _new_ip );
 		}
 
 		SceneManagerPtr scene_manager = SceneManager::getTask( );

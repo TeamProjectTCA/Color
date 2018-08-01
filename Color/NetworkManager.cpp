@@ -14,11 +14,6 @@ _game_processor( processor ) {
 NetworkManager::~NetworkManager( ) {
 }
 
-void NetworkManager::finalize( ) {
-	ClientPtr client = Client::getTask( );
-	client->setConnectFlag( false );
-}
-
 void NetworkManager::update( ) {
 	_connector->update( );
 }

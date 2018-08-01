@@ -8,12 +8,6 @@
     <ClCompile Include="SceneManager.cpp">
       <Filter>SceneManager\SceneManager</Filter>
     </ClCompile>
-    <ClCompile Include="Field.cpp">
-      <Filter>%3f\Field</Filter>
-    </ClCompile>
-    <ClCompile Include="FieldViewer.cpp">
-      <Filter>%3f\ViewField</Filter>
-    </ClCompile>
     <ClCompile Include="Connector.cpp">
       <Filter>Scene\Game\Network</Filter>
     </ClCompile>
@@ -77,6 +71,21 @@
     <ClCompile Include="OptionButton.cpp">
       <Filter>Button\OptionButton</Filter>
     </ClCompile>
+    <ClCompile Include="Field.cpp">
+      <Filter>Scene\Game\Process\Area</Filter>
+    </ClCompile>
+    <ClCompile Include="Area.cpp">
+      <Filter>Scene\Game\Process\Area</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewField.cpp">
+      <Filter>Scene\Game\View</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerUI.cpp">
+      <Filter>Scene\Game\Process\Area</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewPlayerUI.cpp">
+      <Filter>Scene\Game\View</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -84,12 +93,6 @@
     </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>SceneManager\SceneManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Field.h">
-      <Filter>%3f\Field</Filter>
-    </ClInclude>
-    <ClInclude Include="FieldViewer.h">
-      <Filter>%3f\ViewField</Filter>
     </ClInclude>
     <ClInclude Include="Connector.h">
       <Filter>Scene\Game\Network</Filter>
@@ -154,6 +157,21 @@
     <ClInclude Include="OptionButton.h">
       <Filter>Button\OptionButton</Filter>
     </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>Scene\Game\Process\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="Area.h">
+      <Filter>Scene\Game\Process\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewField.h">
+      <Filter>Scene\Game\View</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerUI.h">
+      <Filter>Scene\Game\Process\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewPlayerUI.h">
+      <Filter>Scene\Game\View</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -180,15 +198,6 @@
     <Filter Include="SceneManager\SceneManager">
       <UniqueIdentifier>{5f66ea36-58ce-4825-a1f5-17e0e89bbba4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="%3f">
-      <UniqueIdentifier>{71fc3467-f883-4d32-b12b-e6ad03f1799a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="%3f\ViewField">
-      <UniqueIdentifier>{0e2aa911-b578-4ac2-877f-2c0a504f1aac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="%3f\Field">
-      <UniqueIdentifier>{c81fc8b2-301f-42f2-847c-aac5eca6db39}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene\Game\Network">
       <UniqueIdentifier>{fba4fdb9-4d0e-40ff-9e05-7f8b671b11dd}</UniqueIdentifier>
     </Filter>
@@ -203,6 +212,15 @@
     </Filter>
     <Filter Include="Button\OptionButton">
       <UniqueIdentifier>{a9657296-4b29-4079-8a73-298526614e70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Game\Process">
+      <UniqueIdentifier>{5ce4be2e-38e5-4fbc-9225-a362f5e66363}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Game\Process\Area">
+      <UniqueIdentifier>{cd24c40e-a267-4e39-aa3e-a0a60575ed41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Game\View">
+      <UniqueIdentifier>{f2ee877b-b092-434a-b61e-79632f2bcb9d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

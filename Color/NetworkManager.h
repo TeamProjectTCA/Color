@@ -13,9 +13,6 @@ public:
 	virtual ~NetworkManager( );
 
 public:
-	void finalize( );
-
-public:
 	void update( );
 
 private:

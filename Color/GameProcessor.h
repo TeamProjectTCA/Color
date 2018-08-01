@@ -2,9 +2,8 @@
 #include "smart_ptr.h"
 
 PTR( GameProcessor );
-PTR( SceneManager );
-PTR( Mouse );
-PTR( Keyboard );
+PTR( Field );
+PTR( PlayerUI );
 
 class GameProcessor {
 public:
@@ -14,8 +13,13 @@ public:
 public:
 	void update( );
 
+public:
+	FieldConstPtr getFieldPtr( ) const;
+	PlayerUIConstPtr getPlayer1UIPtr( ) const;
+	PlayerUIConstPtr getPlayer2UIPtr( ) const;
+
 private:
-	SceneManagerPtr _scene_manager;
-	KeyboardPtr _keyboard;
-	MousePtr _mouse;
+	FieldPtr _field;
+	PlayerUIPtr _player1_ui;
+	PlayerUIPtr _player2_ui;
 };

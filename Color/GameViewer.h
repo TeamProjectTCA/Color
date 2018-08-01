@@ -3,22 +3,20 @@
 #include "smart_ptr.h"
 
 PTR( GameViewer );
-PTR( FieldViewer );
 PTR( GameProcessor );
-PTR( Drawer );
+PTR( ViewField );
+PTR( ViewPlayerUI );
 
 class GameViewer {
 public:
-	GameViewer( GameProcessorPtr game );
+	GameViewer( GameProcessorConstPtr processor );
 	virtual ~GameViewer( );
 
 public:
 	void update( );
 
-
 private:
-	DrawerPtr _drawer;
-	GameProcessorPtr _scene_game;
-	FieldViewerPtr _view_field;
-
+	ViewFieldPtr _field;
+	ViewPlayerUIPtr _player1_ui;
+	ViewPlayerUIPtr _player2_ui;
 };
