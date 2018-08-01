@@ -175,6 +175,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Result.cpp" />
+    <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="StartButton.cpp" />
     <ClCompile Include="TitleProcessor.cpp" />
@@ -213,6 +214,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Result.h" />
+    <ClInclude Include="Tile.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="StartButton.h" />
     <ClInclude Include="TitleProcessor.h" />
