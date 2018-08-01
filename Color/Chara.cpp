@@ -2,8 +2,8 @@
 #include "Field.h"
 
 Chara::Chara( FieldConstPtr field ) :
-_field( field ) {
-	_pos = _field->getTilePos( 0, 0 );
+_field( field ),
+_pos( Vector( ) ) {
 }
 
 Chara::~Chara( ) {
@@ -14,5 +14,6 @@ void Chara::setPos( Vector pos ) {
 }
 
 Vector Chara::getPos( ) const {
-	return _pos;
+	Vector result = _field->getTilePos( ( int )_pos.x, ( int )_pos.y );
+	return result;
 }

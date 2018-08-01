@@ -171,11 +171,6 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Fundation2017\Fundation2017.vcxproj">
-      <Project>{2c901e7f-ca6d-47c4-8b5b-89bbea8b61b7}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="ClientToServerData.h" />
     <ClInclude Include="FieldProperty.h" />
     <ClInclude Include="ServerToClientDataUdp.h" />
@@ -184,6 +179,11 @@
     <ClCompile Include="ClientToServerData.cpp" />
     <ClCompile Include="FieldProperty.cpp" />
     <ClCompile Include="ServerToClientDataUdp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Fundation2017\Fundation2017.vcxproj">
+      <Project>{2c901e7f-ca6d-47c4-8b5b-89bbea8b61b7}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

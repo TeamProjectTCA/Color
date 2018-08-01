@@ -7,7 +7,7 @@ FieldProperty::~FieldProperty( ) {
 }
 
 Vector FieldProperty::getPlayer0InitPos( ) const {
-	Vector pos = Vector( 0, 3 );
+	Vector pos = Vector( 0, FIELD_ROW - 1 );
 	return pos;
 }
 

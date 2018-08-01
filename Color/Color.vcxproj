@@ -189,6 +189,9 @@
     <ClCompile Include="ViewPlayerUI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Fundation2017\Fundation2017.vcxproj">
+      <Project>{2c901e7f-ca6d-47c4-8b5b-89bbea8b61b7}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Common\Common.vcxproj">
       <Project>{eeae8449-2f44-44df-9bbf-1576644bd357}</Project>
     </ProjectReference>
