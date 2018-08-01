@@ -8,5 +8,8 @@ public:
 
 public:
 	Vector getPlayerImagePos( ) const;
+
+private:
+	bool _full_hd;
 };
 
