@@ -15,8 +15,9 @@ std::string SceneManager::getTag( ) {
 	return "SCENE_MANAGER";
 }
 
-SceneManager::SceneManager( ServerToClientDataUdpConstPtr recvdata ) :
-_recvdata( recvdata ) {
+SceneManager::SceneManager(  ServerToClientDataTcpConstPtr recvdata_tcp, ServerToClientDataUdpConstPtr recvdata_udp ) :
+_recvdata_tcp( recvdata_tcp ),
+_recvdata_udp( recvdata_udp ){
 }
 
 SceneManager::~SceneManager( ) {
@@ -54,7 +55,7 @@ void SceneManager::changeScene( ) {
 		break;
 
 	case SCENE_GAME:
-		_scene = GamePtr( new Game( _recvdata ) );
+		_scene = GamePtr( new Game( _recvdata_tcp, _recvdata_udp ) );
 		break;
 
 	case SCENE_RESULT:

@@ -22,8 +22,8 @@ void ProcessorForServer::update( ) {
 }
 
 void ProcessorForServer::packageData( ) {
-	_senddata_udp->setPlayer0Pos( _player0->getPos( ) );
-	_senddata_udp->setPlayer1Pos( _player1->getPos( ) );
+	_senddata_udp->setPlayerPos( 0, _player0->getPos( ) );
+	_senddata_udp->setPlayerPos( 1, _player1->getPos( ) );
 }
 
 PlayerConstPtr ProcessorForServer::getPlayer0Ptr( ) const {

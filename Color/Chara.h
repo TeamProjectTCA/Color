@@ -11,6 +11,9 @@ public:
 	virtual ~Chara( );
 
 public:
+	virtual void update( );
+
+public:
 	void setPos( Vector pos );
 
 public:

@@ -1,4 +1,5 @@
 #include "ConnectorForServer.h"
+#include "ServerToClientDataTcp.h"
 #include "Log.h"
 
 ConnectorForServer::ConnectorForServer( LogPtr log ) :
@@ -36,6 +37,9 @@ void ConnectorForServer::checkConnect( ) {
 
 		// new connect
 		if ( _machines[ i ] != "" && past_ip == "" ) {
+			ServerToClientDataTcpPtr senddata_tcp( new ServerToClientDataTcp );
+			senddata_tcp->setIP( i, _machines[ i ] );
+			server->sendTcp( senddata_tcp );
 			_log->add( "NEW CONNECT " + _machines[ i ] );
 			
 		}

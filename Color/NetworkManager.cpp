@@ -4,8 +4,10 @@
 #include "Client.h"
 #include "GameProcessor.h"
 #include "ServerToClientDataUdp.h"
+#include "ServerToClientDataTcp.h"
 
-NetworkManager::NetworkManager( ServerToClientDataUdpConstPtr recvdata_udp, GameProcessorPtr processor ) :
+NetworkManager::NetworkManager( ServerToClientDataTcpConstPtr recvdata_tcp, ServerToClientDataUdpConstPtr recvdata_udp, GameProcessorPtr processor ) :
+_recvdata_tcp( recvdata_tcp ),
 _recvdata_udp( recvdata_udp ),
 _processor( processor ) {
 	_connector = ConnectorPtr( new Connector( ) );
@@ -19,15 +21,44 @@ NetworkManager::~NetworkManager( ) {
 void NetworkManager::update( ) {
 	_connector->update( );
 
-	recv( );
+	recvTcp( );
+	recvUdp( );
 }
 
-void NetworkManager::recv( ) {
+void NetworkManager::recvUdp( ) {
 	ClientPtr client = Client::getTask( );
 	if ( !client->isRecievingUdp( ) ) {
 		return;
 	}
 
-	_processor->setPlayer0Pos( _recvdata_udp->getPlayer0Pos( ) );
-	_processor->setPlayer1Pos( _recvdata_udp->getPlayer1Pos( ) );
+	std::string ip = client->getClientIP( );
+	int idx = _recvdata_tcp->getIdx( ip );
+	if ( idx == -1 ) {
+		return;
+	}
+
+	_processor->setUserPos( _recvdata_udp->getPlayerPos( idx ) );
+	_processor->setEnemyPos( _recvdata_udp->getPlayerPos( ( idx + 1 ) % 2 ) );
+}
+
+void NetworkManager::recvTcp( ) {
+	ClientPtr client = Client::getTask( );
+	if ( !client->isRecievingTcp( ) ) {
+		return;
+	}
+
+	unsigned char type = _recvdata_tcp->getType( );
+	switch ( type ) {
+	case ServerToClientDataTcp::DATA_TYPE_PLAYER:
+	{
+		std::string ip = client->getClientIP( );
+		int idx = _recvdata_tcp->getIdx( ip );
+		_processor->setPlayerNum( idx );
+	}
+		break;
+
+	default:
+		break;
+	}
+
 }

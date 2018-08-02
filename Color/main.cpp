@@ -5,6 +5,7 @@
 #include "Keyboard.h"
 #include "Mouse.h"
 #include "ServerToClientDataUdp.h"
+#include "ServerToClientDataTcp.h"
 #include "Client.h"
 
 const int WIDTH = 1280;
@@ -15,8 +16,8 @@ int main( ) {
 	manager->setScreenSize( WIDTH, HEIGHT );
 
 	ServerToClientDataUdpPtr recvdata_udp( new ServerToClientDataUdp( ) );
-	ServerToClientDataUdpPtr recvdata_tcp( new ServerToClientDataUdp( ) );
-	SceneManagerPtr scene_manager( new SceneManager( recvdata_udp ) );
+	ServerToClientDataTcpPtr recvdata_tcp( new ServerToClientDataTcp( ) );
+	SceneManagerPtr scene_manager( new SceneManager( recvdata_tcp, recvdata_udp ) );
 
 	DrawerPtr   drawer       ( new Drawer( "Resources/Image" ) );
 	SoundPtr    soundplayer  ( new Sound( "Resources/Sound" ) );

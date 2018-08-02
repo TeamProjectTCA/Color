@@ -10,6 +10,7 @@ PTR( CharacterSelect );
 PTR( Game );
 PTR( Result );
 PTR( ServerToClientDataUdp );
+PTR( ServerToClientDataTcp );
 
 
 class SceneManager : public Base {
@@ -18,7 +19,7 @@ public:
 	static std::string getTag( );
 
 public:
-	SceneManager( ServerToClientDataUdpConstPtr recvdata );
+	SceneManager( ServerToClientDataTcpConstPtr recvdata_tcp, ServerToClientDataUdpConstPtr recvdata_udp );
 	virtual ~SceneManager( );
 
 public:
@@ -34,6 +35,7 @@ private:
 
 private:
 	ScenePtr _scene;
-	ServerToClientDataUdpConstPtr _recvdata;
+	ServerToClientDataUdpConstPtr _recvdata_udp;
+	ServerToClientDataTcpConstPtr _recvdata_tcp;
 };
 

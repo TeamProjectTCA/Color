@@ -18,8 +18,8 @@ public:
 
 private:
 	ViewFieldPtr _field;
-	ViewPlayerUIPtr _player0_ui;
-	ViewPlayerUIPtr _player1_ui;
-	ViewCharaPtr _player0;
-	ViewCharaPtr _player1;
+	ViewPlayerUIPtr _user_ui;
+	ViewPlayerUIPtr _enemy_ui;
+	ViewCharaPtr _user;
+	ViewCharaPtr _enemy;
 };

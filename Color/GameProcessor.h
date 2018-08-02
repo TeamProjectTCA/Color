@@ -6,6 +6,7 @@ PTR( GameProcessor );
 PTR( Field );
 PTR( PlayerUI );
 PTR( Chara );
+PTR( User );
 
 class GameProcessor {
 public:
@@ -16,20 +17,21 @@ public:
 	void update( );
 
 public:
-	void setPlayer0Pos( Vector pos );
-	void setPlayer1Pos( Vector pos );
+	void setUserPos( Vector pos );
+	void setEnemyPos( Vector pos );
+	void setPlayerNum( int player_num );
 
 public:
 	FieldConstPtr getFieldPtr( ) const;
-	PlayerUIConstPtr getPlayer0UIPtr( ) const;
-	PlayerUIConstPtr getPlayer1UIPtr( ) const;
-	CharaConstPtr getPlayer0Ptr( ) const;
-	CharaConstPtr getPlayer1Ptr( ) const;
+	PlayerUIConstPtr getUserUIPtr( ) const;
+	PlayerUIConstPtr getEnemyUIPtr( ) const;
+	CharaConstPtr getUserPtr( ) const;
+	CharaConstPtr getEnemyPtr( ) const;
 
 private:
 	FieldPtr _field;
-	PlayerUIPtr _player0_ui;
-	PlayerUIPtr _player1_ui;
-	CharaPtr _player0;
-	CharaPtr _player1;
+	PlayerUIPtr _user_ui;
+	PlayerUIPtr _enemy_ui;
+	UserPtr _user;
+	CharaPtr _enemy;
 };

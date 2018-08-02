@@ -3,22 +3,25 @@
 
 PTR( NetworkManager );
 PTR( ServerToClientDataUdp );
+PTR( ServerToClientDataTcp );
 PTR( Connector );
 PTR( GameProcessor );
 
 class NetworkManager {
 public:
-	NetworkManager( ServerToClientDataUdpConstPtr recvdata_udp, GameProcessorPtr processor );
+	NetworkManager( ServerToClientDataTcpConstPtr recvdata_tcp, ServerToClientDataUdpConstPtr recvdata_udp, GameProcessorPtr processor );
 	virtual ~NetworkManager( );
 
 public:
 	void update( );
 
 private:
-	void recv( );
+	void recvUdp( );
+	void recvTcp( );
 
 private:
 	ServerToClientDataUdpConstPtr _recvdata_udp;
+	ServerToClientDataTcpConstPtr _recvdata_tcp;
 	ConnectorPtr _connector;
 	GameProcessorPtr _processor;
 };

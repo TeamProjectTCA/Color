@@ -11,12 +11,10 @@ public:
 	virtual ~ServerToClientDataUdp( );
 
 public:
-	void setPlayer0Pos( Vector pos );
-	void setPlayer1Pos( Vector pos );
+	void setPlayerPos( int idx, Vector pos );
 
 public:
-	Vector getPlayer0Pos( ) const;
-	Vector getPlayer1Pos( ) const;
+	Vector getPlayerPos( int idx ) const;
 
 public:
 	int getSize( ) const;
@@ -31,8 +29,7 @@ private:
 			unsigned char y;
 		};
 
-		Player player0;
-		Player player1;
+		Player player[ 2 ];
 	};
 
 	#pragma pack( )

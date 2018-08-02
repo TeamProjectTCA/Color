@@ -27,23 +27,31 @@ void ServerToClientDataTcp::setIP( int idx, std::string ip ) {
 	_data.player.data[ idx ].ip = change;
 }
 
-std::string ServerToClientDataTcp::getIP( int idx ) const {
-	std::string result;
-	ServerToClientDataTcp::Pack::IP ip = _data.player.data[ idx ].ip;
-	result += std::to_string( ip.d1 );
-	result += ".";
-	result += std::to_string( ip.d2 );
-	result += ".";
-	result += std::to_string( ip.d3 );
-	result += ".";
-	result += std::to_string( ip.d4 );
-	return result;
+int ServerToClientDataTcp::getIdx( std::string ip ) const {
+
+	int idx = -1;
+	for ( int i = 0; i < 2; i++ ) {
+		ServerToClientDataTcp::Pack::IP ip_data = _data.player.data[ i ].ip;
+		std::string result;
+		result += std::to_string( ip_data.d1 );
+		result += ".";
+		result += std::to_string( ip_data.d2 );
+		result += ".";
+		result += std::to_string( ip_data.d3 );
+		result += ".";
+		result += std::to_string( ip_data.d4 );
+
+		if ( result == ip ) {
+			idx = i;
+			break;
+		}
+	}
+	return idx;
 }
 
 unsigned char ServerToClientDataTcp::getType( ) const {
 	return _data.type;
 }
-
 
 int ServerToClientDataTcp::getSize( ) const {
 	return sizeof( _data );

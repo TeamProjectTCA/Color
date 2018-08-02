@@ -9,6 +9,9 @@ _pos( Vector( ) ) {
 Chara::~Chara( ) {
 }
 
+void Chara::update( ) {
+}
+
 void Chara::setPos( Vector pos ) {
 	_pos = pos;
 }

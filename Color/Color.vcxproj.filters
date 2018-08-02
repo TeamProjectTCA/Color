@@ -86,14 +86,17 @@
     <ClCompile Include="Field.cpp">
       <Filter>Scene\Game\Process\Area\Field</Filter>
     </ClCompile>
-    <ClCompile Include="Chara.cpp">
-      <Filter>Scene\Game\Process</Filter>
-    </ClCompile>
     <ClCompile Include="ViewChara.cpp">
       <Filter>Scene\Game\View</Filter>
     </ClCompile>
     <ClCompile Include="NetworkManager.cpp">
       <Filter>Scene\Game\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Chara.cpp">
+      <Filter>Scene\Game\Process\Chara</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Scene\Game\Process\Chara</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -181,14 +184,17 @@
     <ClInclude Include="Field.h">
       <Filter>Scene\Game\Process\Area\Field</Filter>
     </ClInclude>
-    <ClInclude Include="Chara.h">
-      <Filter>Scene\Game\Process</Filter>
-    </ClInclude>
     <ClInclude Include="ViewChara.h">
       <Filter>Scene\Game\View</Filter>
     </ClInclude>
     <ClInclude Include="NetworkManager.h">
       <Filter>Scene\Game\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Chara.h">
+      <Filter>Scene\Game\Process\Chara</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>Scene\Game\Process\Chara</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -239,6 +245,9 @@
     </Filter>
     <Filter Include="Scene\Game\Process\Area\Field">
       <UniqueIdentifier>{ac7124b9-841e-4048-ba7c-cd3a133feda5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Game\Process\Chara">
+      <UniqueIdentifier>{751351c4-1840-40f2-aabb-21e6a432d682}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

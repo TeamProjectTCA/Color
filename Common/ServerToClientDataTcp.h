@@ -7,8 +7,8 @@
 PTR( ServerToClientDataTcp );
 
 class ServerToClientDataTcp : public Data {
-private:
-	unsigned char DATA_TYPE_PLAYER = 0x01;
+public:
+	static const unsigned char DATA_TYPE_PLAYER = 0x01;
 
 public:
 	ServerToClientDataTcp( );
@@ -18,7 +18,7 @@ public:
 	void setIP( int idx, std::string ip );
 
 public:
-	std::string getIP( int idx ) const;
+	int getIdx( std::string ip ) const;
 	unsigned char getType( ) const;
 
 public:
@@ -52,7 +52,5 @@ private:
 	};
 
 #pragma pack( )
-
 	Pack _data;
 };
-

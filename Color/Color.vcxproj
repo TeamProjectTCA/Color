@@ -184,6 +184,7 @@
     <ClCompile Include="GameViewer.cpp" />
     <ClCompile Include="ResultViewer.cpp" />
     <ClCompile Include="TitleViewer.cpp" />
+    <ClCompile Include="User.cpp" />
     <ClCompile Include="ViewField.cpp" />
     <ClCompile Include="ViewChara.cpp" />
     <ClCompile Include="ViewPlayerUI.cpp" />
@@ -225,6 +226,7 @@
     <ClInclude Include="GameViewer.h" />
     <ClInclude Include="ResultViewer.h" />
     <ClInclude Include="TitleViewer.h" />
+    <ClInclude Include="User.h" />
     <ClInclude Include="ViewField.h" />
     <ClInclude Include="ViewChara.h" />
     <ClInclude Include="ViewPlayerUI.h" />

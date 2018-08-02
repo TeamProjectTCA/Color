@@ -8,10 +8,10 @@
 
 GameViewer::GameViewer( GameProcessorConstPtr processor ) {
 	_field = ViewFieldPtr( new ViewField( processor->getFieldPtr( ) ) );
-	_player0_ui = ViewPlayerUIPtr( new ViewPlayerUI( processor->getPlayer0UIPtr( ) ) );
-	_player1_ui = ViewPlayerUIPtr( new ViewPlayerUI( processor->getPlayer1UIPtr( ) ) );
-	_player0 = ViewCharaPtr( new ViewChara( processor->getPlayer0Ptr( ) ) );
-	_player1 = ViewCharaPtr( new ViewChara( processor->getPlayer1Ptr( ) ) );
+	_user_ui = ViewPlayerUIPtr( new ViewPlayerUI( processor->getUserUIPtr( ) ) );
+	_enemy_ui = ViewPlayerUIPtr( new ViewPlayerUI( processor->getEnemyUIPtr( ) ) );
+	_user = ViewCharaPtr( new ViewChara( processor->getUserPtr( ) ) );
+	_enemy = ViewCharaPtr( new ViewChara( processor->getEnemyPtr( ) ) );
 }
 
 GameViewer::~GameViewer( ) {
@@ -22,10 +22,10 @@ void GameViewer::update( ) {
 	drawer->drawString( 10, 10, "SceneGame", 0xff0000 );
 
 	_field->draw( );
-	_player0_ui->draw( );
-	_player1_ui->draw( );
-	_player0->draw( );
-	_player1->draw( );
+	_user_ui->draw( );
+	_enemy_ui->draw( );
+	_user->draw( );
+	_enemy->draw( );
 
 	drawer->flip( );
 }

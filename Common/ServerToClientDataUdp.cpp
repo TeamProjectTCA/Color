@@ -7,23 +7,13 @@ ServerToClientDataUdp::ServerToClientDataUdp( ) {
 ServerToClientDataUdp::~ServerToClientDataUdp( ) {
 }
 
-void ServerToClientDataUdp::setPlayer0Pos( Vector pos ) {
-	_data.player0.x = ( unsigned char )pos.x;
-	_data.player0.y = ( unsigned char )pos.y;
+void ServerToClientDataUdp::setPlayerPos( int idx, Vector pos ) {
+	_data.player[ idx ].x = ( unsigned char )pos.x;
+	_data.player[ idx ].y = ( unsigned char )pos.y;
 }
 
-void ServerToClientDataUdp::setPlayer1Pos( Vector pos ) {
-	_data.player1.x = ( unsigned char )pos.x;
-	_data.player1.y = ( unsigned char )pos.y;
-}
-
-Vector ServerToClientDataUdp::getPlayer0Pos( ) const {
-	Vector pos = Vector( _data.player0.x, _data.player0.y );
-	return pos;
-}
-
-Vector ServerToClientDataUdp::getPlayer1Pos( ) const {
-	Vector pos = Vector( _data.player1.x, _data.player1.y );
+Vector ServerToClientDataUdp::getPlayerPos( int idx ) const {
+	Vector pos = Vector( _data.player[ idx ].x, _data.player[ idx ].y );
 	return pos;
 }
 

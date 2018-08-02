@@ -6,6 +6,7 @@
 #include "Manager.h"
 #include "Client.h"
 #include "Chara.h"
+#include "User.h"
 
 GameProcessor::GameProcessor( ) {
 	ManagerPtr manager = Manager::getInstance( );
@@ -17,11 +18,11 @@ GameProcessor::GameProcessor( ) {
 	const Vector PLAYER1_ORIGIN = Vector( quarter_width * 3, 0 );
 
 	_field = FieldPtr( new Field( FIELD_ORIGIN ) );
-	_player0_ui = PlayerUIPtr( new PlayerUI( PLAYER0_ORIGIN ) );
-	_player1_ui = PlayerUIPtr( new PlayerUI( PLAYER1_ORIGIN ) );
-
-	_player0 = CharaPtr( new Chara( _field ) );
-	_player1 = CharaPtr( new Chara( _field ) );
+	_user_ui = PlayerUIPtr( new PlayerUI( PLAYER0_ORIGIN ) );
+	_enemy_ui = PlayerUIPtr( new PlayerUI( PLAYER1_ORIGIN ) );
+	
+	_user = UserPtr( new User( _field ) );
+	_enemy = CharaPtr( new Chara( _field ) );
 }
 
 GameProcessor::~GameProcessor( ) {
@@ -38,30 +39,34 @@ void GameProcessor::update( ) {
 	}
 }
 
-void GameProcessor::setPlayer0Pos( Vector pos ) {
-	_player0->setPos( pos );
+void GameProcessor::setUserPos( Vector pos ) {
+	_user->setPos( pos );
 }
 
-void GameProcessor::setPlayer1Pos( Vector pos ) {
-	_player1->setPos( pos );
+void GameProcessor::setEnemyPos( Vector pos ) {
+	_enemy->setPos( pos );
+}
+
+void GameProcessor::setPlayerNum( int player_num ) {
+	_user->setPlayerNum( player_num );
 }
 
 FieldConstPtr GameProcessor::getFieldPtr( ) const {
 	return _field;
 }
 
-PlayerUIConstPtr GameProcessor::getPlayer0UIPtr( ) const {
-	return _player0_ui;
+PlayerUIConstPtr GameProcessor::getUserUIPtr( ) const {
+	return _user_ui;
 }
 
-PlayerUIConstPtr GameProcessor::getPlayer1UIPtr( ) const {
-	return _player1_ui;
+PlayerUIConstPtr GameProcessor::getEnemyUIPtr( ) const {
+	return _enemy_ui;
 }
 
-CharaConstPtr GameProcessor::getPlayer0Ptr( ) const {
-	return _player0;
+CharaConstPtr GameProcessor::getUserPtr( ) const {
+	return _user;
 }
 
-CharaConstPtr GameProcessor::getPlayer1Ptr( ) const {
-	return _player1;
+CharaConstPtr GameProcessor::getEnemyPtr( ) const {
+	return _enemy;
 }
