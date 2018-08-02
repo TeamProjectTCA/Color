@@ -37,6 +37,7 @@ void ConnectorForServer::checkConnect( ) {
 		// new connect
 		if ( _machines[ i ] != "" && past_ip == "" ) {
 			_log->add( "NEW CONNECT " + _machines[ i ] );
+			
 		}
 	}
 }

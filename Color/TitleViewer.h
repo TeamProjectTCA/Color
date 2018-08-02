@@ -10,7 +10,7 @@ PTR( Image );
 
 class TitleViewer {
 public:
-	TitleViewer( TitleProcessorPtr title, StartButtonViewerPtr button, OptionButtonViewerPtr option_button );
+	TitleViewer( TitleProcessorConstPtr title, StartButtonViewerPtr button, OptionButtonViewerPtr option_button );
 	virtual ~TitleViewer( );
 
 public:
@@ -25,7 +25,7 @@ private:
 	ImagePtr _title_image;
 
 	DrawerPtr _drawer;
-	TitleProcessorPtr _scene_title;
+	TitleProcessorConstPtr _scene_title;
 	StartButtonViewerPtr _view_start_button;
 	OptionButtonViewerPtr _view_option_button;
 };

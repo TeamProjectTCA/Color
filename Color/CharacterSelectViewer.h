@@ -8,7 +8,7 @@ PTR( Drawer );
 
 class CharacterSelectViewer  {
 public:
-	CharacterSelectViewer( CharacterSelectProcessorPtr character_select );
+	CharacterSelectViewer( CharacterSelectProcessorConstPtr character_select );
 	virtual ~CharacterSelectViewer( );
 
 public:
@@ -16,5 +16,5 @@ public:
 
 private:
 	DrawerPtr _drawer;
-	CharacterSelectProcessorPtr _scene_character_select;
+	CharacterSelectProcessorConstPtr _scene_character_select;
 };

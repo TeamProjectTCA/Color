@@ -8,7 +8,7 @@
 const char BACKGROUND_IMAGE[ ] = "Title/back_001.png";
 const char TITLE_IMAGE[ ] = "Title/title.png";
 
-TitleViewer::TitleViewer( TitleProcessorPtr title, StartButtonViewerPtr start_button, OptionButtonViewerPtr option_button ) :
+TitleViewer::TitleViewer( TitleProcessorConstPtr title, StartButtonViewerPtr start_button, OptionButtonViewerPtr option_button ) :
 _scene_title( title ),
 _view_start_button( start_button ),
 _view_option_button( option_button ){

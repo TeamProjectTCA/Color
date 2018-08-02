@@ -29,6 +29,7 @@ void Connector::checkConnect( ) {
 		return;
 	}
 
+	client->setConnectFlag( false );
 	SceneManagerPtr scene_manager = SceneManager::getTask( );
 	scene_manager->setNextScene( SCENE_TITLE );
 }

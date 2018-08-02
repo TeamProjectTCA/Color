@@ -8,7 +8,7 @@ PTR( Drawer );
 
 class ResultViewer {
 public:
-	ResultViewer( ResultProcessorPtr result );
+	ResultViewer( ResultProcessorConstPtr result );
 	virtual ~ResultViewer( );
 
 public:
@@ -16,5 +16,5 @@ public:
 
 private:
 	DrawerPtr _drawer;
-	ResultProcessorPtr _scene_result;
+	ResultProcessorConstPtr _scene_result;
 };

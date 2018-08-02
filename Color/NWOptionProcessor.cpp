@@ -10,7 +10,7 @@ NWOptionProcessor::NWOptionProcessor( ) :
 _new_ip_pos( Vector( ) ),
 _now_ip_pos( Vector( ) ) {
 	ClientPtr client = Client::getTask( );
-	_now_ip = client->getServerIP( );
+	//_now_ip = client->getServerIP( );
 
 	ManagerPtr manager = Manager::getInstance( );
 	int width  = manager->getScreenWidth( );

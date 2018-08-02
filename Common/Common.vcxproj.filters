@@ -4,10 +4,12 @@
     <ClCompile Include="ServerToClientDataUdp.cpp" />
     <ClCompile Include="ClientToServerData.cpp" />
     <ClCompile Include="FieldProperty.cpp" />
+    <ClCompile Include="ServerToClientDataTcp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServerToClientDataUdp.h" />
     <ClInclude Include="ClientToServerData.h" />
     <ClInclude Include="FieldProperty.h" />
+    <ClInclude Include="ServerToClientDataTcp.h" />
   </ItemGroup>
 </Project>

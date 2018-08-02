@@ -1,7 +1,7 @@
 #include "CharacterSelectViewer.h"
 #include "Drawer.h"
 
-CharacterSelectViewer::CharacterSelectViewer( CharacterSelectProcessorPtr character_select ) :
+CharacterSelectViewer::CharacterSelectViewer( CharacterSelectProcessorConstPtr character_select ) :
 	_scene_character_select( character_select ) {
 	_drawer = Drawer::getTask( );
 }

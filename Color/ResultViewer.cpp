@@ -2,7 +2,7 @@
 #include "Drawer.h"
 
 
-ResultViewer::ResultViewer( ResultProcessorPtr result ) :
+ResultViewer::ResultViewer( ResultProcessorConstPtr result ) :
 _scene_result( result ) {
 	_drawer = Drawer::getTask( );
 }
