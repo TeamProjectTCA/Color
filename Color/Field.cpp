@@ -4,7 +4,7 @@
 const int TILE_SIZE = 96;
 
 Field::Field( const Vector ORIGIN_POS ) :
-Area( ORIGIN_POS ){
+Area( ORIGIN_POS ) {
 	std::array< std::array< TilePtr, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW >( ).swap( _tile );
 	const int START_POS_X = TILE_SIZE / 4 + TILE_SIZE / 2;
 	const int START_POS_Y = TILE_SIZE / 2 + TILE_SIZE / 2;
@@ -31,4 +31,8 @@ Vector Field::getTilePos( int x, int y ) const {
 	Vector tile = _tile[ y ][ x ]->getPos( );
 
 	return tile + origin;
+}
+
+const int Field::getTileSize( ) const {
+	return TILE_SIZE;
 }

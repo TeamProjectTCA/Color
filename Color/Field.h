@@ -15,6 +15,7 @@ public:
 public:
 	Vector getCenterPos( ) const;
 	Vector getTilePos( int x, int y ) const;
+	const int getTileSize( ) const;
 
 private:
 	std::array< std::array< TilePtr, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > _tile;

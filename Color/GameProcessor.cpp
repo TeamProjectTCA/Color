@@ -14,12 +14,12 @@ GameProcessor::GameProcessor( ) {
 	int quarter_width  = manager->getScreenWidth( )  / 4;
 
 	const Vector FIELD_ORIGIN = Vector( quarter_width, 0 );
-	const Vector PLAYER0_ORIGIN = Vector( );
-	const Vector PLAYER1_ORIGIN = Vector( quarter_width * 3, 0 );
+	const Vector USER_ORIGIN = Vector( );
+	const Vector ENEMY_ORIGIN = Vector( quarter_width * 3, 0 );
 
 	_field = FieldPtr( new Field( FIELD_ORIGIN ) );
-	_user_ui = PlayerUIPtr( new PlayerUI( PLAYER0_ORIGIN ) );
-	_enemy_ui = PlayerUIPtr( new PlayerUI( PLAYER1_ORIGIN ) );
+	_user_ui = PlayerUIPtr( new PlayerUI( USER_ORIGIN ) );
+	_enemy_ui = PlayerUIPtr( new PlayerUI( ENEMY_ORIGIN ) );
 	
 	_user = UserPtr( new User( _field ) );
 	_enemy = CharaPtr( new Chara( _field ) );

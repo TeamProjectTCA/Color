@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClCompile Include="Area.cpp" />
     <ClCompile Include="Field.cpp" />
+    <ClCompile Include="Move.cpp" />
     <ClCompile Include="OptionButton.cpp" />
     <ClCompile Include="OptionButtonViewer.cpp" />
     <ClCompile Include="Chara.cpp" />
@@ -200,6 +201,7 @@
   <ItemGroup>
     <ClInclude Include="Area.h" />
     <ClInclude Include="Field.h" />
+    <ClInclude Include="Move.h" />
     <ClInclude Include="OptionButton.h" />
     <ClInclude Include="OptionButtonViewer.h" />
     <ClInclude Include="Chara.h" />
