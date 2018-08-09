@@ -5,10 +5,6 @@
 
 PTR( SceneManager );
 PTR( Scene );
-PTR( Title );
-PTR( CharacterSelect );
-PTR( Game );
-PTR( Result );
 PTR( ServerToClientDataUdp );
 PTR( ServerToClientDataTcp );
 

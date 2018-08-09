@@ -162,6 +162,7 @@
     <ClCompile Include="OptionButtonViewer.cpp" />
     <ClCompile Include="Chara.cpp" />
     <ClCompile Include="PlayerUI.cpp" />
+    <ClCompile Include="SceneChanger.cpp" />
     <ClCompile Include="StartButtonViewer.cpp" />
     <ClCompile Include="CharacterSelectProcessor.cpp" />
     <ClCompile Include="Connector.cpp" />
@@ -206,6 +207,7 @@
     <ClInclude Include="OptionButtonViewer.h" />
     <ClInclude Include="Chara.h" />
     <ClInclude Include="PlayerUI.h" />
+    <ClInclude Include="SceneChanger.h" />
     <ClInclude Include="StartButtonViewer.h" />
     <ClInclude Include="CharacterSelectProcessor.h" />
     <ClInclude Include="Connector.h" />

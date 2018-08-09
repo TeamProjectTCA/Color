@@ -101,6 +101,9 @@
     <ClCompile Include="Move.cpp">
       <Filter>Scene\Game\Process\Chara\Move</Filter>
     </ClCompile>
+    <ClCompile Include="SceneChanger.cpp">
+      <Filter>SceneManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -201,6 +204,9 @@
     </ClInclude>
     <ClInclude Include="Move.h">
       <Filter>Scene\Game\Process\Chara\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneChanger.h">
+      <Filter>SceneManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

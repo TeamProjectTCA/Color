@@ -1,10 +1,8 @@
 #pragma once
 #include "smart_ptr.h"
+#include <vector>
 
-PTR( TitleProcessor );
-PTR( SceneManager );
-PTR( Mouse );
-PTR( Keyboard );
+PTR( Button );
 
 class CharacterSelectProcessor {
 public:
@@ -14,8 +12,9 @@ public:
 public:
 	void update( );
 
+public:
+	const std::vector< ButtonPtr > &getButton( ) const;
+
 private:
-	SceneManagerPtr _scene_manager;
-	KeyboardPtr _keyboard;
-	MousePtr _mouse;
+	std::vector< ButtonPtr > _button;
 };
