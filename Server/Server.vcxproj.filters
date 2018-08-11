@@ -48,6 +48,9 @@
     <ClCompile Include="ViewPlayer.cpp">
       <Filter>View</Filter>
     </ClCompile>
+    <ClCompile Include="ViewTurn.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServerController.h" />
@@ -94,6 +97,9 @@
       <Filter>Process</Filter>
     </ClInclude>
     <ClInclude Include="ViewPlayer.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewTurn.h">
       <Filter>View</Filter>
     </ClInclude>
   </ItemGroup>

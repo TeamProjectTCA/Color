@@ -41,6 +41,7 @@ void NetworkManager::recvUdp( ) {
 
 	_processor->setUserPos( _recvdata_udp->getPlayerPos( idx ) );
 	_processor->setEnemyPos( _recvdata_udp->getPlayerPos( ( idx + 1 ) % 2 ) );
+	_processor->setTurn( _recvdata_udp->getTurn( ) );
 }
 
 void NetworkManager::recvTcp( ) {
@@ -58,7 +59,12 @@ void NetworkManager::recvTcp( ) {
 		_processor->setPlayerNum( idx );
 	}
 		break;
-
+	case ServerToClientDataTcp::DATA_TYPE_RESULT:
+	{
+		bool gameover = _recvdata_tcp->getGameOver( );
+		_processor->setGameOver( gameover );
+	}
+	break;
 	default:
 		break;
 	}

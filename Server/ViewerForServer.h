@@ -11,6 +11,7 @@ PTR( ViewConnectorForServer );
 PTR( ViewCommand );
 PTR( ViewLog );
 PTR( ViewPlayer );
+PTR( ViewTurn );
 
 class ViewerForServer {
 public:
@@ -28,5 +29,6 @@ private:
 	ViewLogPtr _log;
 	ViewPlayerPtr _player0;
 	ViewPlayerPtr _player1;
+	ViewTurnPtr _turn;
 };
 

@@ -21,8 +21,11 @@ public:
 	void setUserPos( Vector pos );
 	void setEnemyPos( Vector pos );
 	void setPlayerNum( int player_num );
+	void setTurn( int turn );
+	void setGameOver( bool gameover );
 
 public:
+	int getTurn( ) const;
 	Vector getClickMas( ) const;
 	FieldConstPtr getFieldPtr( ) const;
 	PlayerUIConstPtr getUserUIPtr( ) const;
@@ -31,6 +34,9 @@ public:
 	CharaConstPtr getEnemyPtr( ) const;
 
 private:
+	int _turn;
+	bool _gameover;
+
 	FieldPtr _field;
 	PlayerUIPtr _user_ui;
 	PlayerUIPtr _enemy_ui;

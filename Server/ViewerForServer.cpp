@@ -9,6 +9,7 @@
 #include "ViewCommand.h"
 #include "ViewLog.h"
 #include "ViewPlayer.h"
+#include "ViewTurn.h"
 
 ViewerForServer::ViewerForServer( ProcessorForServerConstPtr processor, NWManagerForServerConstPtr network_manager, LogConstPtr log, CommandConstPtr command ) {
 	_connector = ViewConnectorForServerPtr( new ViewConnectorForServer( network_manager->getConnectorPtr( ) ) );
@@ -16,11 +17,13 @@ ViewerForServer::ViewerForServer( ProcessorForServerConstPtr processor, NWManage
 	_log = ViewLogPtr( new ViewLog( log ) );
 	_player0 = ViewPlayerPtr( new ViewPlayer( processor->getPlayer0Ptr( ) ) );
 	_player1 = ViewPlayerPtr( new ViewPlayer( processor->getPlayer1Ptr( ) ) );
+	_turn = ViewTurnPtr( new ViewTurn( processor ) );
 
 	_table = TablePtr( new Table( ) );
 	_table->add( _connector->getSheet( ) , Table::NEXT_POS_RIGHT );
 	_table->add( _player0->getSheet( )   , Table::NEXT_POS_DOWN );
-	_table->add( _player1->getSheet( )   , Table::NEXT_POS_RIGHT );
+	_table->add( _player1->getSheet( )   , Table::NEXT_POS_DOWN );
+	_table->add( _turn->getSheet( )      , Table::NEXT_POS_RIGHT );
 	_table->add( _log->getSheet( )       , Table::NEXT_POS_DOWN );
 	_table->add( _command->getSheet( )   , Table::NEXT_POS_DOWN );
 }
@@ -34,6 +37,7 @@ void ViewerForServer::initialize( ) {
 	_log->initialize( );
 	_player0->initialize( );
 	_player1->initialize( );
+	_turn->initialize( );
 	
 	_table->draw( );
 
@@ -47,6 +51,7 @@ void ViewerForServer::update( ) {
 	_log->updateSheet( );
 	_player0->updateSheet( );
 	_player1->updateSheet( );
+	_turn->updateSheet( );
 
 	_table->draw( );
 

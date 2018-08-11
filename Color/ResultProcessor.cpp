@@ -1,19 +1,20 @@
 #include "ResultProcessor.h"
 #include "SceneManager.h"
+#include "Client.h"
 #include "Keyboard.h"
-#include "Mouse.h"
 
 ResultProcessor::ResultProcessor( ) {
-	_scene_manager = SceneManager::getTask( );
-	_keyboard = Keyboard::getTask( );
-	_mouse = Mouse::getTask( );
 }
 
 ResultProcessor::~ResultProcessor( ) {
 }
 
 void ResultProcessor::update( ) {
+	_keyboard = Keyboard::getTask( );
 	if ( _keyboard->getKeyDown( "z" ) ) {
+		ClientPtr client = Client::getTask( );
+		client->setConnectFlag( false );
+		_scene_manager = SceneManager::getTask( );
 		_scene_manager->setNextScene( SCENE_TITLE );
 	}
 }

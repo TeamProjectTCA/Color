@@ -6,7 +6,8 @@
 #include "ViewPlayerUI.h"
 #include "ViewChara.h"
 
-GameViewer::GameViewer( GameProcessorConstPtr processor ) {
+GameViewer::GameViewer( GameProcessorConstPtr processor ) :
+_processor( processor ) {
 	_field = ViewFieldPtr( new ViewField( processor->getFieldPtr( ) ) );
 	_user_ui = ViewPlayerUIPtr( new ViewPlayerUI( processor->getUserUIPtr( ) ) );
 	_enemy_ui = ViewPlayerUIPtr( new ViewPlayerUI( processor->getEnemyUIPtr( ) ) );
@@ -20,6 +21,7 @@ GameViewer::~GameViewer( ) {
 void GameViewer::update( ) {
 	DrawerPtr drawer = Drawer::getTask( );
 	drawer->drawString( 10, 10, "SceneGame", 0xff0000 );
+	drawer->drawString( 10, 30, "c‚è"+ std::to_string( _processor->getTurn( ) ) +"ƒ^[ƒ“", 0xff0000 );
 
 	_field->draw( );
 	_user_ui->draw( );

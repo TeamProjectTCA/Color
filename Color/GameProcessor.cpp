@@ -4,12 +4,13 @@
 #include "Field.h"
 #include "PlayerUI.h"
 #include "Manager.h"
-#include "Client.h"
 #include "Chara.h"
 #include "User.h"
 #include "Move.h"
 
-GameProcessor::GameProcessor( ) {
+GameProcessor::GameProcessor( ) :
+_turn( -1 ),
+_gameover( false ) {
 	ManagerPtr manager = Manager::getInstance( );
 
 	int quarter_width  = manager->getScreenWidth( )  / 4;
@@ -25,20 +26,17 @@ GameProcessor::GameProcessor( ) {
 	_user = UserPtr( new User( _field ) );
 	_enemy = CharaPtr( new Chara( _field ) );
 
-	_move = MovePtr( new Move( _field, _user ) );
+	_move = MovePtr( new Move( _field ) );
 }
 
 GameProcessor::~GameProcessor( ) {
 }
 
 void GameProcessor::update( ) {
-	KeyboardPtr keyboard = Keyboard::getTask( );
 
-	if ( keyboard->getKeyDown( "z" ) ) {
+	if ( _gameover ) {
 		SceneManagerPtr scene_manager = SceneManager::getTask( );
 		scene_manager->setNextScene( SCENE_RESULT );
-		ClientPtr client = Client::getTask( );
-		client->setConnectFlag( false );
 	}
 }
 
@@ -52,6 +50,17 @@ void GameProcessor::setEnemyPos( Vector pos ) {
 
 void GameProcessor::setPlayerNum( int player_num ) {
 	_user->setPlayerNum( player_num );
+}
+
+void GameProcessor::setTurn( int turn ) {
+	_turn = turn;
+}
+void GameProcessor::setGameOver( bool gameover ) {
+	_gameover = gameover;
+}
+
+int GameProcessor::getTurn( ) const {
+	return ( _turn + 1 ) / 2;
 }
 
 Vector GameProcessor::getClickMas( ) const {

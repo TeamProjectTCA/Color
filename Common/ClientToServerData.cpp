@@ -8,8 +8,8 @@ ClientToServerData::~ClientToServerData( ) {
 }
 
 void ClientToServerData::setClickMas( Vector mas_idx ) {
-	_data.mas_idx.x = mas_idx.x;
-	_data.mas_idx.y = mas_idx.y;
+	_data.mas_idx.x = ( unsigned char ) mas_idx.x;
+	_data.mas_idx.y = ( unsigned char ) mas_idx.y;
 }
 
 Vector ClientToServerData::getClickMas( ) const {

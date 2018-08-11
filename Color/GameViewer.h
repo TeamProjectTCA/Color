@@ -22,4 +22,5 @@ private:
 	ViewPlayerUIPtr _enemy_ui;
 	ViewCharaPtr _user;
 	ViewCharaPtr _enemy;
+	GameProcessorConstPtr _processor;
 };

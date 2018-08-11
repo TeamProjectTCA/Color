@@ -8,7 +8,7 @@ PTR( User );
 
 class Move {
 public:
-	Move( FieldConstPtr field, CharaPtr user );
+	Move( FieldConstPtr field );
 	virtual ~Move( );
 
 public:

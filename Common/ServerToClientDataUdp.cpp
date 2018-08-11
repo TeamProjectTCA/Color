@@ -12,9 +12,17 @@ void ServerToClientDataUdp::setPlayerPos( int idx, Vector pos ) {
 	_data.player[ idx ].y = ( unsigned char )pos.y;
 }
 
+void ServerToClientDataUdp::setTurn( int turn ) {
+	_data.turn = turn;
+}
+
 Vector ServerToClientDataUdp::getPlayerPos( int idx ) const {
 	Vector pos = Vector( _data.player[ idx ].x, _data.player[ idx ].y );
 	return pos;
+}
+
+int ServerToClientDataUdp::getTurn( ) const {
+	return _data.turn;
 }
 
 int ServerToClientDataUdp::getSize( ) const {

@@ -12,9 +12,11 @@ public:
 
 public:
 	void setPlayerPos( int idx, Vector pos );
+	void setTurn( int turn );
 
 public:
 	Vector getPlayerPos( int idx ) const;
+	int getTurn( ) const;
 
 public:
 	int getSize( ) const;
@@ -30,6 +32,7 @@ private:
 		};
 
 		Player player[ 2 ];
+		int turn;
 	};
 
 	#pragma pack( )

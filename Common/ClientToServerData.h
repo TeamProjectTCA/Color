@@ -24,7 +24,6 @@ private:
 	#pragma pack( 1 )
 
 	struct Pack {
-		unsigned char a;
 		struct ClickMas {
 			unsigned char x;
 			unsigned char y;

@@ -27,8 +27,12 @@ void ServerToClientDataTcp::setIP( int idx, std::string ip ) {
 	_data.player.data[ idx ].ip = change;
 }
 
-int ServerToClientDataTcp::getIdx( std::string ip ) const {
+void ServerToClientDataTcp::setGameOver( bool gameover ) {
+	_data.type = DATA_TYPE_RESULT;
+	_data.result.gameover = gameover;
+}
 
+int ServerToClientDataTcp::getIdx( std::string ip ) const {
 	int idx = -1;
 	for ( int i = 0; i < 2; i++ ) {
 		ServerToClientDataTcp::Pack::IP ip_data = _data.player.data[ i ].ip;
@@ -47,6 +51,10 @@ int ServerToClientDataTcp::getIdx( std::string ip ) const {
 		}
 	}
 	return idx;
+}
+
+bool ServerToClientDataTcp::getGameOver( ) const {
+	return _data.result.gameover;
 }
 
 unsigned char ServerToClientDataTcp::getType( ) const {
