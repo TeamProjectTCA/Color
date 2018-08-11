@@ -75,7 +75,7 @@ void NetworkManager::sendTcp( ) {
 	ClientPtr client = Client::getTask( );
 	ClientToServerDataPtr send_data = ClientToServerDataPtr( new ClientToServerData );
 	Vector mas = _processor->getClickMas( );
-	if ( mas != Vector( -1, -1 ) ) {
+	if ( mas != Vector( ) ) {
 		send_data->setClickMas( mas );
 		client->sendTcp( send_data );
 	}

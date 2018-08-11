@@ -54,7 +54,7 @@ void ProcessorForServer::playerMove( ) {
 		return;
 	}
 
-	Vector chara_idx = chara_idx = _player[ _turn % 2 ]->getPos( );
+	Vector chara_idx = _player[ _turn % 2 ]->getPos( );
 	Vector delta = click_mas - chara_idx - Vector( 1, 1 );
 	if ( ( abs( delta.x ) + abs( delta.y ) == 1 ) || ( abs( delta.x ) * abs( delta.y ) == 1 ) ) {
 		if ( click_mas != _player_init_pos[ ( _turn + 1 ) % 2 ] + Vector( 1, 1 ) ) {
