@@ -5,7 +5,6 @@
 #include "FieldProperty.h"
 #include "User.h"
 #include <cmath>
-#include "dxlib.h"
 
 
 Move::Move( FieldConstPtr field, CharaPtr user ):
@@ -14,10 +13,6 @@ _user( user ) {
 }
 
 Move::~Move( ) {
-}
-
-void Move::update( ) {
-	getClickMas( );
 }
 
 Vector Move::getClickMas( ) const {
@@ -29,7 +24,6 @@ Vector Move::getClickMas( ) const {
 	pos -= START_POS;
 	Vector mas_idx = Vector( ( int ) pos.x / TILE_SIZE, ( int ) pos.y / TILE_SIZE );
 
-	DrawCircle( pos.x + START_POS.x, pos.y + START_POS.y, 10, 0x0000ff );
 	//ƒLƒƒƒ‰À•W
 	Vector chara_pos = _user->getPos( );
 	chara_pos -= START_POS;
@@ -42,9 +36,9 @@ Vector Move::getClickMas( ) const {
 			if ( ( abs( ( int ) check.x ) == 1 && abs( ( int ) check.y ) == 0 ) ||
 				 ( abs( ( int ) check.x ) == 0 && abs( ( int ) check.y ) == 1 ) || 
 				 ( abs( ( int ) check.x ) == 1 && abs( ( int ) check.y ) == 1 ) ) {
-				return mas_idx;
+				return mas_idx + Vector( 1, 1 );
 			}
 		}
 	}
-	return Vector( -1, -1 );
+	return Vector( );
 }

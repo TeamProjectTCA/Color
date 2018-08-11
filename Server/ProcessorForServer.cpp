@@ -10,8 +10,12 @@ _recv_data( recv_data ),
 _senddata_udp( senddata_udp ),
 _command( command ) {
 	FieldPropertyPtr field_property( new FieldProperty );
-	_player0 = PlayerPtr( new Player( 0, field_property->getPlayer0InitPos( ) ) );
-	_player1 = PlayerPtr( new Player( 1, field_property->getPlayer1InitPos( ) ) );
+	
+	_player0_init_pos = field_property->getPlayer0InitPos( );
+	_player1_init_pos = field_property->getPlayer1InitPos( );
+
+	_player0 = PlayerPtr( new Player( 0, _player0_init_pos ) );
+	_player1 = PlayerPtr( new Player( 1, _player1_init_pos ) );
 }
 
 ProcessorForServer::~ProcessorForServer( ) {
@@ -19,13 +23,20 @@ ProcessorForServer::~ProcessorForServer( ) {
 
 void ProcessorForServer::update( ) {
 	_command->update( );
-	if ( _recv_data->getClickMas( ) != Vector( 0, 0 ) ) {
-		_player0->setPos( _recv_data->getClickMas( ) );
-	}
+	
 	packageData( );
 }
 
 void ProcessorForServer::packageData( ) {
+	Vector destination_mas = _recv_data->getClickMas( );
+	if ( destination_mas != Vector( 0, 0 ) ) {
+		if ( destination_mas  != _player1_init_pos + Vector( 1, 1 ) ) {
+			_player0->setPos( destination_mas - Vector( 1, 1 ) );
+		}
+		if ( destination_mas != _player0_init_pos + Vector( 1, 1 ) ) {
+			_player1->setPos( destination_mas - Vector( 1, 1 ) );
+		}
+	}
 	_senddata_udp->setPlayerPos( 0, _player0->getPos( ) );
 	_senddata_udp->setPlayerPos( 1, _player1->getPos( ) );
 }

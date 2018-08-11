@@ -7,12 +7,8 @@
 #include "OptionButtonViewer.h"
 
 Title::Title( ) {
-	_start_button = StartButtonPtr( new StartButton( ) );
-	_view_start_button = StartButtonViewerPtr( new StartButtonViewer( _start_button ) );
-	_option_button = OptionButtonPtr( new OptionButton( ) );
-	_view_option_button = OptionButtonViewerPtr( new OptionButtonViewer( _option_button ) );
-	_process = TitleProcessorPtr( new TitleProcessor( _start_button, _option_button ) );
-	_viewer = TitleViewerPtr( new TitleViewer( _process, _view_start_button, _view_option_button ) );
+	_process = TitleProcessorPtr( new TitleProcessor );
+	_viewer = TitleViewerPtr( new TitleViewer( _process ) );
 }
 
 Title::~Title( ) {

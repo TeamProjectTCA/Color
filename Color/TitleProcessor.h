@@ -1,14 +1,15 @@
 #pragma once
 #include "smart_ptr.h"
 #include "Vector.h"
+#include <vector>
 
 PTR( TitleProcessor );
-PTR( StartButton );
-PTR( OptionButton );
+PTR( Button );
+
 
 class TitleProcessor {
 public:
-	TitleProcessor( StartButtonPtr start_button, OptionButtonPtr option_button );
+	TitleProcessor( );
 	virtual ~TitleProcessor( );
 
 public:
@@ -17,10 +18,10 @@ public:
 public:
 	Vector getBgPos( ) const;
 	Vector getLogoPos( ) const;
+	const std::vector< ButtonPtr > &getButton( ) const;
 
 private:
 	Vector _bg_pos;
 	Vector _logo_pos;
-	StartButtonPtr _start_button;
-	OptionButtonPtr _option_button;
+	std::vector< ButtonPtr > _button;
 };

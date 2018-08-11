@@ -12,9 +12,6 @@ public:
 	virtual ~Move( );
 
 public:
-	void update( );
-
-public:
 	Vector getClickMas( ) const;
 
 private:

@@ -40,7 +40,6 @@ void GameProcessor::update( ) {
 		ClientPtr client = Client::getTask( );
 		client->setConnectFlag( false );
 	}
-	_move->update( );
 }
 
 void GameProcessor::setUserPos( Vector pos ) {

@@ -7,8 +7,8 @@
 #include "SceneManager.h"
 #include "Manager.h"
 
-const char START_BUTTON_DEFAULT_IMAGE[ ] = "Button/StartButtonNormal.png";
-const char START_BUTTON_CLICKED_IMAGE[ ] = "Button/StartButtonPush.png";
+const char START_BUTTON_DEFAULT_IMAGE[ ] = "Button/Start.png";
+const char START_BUTTON_CLICKED_IMAGE[ ] = "Button/StartClick.png";
 const char BACK_BUTTON_DEFAULT_IMAGE[ ] = "Button/Return.png";
 const char BACK_BUTTON_CLICKED_IMAGE[ ] = "Button/ReturnClick.png";
 
