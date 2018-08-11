@@ -1,10 +1,12 @@
 #include "ProcessorForServer.h"
 #include "ServerToClientDataUdp.h"
+#include "ClientToServerData.h"
 #include "Command.h"
 #include "Player.h"
 #include "FieldProperty.h"
 
-ProcessorForServer::ProcessorForServer( ServerToClientDataUdpPtr senddata_udp, LogPtr log, CommandPtr command ) :
+ProcessorForServer::ProcessorForServer( ClientToServerDataConstPtr recv_data, ServerToClientDataUdpPtr senddata_udp, LogPtr log, CommandPtr command ) :
+_recv_data( recv_data ),
 _senddata_udp( senddata_udp ),
 _command( command ) {
 	FieldPropertyPtr field_property( new FieldProperty );
@@ -17,7 +19,9 @@ ProcessorForServer::~ProcessorForServer( ) {
 
 void ProcessorForServer::update( ) {
 	_command->update( );
-
+	if ( _recv_data->getClickMas( ) != Vector( 0, 0 ) ) {
+		_player0->setPos( _recv_data->getClickMas( ) );
+	}
 	packageData( );
 }
 

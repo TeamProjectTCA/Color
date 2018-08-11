@@ -17,7 +17,7 @@ ServerController::ServerController( ClientToServerDataConstPtr recvdata ) {
 	LogPtr log( new Log( ) );
 	CommandPtr command( new Command( log ) );
 
-	_processor       = ProcessorForServerPtr( new ProcessorForServer( senddata_udp, log, command ) );
+	_processor       = ProcessorForServerPtr( new ProcessorForServer( recvdata, senddata_udp, log, command ) );
 	_network_manager = NWManagerForServerPtr( new NWManagerForServer( recvdata, senddata_udp, _processor, log ) );
 	_viewer          = ViewerForServerPtr   ( new ViewerForServer( _processor, _network_manager, log, command ) );
 }

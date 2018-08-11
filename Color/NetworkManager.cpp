@@ -5,6 +5,7 @@
 #include "GameProcessor.h"
 #include "ServerToClientDataUdp.h"
 #include "ServerToClientDataTcp.h"
+#include "ClientToServerData.h"
 
 NetworkManager::NetworkManager( ServerToClientDataTcpConstPtr recvdata_tcp, ServerToClientDataUdpConstPtr recvdata_udp, GameProcessorPtr processor ) :
 _recvdata_tcp( recvdata_tcp ),
@@ -23,6 +24,7 @@ void NetworkManager::update( ) {
 
 	recvTcp( );
 	recvUdp( );
+	sendTcp( );
 }
 
 void NetworkManager::recvUdp( ) {
@@ -61,4 +63,14 @@ void NetworkManager::recvTcp( ) {
 		break;
 	}
 
+}
+
+void NetworkManager::sendTcp( ) {
+	ClientPtr client = Client::getTask( );
+	ClientToServerDataPtr send_data = ClientToServerDataPtr( new ClientToServerData );
+	Vector mas = _processor->getClickMas( );
+	if ( mas != Vector( -1, -1 ) ) {
+		send_data->setClickMas( mas );
+		client->sendTcp( send_data );
+	}
 }

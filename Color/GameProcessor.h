@@ -7,6 +7,7 @@ PTR( Field );
 PTR( PlayerUI );
 PTR( Chara );
 PTR( User );
+PTR( Move );
 
 class GameProcessor {
 public:
@@ -22,6 +23,7 @@ public:
 	void setPlayerNum( int player_num );
 
 public:
+	Vector getClickMas( ) const;
 	FieldConstPtr getFieldPtr( ) const;
 	PlayerUIConstPtr getUserUIPtr( ) const;
 	PlayerUIConstPtr getEnemyUIPtr( ) const;
@@ -34,4 +36,5 @@ private:
 	PlayerUIPtr _enemy_ui;
 	UserPtr _user;
 	CharaPtr _enemy;
+	MovePtr _move;
 };

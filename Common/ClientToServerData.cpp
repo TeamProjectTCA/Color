@@ -7,6 +7,16 @@ ClientToServerData::ClientToServerData( ) {
 ClientToServerData::~ClientToServerData( ) {
 }
 
+void ClientToServerData::setClickMas( Vector mas_idx ) {
+	_data.mas_idx.x = mas_idx.x;
+	_data.mas_idx.y = mas_idx.y;
+}
+
+Vector ClientToServerData::getClickMas( ) const {
+	Vector mas = Vector( _data.mas_idx.x, _data.mas_idx.y );
+	return mas;
+}
+
 int ClientToServerData::getSize( ) const {
 	return sizeof( _data );
 }

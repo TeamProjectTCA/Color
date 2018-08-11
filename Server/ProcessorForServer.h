@@ -3,13 +3,14 @@
 
 PTR( ProcessorForServer );
 PTR( ServerToClientDataUdp );
+PTR( ClientToServerData );
 PTR( Log );
 PTR( Command );
 PTR( Player );
 
 class ProcessorForServer {
 public:
-	ProcessorForServer( ServerToClientDataUdpPtr senddata_udp, LogPtr log, CommandPtr command );
+	ProcessorForServer( ClientToServerDataConstPtr recv_data,  ServerToClientDataUdpPtr senddata_udp, LogPtr log, CommandPtr command );
 	virtual ~ProcessorForServer( );
 
 public:
@@ -25,6 +26,7 @@ public:
 
 private:
 	ServerToClientDataUdpPtr _senddata_udp;
+	ClientToServerDataConstPtr _recv_data;
 	CommandPtr _command;
 	PlayerPtr _player0;
 	PlayerPtr _player1;

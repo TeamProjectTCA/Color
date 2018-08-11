@@ -10,6 +10,9 @@ public:
 	virtual ~Player( );
 
 public:
+	void setPos( Vector pos );
+
+public:
 	const int getPlayerNum( ) const;
 	Vector getPos( ) const;
 

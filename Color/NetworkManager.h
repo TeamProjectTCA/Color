@@ -4,6 +4,7 @@
 PTR( NetworkManager );
 PTR( ServerToClientDataUdp );
 PTR( ServerToClientDataTcp );
+PTR( ClientToServerData );
 PTR( Connector );
 PTR( GameProcessor );
 
@@ -18,6 +19,7 @@ public:
 private:
 	void recvUdp( );
 	void recvTcp( );
+	void sendTcp( );
 
 private:
 	ServerToClientDataUdpConstPtr _recvdata_udp;

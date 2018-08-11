@@ -8,6 +8,10 @@ _pos( POS ) {
 Player::~Player( ) {
 }
 
+void Player::setPos( Vector pos ) {
+	_pos = pos;
+}
+
 const int Player::getPlayerNum( ) const {
 	return _PLAYER_NUM;
 }

@@ -4,20 +4,21 @@
 
 PTR( Field );
 PTR( Chara );
+PTR( User );
 
 class Move {
 public:
-	Move( FieldConstPtr field, CharaPtr chara );
+	Move( FieldConstPtr field, CharaPtr user );
 	virtual ~Move( );
 
-private:
-	Vector getClickMas( );
+public:
+	void update( );
+
+public:
+	Vector getClickMas( ) const;
 
 private:
-	const int TILE_SIZE;
-	const Vector START_POS;
-
 	FieldConstPtr _field;
-	CharaPtr _chara;
+	CharaPtr _user;
 };
 
