@@ -16,6 +16,9 @@ public:
 public:
 	void setPlayerNum( int player_num );
 
+public:
+	int getPlayerNum( ) const;
+
 private:
 	int _player_num;
 };

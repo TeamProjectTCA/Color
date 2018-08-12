@@ -167,6 +167,7 @@
     <ClCompile Include="ServerController.cpp" />
     <ClCompile Include="Sheet.cpp" />
     <ClCompile Include="Table.cpp" />
+    <ClCompile Include="Turn.cpp" />
     <ClCompile Include="ViewCommand.cpp" />
     <ClCompile Include="ViewConnectorForServer.cpp" />
     <ClCompile Include="ViewerForServer.cpp" />
@@ -194,6 +195,7 @@
     <ClInclude Include="ServerController.h" />
     <ClInclude Include="Sheet.h" />
     <ClInclude Include="Table.h" />
+    <ClInclude Include="Turn.h" />
     <ClInclude Include="ViewCommand.h" />
     <ClInclude Include="ViewConnectorForServer.h" />
     <ClInclude Include="ViewerForServer.h" />

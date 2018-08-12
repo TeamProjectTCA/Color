@@ -15,12 +15,11 @@ ServerControllerPtr ServerController::getTask( ) {
 
 ServerController::ServerController( ClientToServerDataConstPtr recvdata ) {
 	ServerToClientDataUdpPtr senddata_udp( new ServerToClientDataUdp );
-	ServerToClientDataTcpPtr senddata_tcp( new ServerToClientDataTcp );
 	LogPtr log( new Log( ) );
 	CommandPtr command( new Command( log ) );
 
-	_processor       = ProcessorForServerPtr( new ProcessorForServer( recvdata, senddata_udp, senddata_tcp, log, command ) );
-	_network_manager = NWManagerForServerPtr( new NWManagerForServer( recvdata, senddata_udp, senddata_tcp, _processor, log ) );
+	_processor       = ProcessorForServerPtr( new ProcessorForServer( recvdata, senddata_udp, log, command ) );
+	_network_manager = NWManagerForServerPtr( new NWManagerForServer( recvdata, senddata_udp, _processor, log ) );
 	_viewer          = ViewerForServerPtr   ( new ViewerForServer( _processor, _network_manager, log, command ) );
 }
 

@@ -8,14 +8,17 @@ PTR( User );
 
 class Move {
 public:
-	Move( FieldConstPtr field );
+	Move( FieldConstPtr field, UserPtr user );
 	virtual ~Move( );
 
 public:
-	Vector getClickMas( ) const;
+	void update( );
+
+public:
+	void sendClickMas( );
 
 private:
 	FieldConstPtr _field;
-	CharaPtr _user;
+	UserPtr _user;
 };
 

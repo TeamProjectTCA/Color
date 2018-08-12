@@ -5,15 +5,15 @@
 
 PTR( ProcessorForServer );
 PTR( ServerToClientDataUdp );
-PTR( ServerToClientDataTcp );
 PTR( ClientToServerData );
 PTR( Log );
 PTR( Command );
 PTR( Player );
+PTR( Turn );
 
 class ProcessorForServer {
 public:
-	ProcessorForServer( ClientToServerDataConstPtr recv_data,  ServerToClientDataUdpPtr senddata_udp, ServerToClientDataTcpPtr senddata_tcp, LogPtr log, CommandPtr command );
+	ProcessorForServer( ClientToServerDataConstPtr recv_data,  ServerToClientDataUdpPtr senddata_udp, LogPtr log, CommandPtr command );
 	virtual ~ProcessorForServer( );
 
 public:
@@ -22,23 +22,21 @@ public:
 private:
 	void packageData( );
 	void playerMove( );
+	void sendGameOver( );
 	
 public:
 	int getTurn( ) const;
 	const int getTURNMAX( ) const;
-	bool isGameOver( ) const;
 	PlayerConstPtr getPlayer0Ptr( ) const;
 	PlayerConstPtr getPlayer1Ptr( ) const;
 
 private:
-	int _turn;
-	bool sended_tcp;
 	std::array< Vector, 2 > _player_init_pos;
 
 	ServerToClientDataUdpPtr _senddata_udp;
-	ServerToClientDataTcpPtr _senddata_tcp;
 	ClientToServerDataConstPtr _recv_data;
 	CommandPtr _command;
+	TurnPtr _turn;
 	std::array< PlayerPtr, 2 > _player;
 };
 

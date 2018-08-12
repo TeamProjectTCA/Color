@@ -26,7 +26,7 @@ _gameover( false ) {
 	_user = UserPtr( new User( _field ) );
 	_enemy = CharaPtr( new Chara( _field ) );
 
-	_move = MovePtr( new Move( _field ) );
+	_move = MovePtr( new Move( _field, _user ) );
 }
 
 GameProcessor::~GameProcessor( ) {
@@ -38,6 +38,7 @@ void GameProcessor::update( ) {
 		SceneManagerPtr scene_manager = SceneManager::getTask( );
 		scene_manager->setNextScene( SCENE_RESULT );
 	}
+	_move->update( );
 }
 
 void GameProcessor::setUserPos( Vector pos ) {
@@ -61,10 +62,6 @@ void GameProcessor::setGameOver( bool gameover ) {
 
 int GameProcessor::getTurn( ) const {
 	return ( _turn + 1 ) / 2;
-}
-
-Vector GameProcessor::getClickMas( ) const {
-	return _move->getClickMas( );
 }
 
 FieldConstPtr GameProcessor::getFieldPtr( ) const {

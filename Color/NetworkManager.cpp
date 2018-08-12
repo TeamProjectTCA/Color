@@ -24,7 +24,6 @@ void NetworkManager::update( ) {
 
 	recvTcp( );
 	recvUdp( );
-	sendTcp( );
 }
 
 void NetworkManager::recvUdp( ) {
@@ -69,14 +68,4 @@ void NetworkManager::recvTcp( ) {
 		break;
 	}
 
-}
-
-void NetworkManager::sendTcp( ) {
-	ClientPtr client = Client::getTask( );
-	ClientToServerDataPtr send_data = ClientToServerDataPtr( new ClientToServerData );
-	Vector mas = _processor->getClickMas( );
-	if ( mas != Vector( ) ) {
-		send_data->setClickMas( mas );
-		client->sendTcp( send_data );
-	}
 }

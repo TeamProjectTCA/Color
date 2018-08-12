@@ -12,9 +12,11 @@ public:
 
 public:
 	void setClickMas( Vector mas_idx );
+	void setPlayerNum( int num );
 
 public:
 	Vector getClickMas( ) const;
+	int getPlayerNum( ) const;
 
 public:
 	int getSize( ) const;
@@ -29,6 +31,7 @@ private:
 			unsigned char y;
 		};
 		ClickMas mas_idx;
+		int player_num;
 	};
 
 	#pragma pack( )
