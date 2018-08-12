@@ -26,7 +26,6 @@ public:
 
 public:
 	int getTurn( ) const;
-	Vector getClickMas( ) const;
 	FieldConstPtr getFieldPtr( ) const;
 	PlayerUIConstPtr getUserUIPtr( ) const;
 	PlayerUIConstPtr getEnemyUIPtr( ) const;

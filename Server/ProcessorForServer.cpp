@@ -39,17 +39,19 @@ void ProcessorForServer::packageData( ) {
 }
 
 void ProcessorForServer::playerMove( ) {
+
 	Vector click_mas = _recv_data->getClickMas( );
 	int player_num = _recv_data->getPlayerNum( );
+
 	if ( click_mas == Vector( ) ) {
 		return;
 	}
 
-		if ( click_mas != _player_init_pos[ ( _turn->getTurn( ) + 1 ) % 2 ] + Vector( 1, 1 ) && player_num == _turn->getTurn( ) % 2 ) {
-			_player[ player_num ]->setPos( click_mas - Vector( 1, 1 ) );
-			_turn->countTurn( );
-		}
-	
+	if ( ( player_num == _turn->getTurn( ) % 2 ) &&
+		 ( click_mas != _player_init_pos[ ( _turn->getTurn( ) + 1 ) % 2 ] + Vector( 1, 1 ) ) ) {
+		_player[ player_num ]->setPos( click_mas - Vector( 1, 1 ) );
+		_turn->countTurn( );
+	}
 }
 
 void ProcessorForServer::sendGameOver( ) {
