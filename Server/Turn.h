@@ -9,7 +9,7 @@ public:
 	virtual ~Turn( );
 
 public:
-	void update( );
+	void setTurn( int turn );
 
 public:
 	int getTurn( ) const;

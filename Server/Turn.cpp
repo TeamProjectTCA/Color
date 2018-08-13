@@ -10,6 +10,10 @@ _turn( TURN_MAX ){
 Turn::~Turn( ) {
 }
 
+void Turn::setTurn( int turn ) {
+	_turn = turn;
+}
+
 int Turn::getTurn( ) const {
 	return _turn;
 }

@@ -6,6 +6,7 @@
 #include "Player.h"
 #include "FieldProperty.h"
 #include "Turn.h"
+#include "Server.h"
 
 ProcessorForServer::ProcessorForServer( ClientToServerDataConstPtr recv_data, ServerToClientDataUdpPtr senddata_udp, LogPtr log, CommandPtr command ) :
 _recv_data( recv_data ),
@@ -30,6 +31,7 @@ void ProcessorForServer::update( ) {
 
 	packageData( );
 	playerMove( );
+	sendGameOver( );
 }
 
 void ProcessorForServer::packageData( ) {
@@ -55,9 +57,12 @@ void ProcessorForServer::playerMove( ) {
 }
 
 void ProcessorForServer::sendGameOver( ) {
-	if ( _turn == 0 ) {
+	if ( _turn->getTurn( ) == 0 ) {
 		ServerToClientDataTcpPtr senddata_tcp( new ServerToClientDataTcp );
 		senddata_tcp->setGameOver( true );
+		ServerPtr server = Server::getTask( );
+		server->sendTcp( senddata_tcp );
+		_turn->setTurn( _turn->getTURNMAX( ) );
 	}
 }
 
