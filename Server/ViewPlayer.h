@@ -11,9 +11,6 @@ public:
 	virtual ~ViewPlayer( );
 
 public:
-	void initialize( );
-
-public:
 	void updateSheet( );
 
 public:

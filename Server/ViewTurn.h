@@ -1,17 +1,13 @@
 #pragma once
 #include "smart_ptr.h"
 
-PTR( ViewTurn );
-PTR( ProcessorForServer );
+PTR( Turn );
 PTR( Sheet );
 
 class ViewTurn {
 public:
-	ViewTurn( ProcessorForServerConstPtr processor );
+	ViewTurn( TurnConstPtr turn );
 	virtual ~ViewTurn( );
-
-public:
-	void initialize( );
 
 public:
 	void updateSheet( );
@@ -20,7 +16,7 @@ public:
 	SheetPtr getSheet( ) const;
 
 private:
-	ProcessorForServerConstPtr _processor;
+	TurnConstPtr _turn;
 	SheetPtr _sheet;
 };
 

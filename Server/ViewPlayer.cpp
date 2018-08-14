@@ -15,13 +15,11 @@ _player( player ) {
 	_sheet->write( 0, 0, "PLAYER" );
 	_sheet->write( 1, 0, "X" );
 	_sheet->write( 2, 0, "Y" );
+
+	updateSheet( );
 }
 
 ViewPlayer::~ViewPlayer( ) {
-}
-
-void ViewPlayer::initialize( ) {
-	updateSheet( );
 }
 
 void ViewPlayer::updateSheet( ) {

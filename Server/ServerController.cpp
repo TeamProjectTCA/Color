@@ -13,22 +13,21 @@ ServerControllerPtr ServerController::getTask( ) {
 	return std::dynamic_pointer_cast< ServerController >( Manager::getInstance( )->getTask( getTag( ) ) );
 }
 
-ServerController::ServerController( ClientToServerDataConstPtr recvdata ) {
-	ServerToClientDataUdpPtr senddata_udp( new ServerToClientDataUdp );
-	LogPtr log( new Log( ) );
-	CommandPtr command( new Command( log ) );
-
-	_processor       = ProcessorForServerPtr( new ProcessorForServer( recvdata, senddata_udp, log, command ) );
-	_network_manager = NWManagerForServerPtr( new NWManagerForServer( recvdata, senddata_udp, _processor, log ) );
-	_viewer          = ViewerForServerPtr   ( new ViewerForServer( _processor, _network_manager, log, command ) );
+ServerController::ServerController( ClientToServerDataConstPtr recvdata ) :
+_recvdata( recvdata ) {
 }
 
 ServerController::~ServerController( ) {
 }
 
 void ServerController::initialize( ) {
-	_network_manager->initialize( );
-	_viewer->initialize( );
+	ServerToClientDataUdpPtr senddata_udp( new ServerToClientDataUdp );
+	LogPtr log( new Log( ) );
+	CommandPtr command( new Command( log ) );
+
+	_processor       = ProcessorForServerPtr( new ProcessorForServer( senddata_udp, log, command ) );
+	_network_manager = NWManagerForServerPtr( new NWManagerForServer( _recvdata, senddata_udp, _processor, log ) );
+	_viewer          = ViewerForServerPtr   ( new ViewerForServer( _processor, _network_manager, log, command ) );
 }
 
 void ServerController::update( ) {

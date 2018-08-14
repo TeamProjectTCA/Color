@@ -13,7 +13,6 @@ public:
 	virtual ~ConnectorForServer( );
 
 public:
-	void initialize( );
 	void update( );
 
 public:

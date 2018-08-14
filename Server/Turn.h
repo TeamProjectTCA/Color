@@ -13,10 +13,12 @@ public:
 
 public:
 	int getTurn( ) const;
-	const int getTURNMAX( ) const;
 
 public:
 	void countTurn( );
+
+public:
+	static const int TURN_MAX = 40 * 2;
 
 private:
 	int _turn;

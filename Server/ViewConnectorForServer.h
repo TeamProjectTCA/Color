@@ -11,9 +11,6 @@ public:
 	virtual ~ViewConnectorForServer( );
 
 public:
-	void initialize( );
-
-public:
 	void updateSheet( );
 
 public:

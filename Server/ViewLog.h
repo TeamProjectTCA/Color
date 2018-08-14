@@ -11,9 +11,6 @@ public:
 	virtual ~ViewLog( );
 
 public:
-	void initialize( );
-
-public:
 	void updateSheet( );
 	SheetPtr getSheet( ) const;
 

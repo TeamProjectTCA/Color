@@ -7,6 +7,9 @@ PTR( ClientToServerData );
 
 class ClientToServerData : public Data {
 public:
+	static const unsigned char DATA_TYPE_PLAYER = 0x01;
+
+public:
 	ClientToServerData( );
 	virtual ~ClientToServerData( );
 
@@ -15,6 +18,7 @@ public:
 	void setPlayerNum( int num );
 
 public:
+	unsigned char getDataType( ) const;
 	Vector getClickMas( ) const;
 	int getPlayerNum( ) const;
 
@@ -30,8 +34,18 @@ private:
 			unsigned char x;
 			unsigned char y;
 		};
-		ClickMas mas_idx;
-		int player_num;
+
+		// union Œ^ //
+		struct Player {
+			unsigned char player_num;
+			ClickMas mas;
+		};
+
+
+		unsigned char data_type;
+		union {
+			Player player;
+		};
 	};
 
 	#pragma pack( )

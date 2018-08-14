@@ -14,13 +14,11 @@ _connector( connector ) {
 	_sheet->addCol( TAG_PITCH_IP );
 	_sheet->write( 0, 0, "ID" );
 	_sheet->write( 1, 0, "IP" );
+
+	updateSheet( );
 }
 
 ViewConnectorForServer::~ViewConnectorForServer( ) {
-}
-
-void ViewConnectorForServer::initialize( ) {
-	updateSheet( );
 }
 
 void ViewConnectorForServer::updateSheet( ) {

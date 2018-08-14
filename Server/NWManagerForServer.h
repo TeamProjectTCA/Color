@@ -14,8 +14,14 @@ public:
 	virtual ~NWManagerForServer( );
 
 public:
-	void initialize( );
 	void update( );
+
+public:
+	void sendUdp( );
+
+private:
+	void recv( );
+	void recvPlayerPos( );
 
 public:
 	ConnectorForServerConstPtr getConnectorPtr( ) const;

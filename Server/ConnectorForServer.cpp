@@ -5,14 +5,11 @@
 ConnectorForServer::ConnectorForServer( LogPtr log ) :
 _log( log ) {
 	std::array< std::string, Server::MAX_MACHINES >( ).swap( _machines );
+	ServerPtr server = Server::getTask( );
+	server->createIP( );
 }
 
 ConnectorForServer::~ConnectorForServer( ) {
-}
-
-void ConnectorForServer::initialize( ) {
-	ServerPtr server = Server::getTask( );
-	server->createIP( );
 }
 
 void ConnectorForServer::update( ) {
