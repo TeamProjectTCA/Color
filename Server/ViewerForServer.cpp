@@ -20,12 +20,13 @@ ViewerForServer::ViewerForServer( ProcessorForServerConstPtr processor, NWManage
 	_turn = ViewTurnPtr( new ViewTurn( processor->getTurnPtr( ) ) );
 
 	_table = TablePtr( new Table( ) );
-	_table->add( _connector->getSheet( ) , Table::NEXT_POS_RIGHT );
-	_table->add( _player0->getSheet( )   , Table::NEXT_POS_DOWN );
-	_table->add( _player1->getSheet( )   , Table::NEXT_POS_DOWN );
-	_table->add( _turn->getSheet( )      , Table::NEXT_POS_RIGHT );
-	_table->add( _log->getSheet( )       , Table::NEXT_POS_DOWN );
-	_table->add( _command->getSheet( )   , Table::NEXT_POS_DOWN );
+	_table->add( _connector->getSheetServer( ) , Table::NEXT_POS_DOWN );
+	_table->add( _connector->getSheetClient( ) , Table::NEXT_POS_RIGHT );
+	_table->add( _player0->getSheet( )         , Table::NEXT_POS_DOWN );
+	_table->add( _player1->getSheet( )         , Table::NEXT_POS_DOWN );
+	_table->add( _turn->getSheet( )            , Table::NEXT_POS_RIGHT );
+	_table->add( _log->getSheet( )             , Table::NEXT_POS_DOWN );
+	_table->add( _command->getSheet( )         , Table::NEXT_POS_DOWN );
 }
 
 ViewerForServer::~ViewerForServer( ) {

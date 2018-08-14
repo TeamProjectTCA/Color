@@ -11,7 +11,7 @@ ViewChara::~ViewChara( ) {
 
 void ViewChara::draw( ) const {
 	DrawerPtr drawer = Drawer::getTask( );
-	Vector pos = _player->getPos( );
+	Vector pos = _player->getScreenPos( );
 
 	drawer->drawCircle( ( float )pos.x, ( float )pos.y, 10, 0xff0000, true );
 }

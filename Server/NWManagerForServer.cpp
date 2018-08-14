@@ -19,6 +19,7 @@ void NWManagerForServer::update( ) {
 	_connector->update( );
 
 	recv( );
+	sendUdp( );
 }
 
 void NWManagerForServer::sendUdp( ) {

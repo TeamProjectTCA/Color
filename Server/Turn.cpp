@@ -9,7 +9,9 @@ _active_player( 0 ) {
 	_player[ 0 ] = player[ 0 ];
 	_player[ 1 ] = player[ 1 ];
 
-	std::array< Vector, 2 >( ).swap( _past_pos );
+	for ( int i = 0; i < 2; i++ ) {
+		_past_pos[ i ] = _player[ i ]->getPos( );
+	}
 }
 
 Turn::~Turn( ) {

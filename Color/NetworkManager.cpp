@@ -38,8 +38,8 @@ void NetworkManager::recvUdp( ) {
 		return;
 	}
 
-	_processor->setUserPos( _recvdata_udp->getPlayerPos( idx ) );
-	_processor->setEnemyPos( _recvdata_udp->getPlayerPos( ( idx + 1 ) % 2 ) );
+	_processor->setUserFieldIdx( _recvdata_udp->getPlayerPos( idx ) );
+	_processor->setEnemyFieldIdx( _recvdata_udp->getPlayerPos( ( idx + 1 ) % 2 ) );
 	_processor->setTurn( _recvdata_udp->getTurn( ) );
 }
 

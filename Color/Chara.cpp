@@ -12,11 +12,15 @@ Chara::~Chara( ) {
 void Chara::update( ) {
 }
 
-void Chara::setPos( Vector pos ) {
+void Chara::setFieldIdx( Vector pos ) {
 	_pos = pos;
 }
 
-Vector Chara::getPos( ) const {
+Vector Chara::getFieldIdx( ) const {
+	return _pos;
+}
+
+Vector Chara::getScreenPos( ) const {
 	Vector result = _field->getTilePos( ( int )_pos.x, ( int )_pos.y );
 	return result;
 }

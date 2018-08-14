@@ -20,6 +20,11 @@ std::string ConnectorForServer::getMachinesIp( int idx ) const {
 	return _machines[ idx ];
 }
 
+std::string ConnectorForServer::getServerIp( ) const {
+	ServerConstPtr server = Server::getTask( );
+	return server->getServerIP( );
+}
+
 void ConnectorForServer::checkConnect( ) {
 	ServerPtr server = Server::getTask( );
 	for ( int i = 0; i < Server::MAX_MACHINES; i++ ) {

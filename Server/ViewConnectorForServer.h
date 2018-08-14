@@ -1,7 +1,6 @@
 #pragma once
 #include "smart_ptr.h"
 
-PTR( ViewConnectorForServer );
 PTR( ConnectorForServer );
 PTR( Sheet );
 
@@ -14,10 +13,12 @@ public:
 	void updateSheet( );
 
 public:
-	SheetPtr getSheet( ) const;
+	SheetPtr getSheetServer( ) const;
+	SheetPtr getSheetClient( ) const;
 
 private:
 	ConnectorForServerConstPtr _connector;
-	SheetPtr _sheet;
+	SheetPtr _sheet_server;
+	SheetPtr _sheet_client;
 };
 
