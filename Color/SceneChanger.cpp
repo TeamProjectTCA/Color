@@ -8,7 +8,7 @@ _scene( scene ) {
 SceneChanger::~SceneChanger( ) {
 }
 
-void SceneChanger::onEvent( ) {
+void SceneChanger::start( ) {
 	SceneManagerPtr scene = SceneManager::getTask( );
 	scene->setNextScene( _scene );
 }
