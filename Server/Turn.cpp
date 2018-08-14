@@ -28,7 +28,7 @@ void Turn::update( ) {
 
 		_active_player++;
 		// プレイヤー全てが更新したらターンを減らす
-		if ( _active_player == _player.size( ) - 1 ) {
+		if ( _active_player == _player.size( ) ) {
 			_active_player = 0;
 			countTurn( );
 		}

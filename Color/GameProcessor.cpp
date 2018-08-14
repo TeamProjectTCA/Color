@@ -54,6 +54,7 @@ void GameProcessor::setPlayerNum( int player_num ) {
 void GameProcessor::setTurn( int turn ) {
 	_turn = turn;
 }
+
 void GameProcessor::setGameOver( bool gameover ) {
 	_gameover = gameover;
 }
