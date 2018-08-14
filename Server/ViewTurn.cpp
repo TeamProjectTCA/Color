@@ -22,8 +22,8 @@ ViewTurn::~ViewTurn( ) {
 }
 
 void ViewTurn::updateSheet( ) {
-	_sheet->write( 1, 0, std::to_string( ( _turn->getTurn( ) + 1 ) / 2 ) );
-	_sheet->write( 1, 1, std::to_string( Turn::TURN_MAX / 2 ) );
+	_sheet->write( 1, 0, std::to_string( _turn->getTurn( ) ) );
+	_sheet->write( 1, 1, std::to_string( Turn::TURN_MAX ) );
 }
 
 SheetPtr ViewTurn::getSheet( ) const {

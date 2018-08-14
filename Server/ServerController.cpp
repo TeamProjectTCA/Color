@@ -22,7 +22,7 @@ ServerController::~ServerController( ) {
 
 void ServerController::initialize( ) {
 	ServerToClientDataUdpPtr senddata_udp( new ServerToClientDataUdp );
-	LogPtr log( new Log( ) );
+	LogPtr log( new Log );
 	CommandPtr command( new Command( log ) );
 
 	_processor       = ProcessorForServerPtr( new ProcessorForServer( senddata_udp, log, command ) );

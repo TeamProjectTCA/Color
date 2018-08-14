@@ -16,7 +16,7 @@ _command( command ) {
 	_player[ 0 ] = PlayerPtr( new Player( 0, field_property->getPlayer0InitPos( ) ) );
 	_player[ 1 ] = PlayerPtr( new Player( 1, field_property->getPlayer1InitPos( ) ) );
 
-	_turn = TurnPtr( new Turn );
+	_turn = TurnPtr( new Turn( _player ) );
 }
 
 ProcessorForServer::~ProcessorForServer( ) {
@@ -24,25 +24,16 @@ ProcessorForServer::~ProcessorForServer( ) {
 
 void ProcessorForServer::update( ) {
 	_command->update( );
+	_turn->update( );
 
 	// ƒf[ƒ^‚ð‹l‚ß‚é
-	packageData( );
+	packageDataUdp( );
 }
 
-void ProcessorForServer::packageData( ) {
+void ProcessorForServer::packageDataUdp( ) {
 	_senddata_udp->setPlayerPos( 0, _player[ 0 ]->getPos( ) );
 	_senddata_udp->setPlayerPos( 1, _player[ 1 ]->getPos( ) );
 	_senddata_udp->setTurn( _turn->getTurn( ) );
-}
-
-void ProcessorForServer::sendGameOver( ) {
-	//if ( _turn->getTurn( ) == 0 ) {
-	//	ServerToClientDataTcpPtr senddata_tcp( new ServerToClientDataTcp );
-	//	senddata_tcp->setGameOver( true );
-	//	ServerPtr server = Server::getTask( );
-	//	server->sendTcp( senddata_tcp );
-	//	_turn->setTurn( Turn::TURN_MAX );
-	//}
 }
 
 void ProcessorForServer::setPlayerPos( int player_num, Vector pos ) {

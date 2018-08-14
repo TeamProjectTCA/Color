@@ -22,8 +22,7 @@ public:
 	void setPlayerPos( int player_num, Vector pos );
 
 private:
-	void packageData( );
-	void sendGameOver( );
+	void packageDataUdp( );
 	
 public:
 	PlayerConstPtr getPlayer0Ptr( ) const;
