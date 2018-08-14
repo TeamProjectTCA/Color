@@ -1,27 +1,24 @@
 #pragma once
 #include "smart_ptr.h"
 #include "Vector.h"
+#include "GameDrawer.h"
 #include <vector>
 
 PTR( TitleProcessor );
 PTR( Button );
+PTR( Image );
 
-
-class TitleProcessor {
+class TitleProcessor : public GameDrawer {
 public:
 	TitleProcessor( );
 	virtual ~TitleProcessor( );
 
 public:
 	void update( );
-
-public:
-	Vector getBgPos( ) const;
-	Vector getLogoPos( ) const;
-	const std::vector< ButtonPtr > &getButton( ) const;
+	void draw( ) const;
 
 private:
-	Vector _bg_pos;
-	Vector _logo_pos;
+	ImagePtr _bg;
+	ImagePtr _logo;
 	std::vector< ButtonPtr > _button;
 };

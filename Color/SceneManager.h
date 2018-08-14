@@ -7,7 +7,7 @@ PTR( SceneManager );
 PTR( Scene );
 PTR( ServerToClientDataUdp );
 PTR( ServerToClientDataTcp );
-
+PTR( Viewer );
 
 class SceneManager : public Base {
 public:
@@ -33,5 +33,6 @@ private:
 	ScenePtr _scene;
 	ServerToClientDataUdpConstPtr _recvdata_udp;
 	ServerToClientDataTcpConstPtr _recvdata_tcp;
+	ViewerPtr _viewer;
 };
 

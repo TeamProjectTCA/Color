@@ -6,6 +6,7 @@
 #include "CharacterSelect.h"
 #include "Game.h"
 #include "Result.h"
+#include "Viewer.h"
 
 SceneManagerPtr SceneManager::getTask( ) {
 	return std::dynamic_pointer_cast< SceneManager >( Manager::getInstance( )->getTask( getTag( ) ) );
@@ -17,14 +18,15 @@ std::string SceneManager::getTag( ) {
 
 SceneManager::SceneManager(  ServerToClientDataTcpConstPtr recvdata_tcp, ServerToClientDataUdpConstPtr recvdata_udp ) :
 _recvdata_tcp( recvdata_tcp ),
-_recvdata_udp( recvdata_udp ){
+_recvdata_udp( recvdata_udp ) {
 }
 
 SceneManager::~SceneManager( ) {
 }
 
 void SceneManager::initialize( ) {
-	_scene = TitlePtr( new Title( ) );
+	_viewer = ViewerPtr( new Viewer );
+	_scene = TitlePtr( new Title( _viewer ) );
 }
 
 void SceneManager::finalize( ) {
@@ -32,6 +34,7 @@ void SceneManager::finalize( ) {
 
 void SceneManager::update( ) {
 	_scene->update( );
+	_viewer->update( );
 
 	changeScene( );
 }
@@ -41,9 +44,11 @@ void SceneManager::changeScene( ) {
 		return;
 	}
 
+	_viewer->resetDrawer( );
+
 	switch ( _scene->getNextScene( ) ) {
 	case SCENE_TITLE:
-		_scene = TitlePtr( new Title( ) );
+		_scene = TitlePtr( new Title( _viewer ) );
 		break;
 
 	case SCENE_NWOPTION:
@@ -61,6 +66,9 @@ void SceneManager::changeScene( ) {
 	case SCENE_RESULT:
 		_scene = ResultPtr( new Result( ) );
 		break;
+
+	default:
+		return;
 	}
 }
 
