@@ -1,13 +1,13 @@
 #include "ViewTurn.h"
-#include "ProcessorForServer.h"
+#include "Turn.h"
 #include "Sheet.h"
 
 const int SHEET_ROW = 2;
 const int SHEET_TAG_PITCH = 150;
 const int SHEET_VALUE_PITCH = 150;
 
-ViewTurn::ViewTurn( ProcessorForServerConstPtr processor ) :
-_processor( processor ) {
+ViewTurn::ViewTurn( TurnConstPtr turn ) :
+_turn( turn ) {
 	_sheet = SheetPtr( new Sheet( SHEET_ROW ) );
 	_sheet->addCol( SHEET_TAG_PITCH );
 	_sheet->addCol( SHEET_VALUE_PITCH );
@@ -24,8 +24,8 @@ void ViewTurn::initialize( ) {
 
 void ViewTurn::updateSheet( ) {
 
-	_sheet->write( 1, 0, std::to_string( ( _processor->getTurn( ) + 1 ) / 2 ) );
-	_sheet->write( 1, 1, std::to_string( _processor->getTURNMAX( ) / 2 ) );
+	_sheet->write( 1, 0, std::to_string( ( _turn->getTurn( ) + 1 ) / 2 ) );
+	_sheet->write( 1, 1, std::to_string( _turn->getTURNMAX( ) / 2 ) );
 }
 
 SheetPtr ViewTurn::getSheet( ) const {

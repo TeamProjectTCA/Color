@@ -54,6 +54,9 @@
     <ClCompile Include="Turn.cpp">
       <Filter>Process</Filter>
     </ClCompile>
+    <ClCompile Include="PaintTile.cpp">
+      <Filter>Process</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServerController.h" />
@@ -106,6 +109,9 @@
       <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="Turn.h">
+      <Filter>Process</Filter>
+    </ClInclude>
+    <ClInclude Include="PaintTile.h">
       <Filter>Process</Filter>
     </ClInclude>
   </ItemGroup>

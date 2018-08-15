@@ -6,6 +6,7 @@
 #include "Player.h"
 #include "FieldProperty.h"
 #include "Turn.h"
+#include "PaintTile.h"
 #include "Server.h"
 
 ProcessorForServer::ProcessorForServer( ClientToServerDataConstPtr recv_data, ServerToClientDataUdpPtr senddata_udp, LogPtr log, CommandPtr command ) :
@@ -38,10 +39,10 @@ void ProcessorForServer::packageData( ) {
 	_senddata_udp->setPlayerPos( 0, _player[ 0 ]->getPos( ) );
 	_senddata_udp->setPlayerPos( 1, _player[ 1 ]->getPos( ) );
 	_senddata_udp->setTurn( _turn->getTurn( ) );
+	_senddata_udp->setColor( _paint->getTileColor( ) );
 }
 
 void ProcessorForServer::playerMove( ) {
-
 	Vector click_mas = _recv_data->getClickMas( );
 	int player_num = _recv_data->getPlayerNum( );
 
@@ -52,6 +53,7 @@ void ProcessorForServer::playerMove( ) {
 	if ( ( player_num == _turn->getTurn( ) % 2 ) &&
 		 ( click_mas != _player_init_pos[ ( _turn->getTurn( ) + 1 ) % 2 ] + Vector( 1, 1 ) ) ) {
 		_player[ player_num ]->setPos( click_mas - Vector( 1, 1 ) );
+		_paint->setTileColor( click_mas, player_num );
 		_turn->countTurn( );
 	}
 }
@@ -66,17 +68,14 @@ void ProcessorForServer::sendGameOver( ) {
 	}
 }
 
-int ProcessorForServer::getTurn( ) const {
-	return _turn->getTurn( );
-}
-const int ProcessorForServer::getTURNMAX( ) const {
-	return _turn->getTURNMAX( );
-}
-
 PlayerConstPtr ProcessorForServer::getPlayer0Ptr( ) const {
 	return _player[ 0 ];
 }
 
 PlayerConstPtr ProcessorForServer::getPlayer1Ptr( ) const {
 	return _player[ 1 ];
+}
+
+TurnConstPtr ProcessorForServer::getTurnPtr( ) const {
+	return _turn;
 }

@@ -2,6 +2,8 @@
 #include "Data.h"
 #include "smart_ptr.h"
 #include "Vector.h"
+#include "FieldProperty.h"
+#include <array>
 
 PTR( ServerToClientDataUdp );
 
@@ -13,10 +15,12 @@ public:
 public:
 	void setPlayerPos( int idx, Vector pos );
 	void setTurn( int turn );
+	void setColor( std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > color );
 
 public:
 	Vector getPlayerPos( int idx ) const;
 	int getTurn( ) const;
+	std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > getColor( ) const;
 
 public:
 	int getSize( ) const;
@@ -33,6 +37,7 @@ private:
 
 		Player player[ 2 ];
 		int turn;
+		std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > color;
 	};
 
 	#pragma pack( )

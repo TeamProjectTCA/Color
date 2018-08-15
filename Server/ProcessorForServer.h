@@ -10,6 +10,7 @@ PTR( Log );
 PTR( Command );
 PTR( Player );
 PTR( Turn );
+PTR( PaintTile );
 
 class ProcessorForServer {
 public:
@@ -25,10 +26,9 @@ private:
 	void sendGameOver( );
 	
 public:
-	int getTurn( ) const;
-	const int getTURNMAX( ) const;
 	PlayerConstPtr getPlayer0Ptr( ) const;
 	PlayerConstPtr getPlayer1Ptr( ) const;
+	TurnConstPtr getTurnPtr( ) const;
 
 private:
 	std::array< Vector, 2 > _player_init_pos;
@@ -37,6 +37,7 @@ private:
 	ClientToServerDataConstPtr _recv_data;
 	CommandPtr _command;
 	TurnPtr _turn;
+	PaintTilePtr _paint;
 	std::array< PlayerPtr, 2 > _player;
 };
 

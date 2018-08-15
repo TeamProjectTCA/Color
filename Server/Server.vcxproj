@@ -162,6 +162,7 @@
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NWManagerForServer.cpp" />
+    <ClCompile Include="PaintTile.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ProcessorForServer.cpp" />
     <ClCompile Include="ServerController.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="ConnectorForServer.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="NWManagerForServer.h" />
+    <ClInclude Include="PaintTile.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ProcessorForServer.h" />
     <ClInclude Include="ServerController.h" />

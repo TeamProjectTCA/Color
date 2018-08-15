@@ -16,6 +16,10 @@ void ServerToClientDataUdp::setTurn( int turn ) {
 	_data.turn = turn;
 }
 
+void ServerToClientDataUdp::setColor( std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > color ) {
+	_data.color = color;
+}
+
 Vector ServerToClientDataUdp::getPlayerPos( int idx ) const {
 	Vector pos = Vector( _data.player[ idx ].x, _data.player[ idx ].y );
 	return pos;
@@ -23,6 +27,10 @@ Vector ServerToClientDataUdp::getPlayerPos( int idx ) const {
 
 int ServerToClientDataUdp::getTurn( ) const {
 	return _data.turn;
+}
+
+std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > ServerToClientDataUdp::getColor( ) const {
+	return _data.color;
 }
 
 int ServerToClientDataUdp::getSize( ) const {

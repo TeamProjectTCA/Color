@@ -3,7 +3,7 @@
 #include "Drawer.h"
 #include "Image.h"
 
-const char TILE_IMAGE[ ] = "Field/tile.png";
+const char TILE_IMAGE[ ] = "Field/WhiteTile.png";
 
 ViewField::ViewField( FieldConstPtr field ) :
 _field( field ) {

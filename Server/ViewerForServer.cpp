@@ -17,7 +17,7 @@ ViewerForServer::ViewerForServer( ProcessorForServerConstPtr processor, NWManage
 	_log = ViewLogPtr( new ViewLog( log ) );
 	_player0 = ViewPlayerPtr( new ViewPlayer( processor->getPlayer0Ptr( ) ) );
 	_player1 = ViewPlayerPtr( new ViewPlayer( processor->getPlayer1Ptr( ) ) );
-	_turn = ViewTurnPtr( new ViewTurn( processor ) );
+	_turn = ViewTurnPtr( new ViewTurn( processor->getTurnPtr( ) ) );
 
 	_table = TablePtr( new Table( ) );
 	_table->add( _connector->getSheet( ) , Table::NEXT_POS_RIGHT );
