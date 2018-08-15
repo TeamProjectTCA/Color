@@ -9,19 +9,15 @@
 #include "PaintTile.h"
 #include "Server.h"
 
-ProcessorForServer::ProcessorForServer( ClientToServerDataConstPtr recv_data, ServerToClientDataUdpPtr senddata_udp, LogPtr log, CommandPtr command ) :
-_recv_data( recv_data ),
+ProcessorForServer::ProcessorForServer( ServerToClientDataUdpPtr senddata_udp, LogPtr log, CommandPtr command ) :
 _senddata_udp( senddata_udp ),
 _command( command ) {
 	FieldPropertyPtr field_property( new FieldProperty );
 	
-	_player_init_pos[ 0 ] = field_property->getPlayer0InitPos( );
-	_player_init_pos[ 1 ] = field_property->getPlayer1InitPos( );
+	_player[ 0 ] = PlayerPtr( new Player( 0, field_property->getPlayer0InitPos( ) ) );
+	_player[ 1 ] = PlayerPtr( new Player( 1, field_property->getPlayer1InitPos( ) ) );
 
-	_player[ 0 ] = PlayerPtr( new Player( 0, _player_init_pos[ 0 ] ) );
-	_player[ 1 ] = PlayerPtr( new Player( 1, _player_init_pos[ 1 ] ) );
-
-	_turn = TurnPtr( new Turn );
+	_turn = TurnPtr( new Turn( _player ) );
 }
 
 ProcessorForServer::~ProcessorForServer( ) {
@@ -29,43 +25,21 @@ ProcessorForServer::~ProcessorForServer( ) {
 
 void ProcessorForServer::update( ) {
 	_command->update( );
+	_turn->update( );
 
-	packageData( );
-	playerMove( );
-	sendGameOver( );
+	// ƒf[ƒ^‚ð‹l‚ß‚é
+	packageDataUdp( );
 }
 
-void ProcessorForServer::packageData( ) {
+void ProcessorForServer::packageDataUdp( ) {
 	_senddata_udp->setPlayerPos( 0, _player[ 0 ]->getPos( ) );
 	_senddata_udp->setPlayerPos( 1, _player[ 1 ]->getPos( ) );
 	_senddata_udp->setTurn( _turn->getTurn( ) );
 	_senddata_udp->setColor( _paint->getTileColor( ) );
 }
 
-void ProcessorForServer::playerMove( ) {
-	Vector click_mas = _recv_data->getClickMas( );
-	int player_num = _recv_data->getPlayerNum( );
-
-	if ( click_mas == Vector( ) ) {
-		return;
-	}
-
-	if ( ( player_num == _turn->getTurn( ) % 2 ) &&
-		 ( click_mas != _player_init_pos[ ( _turn->getTurn( ) + 1 ) % 2 ] + Vector( 1, 1 ) ) ) {
-		_player[ player_num ]->setPos( click_mas - Vector( 1, 1 ) );
-		_paint->setTileColor( click_mas, player_num );
-		_turn->countTurn( );
-	}
-}
-
-void ProcessorForServer::sendGameOver( ) {
-	if ( _turn->getTurn( ) == 0 ) {
-		ServerToClientDataTcpPtr senddata_tcp( new ServerToClientDataTcp );
-		senddata_tcp->setGameOver( true );
-		ServerPtr server = Server::getTask( );
-		server->sendTcp( senddata_tcp );
-		_turn->setTurn( _turn->getTURNMAX( ) );
-	}
+void ProcessorForServer::setPlayerPos( int player_num, Vector pos ) {
+	_player[ player_num ]->setPos( pos );
 }
 
 PlayerConstPtr ProcessorForServer::getPlayer0Ptr( ) const {

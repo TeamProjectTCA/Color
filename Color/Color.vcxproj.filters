@@ -14,9 +14,6 @@
     <ClCompile Include="TitleProcessor.cpp">
       <Filter>Scene\Title</Filter>
     </ClCompile>
-    <ClCompile Include="TitleViewer.cpp">
-      <Filter>Scene\Title</Filter>
-    </ClCompile>
     <ClCompile Include="NWOptionProcessor.cpp">
       <Filter>Scene\NWOption</Filter>
     </ClCompile>
@@ -56,18 +53,6 @@
     <ClCompile Include="Title.cpp">
       <Filter>Scene\Title</Filter>
     </ClCompile>
-    <ClCompile Include="StartButtonViewer.cpp">
-      <Filter>Button\StartButton</Filter>
-    </ClCompile>
-    <ClCompile Include="StartButton.cpp">
-      <Filter>Button\StartButton</Filter>
-    </ClCompile>
-    <ClCompile Include="OptionButtonViewer.cpp">
-      <Filter>Button\OptionButton</Filter>
-    </ClCompile>
-    <ClCompile Include="OptionButton.cpp">
-      <Filter>Button\OptionButton</Filter>
-    </ClCompile>
     <ClCompile Include="Area.cpp">
       <Filter>Scene\Game\Process\Area</Filter>
     </ClCompile>
@@ -104,6 +89,9 @@
     <ClCompile Include="SceneChanger.cpp">
       <Filter>SceneManager</Filter>
     </ClCompile>
+    <ClCompile Include="Viewer.cpp">
+      <Filter>Viewer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -116,9 +104,6 @@
       <Filter>Scene\Game\Network</Filter>
     </ClInclude>
     <ClInclude Include="TitleProcessor.h">
-      <Filter>Scene\Title</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleViewer.h">
       <Filter>Scene\Title</Filter>
     </ClInclude>
     <ClInclude Include="NWOptionProcessor.h">
@@ -160,18 +145,6 @@
     <ClInclude Include="Title.h">
       <Filter>Scene\Title</Filter>
     </ClInclude>
-    <ClInclude Include="StartButton.h">
-      <Filter>Button\StartButton</Filter>
-    </ClInclude>
-    <ClInclude Include="StartButtonViewer.h">
-      <Filter>Button\StartButton</Filter>
-    </ClInclude>
-    <ClInclude Include="OptionButtonViewer.h">
-      <Filter>Button\OptionButton</Filter>
-    </ClInclude>
-    <ClInclude Include="OptionButton.h">
-      <Filter>Button\OptionButton</Filter>
-    </ClInclude>
     <ClInclude Include="Area.h">
       <Filter>Scene\Game\Process\Area</Filter>
     </ClInclude>
@@ -208,6 +181,12 @@
     <ClInclude Include="SceneChanger.h">
       <Filter>SceneManager</Filter>
     </ClInclude>
+    <ClInclude Include="Viewer.h">
+      <Filter>Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDrawer.h">
+      <Filter>Viewer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -237,15 +216,6 @@
     <Filter Include="Scene\Game\Network">
       <UniqueIdentifier>{fba4fdb9-4d0e-40ff-9e05-7f8b671b11dd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Button">
-      <UniqueIdentifier>{269c9bea-0e38-4603-9a02-1566ea10a0f1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Button\StartButton">
-      <UniqueIdentifier>{f04083af-af3f-4cd7-94e4-a0d4bb7473b6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Button\OptionButton">
-      <UniqueIdentifier>{a9657296-4b29-4079-8a73-298526614e70}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene\Game\Process">
       <UniqueIdentifier>{5ce4be2e-38e5-4fbc-9225-a362f5e66363}</UniqueIdentifier>
     </Filter>
@@ -263,6 +233,9 @@
     </Filter>
     <Filter Include="Scene\Game\Process\Chara\Move">
       <UniqueIdentifier>{fa0a1b6d-98e6-4ed5-a63f-577542869a60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Viewer">
+      <UniqueIdentifier>{f3975e2c-01de-4fea-a1eb-39558227c71e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

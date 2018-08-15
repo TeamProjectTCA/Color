@@ -19,7 +19,6 @@ public:
 	virtual ~ViewerForServer( );
 
 public:
-	void initialize( );
 	void update( );
 
 private:

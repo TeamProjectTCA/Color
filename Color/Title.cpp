@@ -1,14 +1,10 @@
 #include "Title.h"
 #include "TitleProcessor.h"
-#include "TitleViewer.h"
-#include "StartButton.h"
-#include "StartButtonViewer.h"
-#include "OptionButton.h"
-#include "OptionButtonViewer.h"
+#include "Viewer.h"
 
-Title::Title( ) {
+Title::Title( ViewerPtr viewer ) {
 	_process = TitleProcessorPtr( new TitleProcessor );
-	_viewer = TitleViewerPtr( new TitleViewer( _process ) );
+	viewer->addDrawer( _process );
 }
 
 Title::~Title( ) {
@@ -16,5 +12,4 @@ Title::~Title( ) {
 
 void Title::update( ) {
 	_process->update( );
-	_viewer->update( );
 }

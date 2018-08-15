@@ -158,12 +158,9 @@
     <ClCompile Include="Area.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="Move.cpp" />
-    <ClCompile Include="OptionButton.cpp" />
-    <ClCompile Include="OptionButtonViewer.cpp" />
     <ClCompile Include="Chara.cpp" />
     <ClCompile Include="PlayerUI.cpp" />
     <ClCompile Include="SceneChanger.cpp" />
-    <ClCompile Include="StartButtonViewer.cpp" />
     <ClCompile Include="CharacterSelectProcessor.cpp" />
     <ClCompile Include="Connector.cpp" />
     <ClCompile Include="GameProcessor.cpp" />
@@ -180,13 +177,12 @@
     <ClCompile Include="Result.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Title.cpp" />
-    <ClCompile Include="StartButton.cpp" />
     <ClCompile Include="TitleProcessor.cpp" />
     <ClCompile Include="CharacterSelectViewer.cpp" />
     <ClCompile Include="GameViewer.cpp" />
     <ClCompile Include="ResultViewer.cpp" />
-    <ClCompile Include="TitleViewer.cpp" />
     <ClCompile Include="User.cpp" />
+    <ClCompile Include="Viewer.cpp" />
     <ClCompile Include="ViewField.cpp" />
     <ClCompile Include="ViewChara.cpp" />
     <ClCompile Include="ViewPlayerUI.cpp" />
@@ -202,13 +198,11 @@
   <ItemGroup>
     <ClInclude Include="Area.h" />
     <ClInclude Include="Field.h" />
+    <ClInclude Include="GameDrawer.h" />
     <ClInclude Include="Move.h" />
-    <ClInclude Include="OptionButton.h" />
-    <ClInclude Include="OptionButtonViewer.h" />
     <ClInclude Include="Chara.h" />
     <ClInclude Include="PlayerUI.h" />
     <ClInclude Include="SceneChanger.h" />
-    <ClInclude Include="StartButtonViewer.h" />
     <ClInclude Include="CharacterSelectProcessor.h" />
     <ClInclude Include="Connector.h" />
     <ClInclude Include="GameProcessor.h" />
@@ -224,13 +218,12 @@
     <ClInclude Include="Result.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="Title.h" />
-    <ClInclude Include="StartButton.h" />
     <ClInclude Include="TitleProcessor.h" />
     <ClInclude Include="CharacterSelectViewer.h" />
     <ClInclude Include="GameViewer.h" />
     <ClInclude Include="ResultViewer.h" />
-    <ClInclude Include="TitleViewer.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="Viewer.h" />
     <ClInclude Include="ViewField.h" />
     <ClInclude Include="ViewChara.h" />
     <ClInclude Include="ViewPlayerUI.h" />

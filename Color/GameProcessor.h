@@ -18,8 +18,8 @@ public:
 	void update( );
 
 public:
-	void setUserPos( Vector pos );
-	void setEnemyPos( Vector pos );
+	void setUserFieldIdx( Vector pos );
+	void setEnemyFieldIdx( Vector pos );
 	void setPlayerNum( int player_num );
 	void setTurn( int turn );
 	void setGameOver( bool gameover );

@@ -8,13 +8,10 @@ ViewLog::ViewLog( LogConstPtr log ) :
 _log( log ) {
 	_sheet = SheetPtr( new Sheet( _log->getRow( ), false ) );
 	_sheet->addCol( COL_PITCH );
+	updateSheet( );
 }
 
 ViewLog::~ViewLog( ) {
-}
-
-void ViewLog::initialize( ) {
-	updateSheet( );
 }
 
 void ViewLog::updateSheet( ) {

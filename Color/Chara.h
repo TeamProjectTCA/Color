@@ -14,10 +14,11 @@ public:
 	virtual void update( );
 
 public:
-	void setPos( Vector pos );
+	void setFieldIdx( Vector pos );
 
 public:
-	Vector getPos( ) const;
+	Vector getFieldIdx( ) const;
+	Vector getScreenPos( ) const;
 
 private:
 	Vector _pos;

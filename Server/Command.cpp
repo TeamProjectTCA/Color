@@ -35,7 +35,7 @@ void Command::update( ) {
 	}
 
 	// enter
-	if ( keyboard->getKeyUp( "ENTER" ) ) {
+	if ( keyboard->getKeyDown( "ENTER" ) ) {
 		_word->add( _input );
 		std::string( ).swap( _input );
 

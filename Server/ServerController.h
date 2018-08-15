@@ -26,5 +26,6 @@ private:
 	NWManagerForServerPtr _network_manager;
 	ProcessorForServerPtr _processor;
 	ViewerForServerPtr    _viewer;
+	ClientToServerDataConstPtr _recvdata;
 };
 

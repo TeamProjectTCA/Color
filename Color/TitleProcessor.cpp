@@ -4,21 +4,30 @@
 #include "Image.h"
 #include "SceneChanger.h"
 
-#include "SceneManager.h"
 #include "Manager.h"
+#include "Drawer.h"
 
 const char START_BUTTON_DEFAULT_IMAGE[ ] = "Button/Start.png";
 const char START_BUTTON_CLICKED_IMAGE[ ] = "Button/StartClick.png";
 const char BACK_BUTTON_DEFAULT_IMAGE[ ] = "Button/Option.png";
 const char BACK_BUTTON_CLICKED_IMAGE[ ] = "Button/OptionClick.png";
 
+const char BG_IMAGE[ ] = "Title/back_001.png";
+const char LOGO_IMAGE[ ] = "Title/title.png";
+
 TitleProcessor::TitleProcessor( ) {
 	ManagerPtr manager = Manager::getInstance( );
 	int width = manager->getScreenWidth( );
 	int height = manager->getScreenHeight( );
 
-	_bg_pos = Vector( width / 2, height / 2 );
-	_logo_pos = Vector( width / 2, height / 4 );
+	DrawerPtr drawer = Drawer::getTask( );
+	_bg = drawer->getImage( BG_IMAGE );
+	_bg->setPos( width / 2, height / 2 );
+	_bg->setCentral( true );
+
+	_logo = drawer->getImage( LOGO_IMAGE );
+	_logo->setPos( width / 2, height / 4 );
+	_logo->setCentral( true );
 
 	//button
 	ButtonPtr start_button( new Button( Vector( width / 2, height / 8 * 5 ) ) );
@@ -31,7 +40,7 @@ TitleProcessor::TitleProcessor( ) {
 	option_button->setDefaultImagePath( BACK_BUTTON_DEFAULT_IMAGE );
 	option_button->setClickedImagePath( BACK_BUTTON_CLICKED_IMAGE );
 	SceneChangerPtr option( new SceneChanger( SCENE_NWOPTION ) );
-	option_button->setEvent( next );
+	option_button->setEvent( option );
 
 	_button.push_back( start_button );
 	_button.push_back( option_button );
@@ -47,14 +56,12 @@ void TitleProcessor::update( ) {
 	}
 }
 
-Vector TitleProcessor::getBgPos( ) const {
-	return _bg_pos;
-}
+void TitleProcessor::draw( ) const {
+	_bg->draw( );
+	_logo->draw( );
 
-Vector TitleProcessor::getLogoPos( ) const {
-	return _logo_pos;
-}
-
-const std::vector< ButtonPtr >& TitleProcessor::getButton( ) const {
-	return _button;
+	for ( ButtonPtr button : _button ) {
+		ImageConstPtr image = button->getImage( );
+		image->draw( );
+	}
 }

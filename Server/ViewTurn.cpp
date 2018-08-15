@@ -1,6 +1,7 @@
 #include "ViewTurn.h"
 #include "Turn.h"
 #include "Sheet.h"
+#include "Turn.h"
 
 const int SHEET_ROW = 2;
 const int SHEET_TAG_PITCH = 150;
@@ -13,19 +14,16 @@ _turn( turn ) {
 	_sheet->addCol( SHEET_VALUE_PITCH );
 	_sheet->write( 0, 0, "Turn" );
 	_sheet->write( 0, 1, "TurnMax" );
+
+	updateSheet( );
 }
 
 ViewTurn::~ViewTurn( ) {
 }
 
-void ViewTurn::initialize( ) {
-	updateSheet( );
-}
-
 void ViewTurn::updateSheet( ) {
-
-	_sheet->write( 1, 0, std::to_string( ( _turn->getTurn( ) + 1 ) / 2 ) );
-	_sheet->write( 1, 1, std::to_string( _turn->getTURNMAX( ) / 2 ) );
+	_sheet->write( 1, 0, std::to_string( _turn->getTurn( ) ) );
+	_sheet->write( 1, 1, std::to_string( Turn::TURN_MAX ) );
 }
 
 SheetPtr ViewTurn::getSheet( ) const {

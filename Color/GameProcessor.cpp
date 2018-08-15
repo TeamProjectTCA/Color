@@ -1,6 +1,5 @@
 #include "GameProcessor.h"
 #include "SceneManager.h"
-#include "Keyboard.h"
 #include "Field.h"
 #include "PlayerUI.h"
 #include "Manager.h"
@@ -33,7 +32,6 @@ GameProcessor::~GameProcessor( ) {
 }
 
 void GameProcessor::update( ) {
-
 	if ( _gameover ) {
 		SceneManagerPtr scene_manager = SceneManager::getTask( );
 		scene_manager->setNextScene( SCENE_RESULT );
@@ -41,12 +39,12 @@ void GameProcessor::update( ) {
 	_move->update( );
 }
 
-void GameProcessor::setUserPos( Vector pos ) {
-	_user->setPos( pos );
+void GameProcessor::setUserFieldIdx( Vector pos ) {
+	_user->setFieldIdx( pos );
 }
 
-void GameProcessor::setEnemyPos( Vector pos ) {
-	_enemy->setPos( pos );
+void GameProcessor::setEnemyFieldIdx( Vector pos ) {
+	_enemy->setFieldIdx( pos );
 }
 
 void GameProcessor::setPlayerNum( int player_num ) {
@@ -56,12 +54,13 @@ void GameProcessor::setPlayerNum( int player_num ) {
 void GameProcessor::setTurn( int turn ) {
 	_turn = turn;
 }
+
 void GameProcessor::setGameOver( bool gameover ) {
 	_gameover = gameover;
 }
 
 int GameProcessor::getTurn( ) const {
-	return ( _turn + 1 ) / 2;
+	return _turn;
 }
 
 FieldConstPtr GameProcessor::getFieldPtr( ) const {

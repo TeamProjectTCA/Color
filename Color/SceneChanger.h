@@ -11,7 +11,7 @@ public:
 	virtual ~SceneChanger( );
 
 public:
-	void onEvent( );
+	void start( );
 
 private:
 	SCENE _scene;

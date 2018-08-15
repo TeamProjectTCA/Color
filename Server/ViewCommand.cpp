@@ -11,13 +11,11 @@ _command( command ) {
 	_sheet->addCol( TAG_PITCH );
 	_sheet->addCol( VALUE_PITCH );
 	_sheet->write( 0, 0, "COMMAND" );
+
+	updateSheet( );
 }
 
 ViewCommand::~ViewCommand( ) {
-}
-
-void ViewCommand::initialize( ) {
-	updateSheet( );
 }
 
 void ViewCommand::updateSheet( ) {

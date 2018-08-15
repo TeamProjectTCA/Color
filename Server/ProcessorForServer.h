@@ -5,7 +5,6 @@
 
 PTR( ProcessorForServer );
 PTR( ServerToClientDataUdp );
-PTR( ClientToServerData );
 PTR( Log );
 PTR( Command );
 PTR( Player );
@@ -14,16 +13,17 @@ PTR( PaintTile );
 
 class ProcessorForServer {
 public:
-	ProcessorForServer( ClientToServerDataConstPtr recv_data,  ServerToClientDataUdpPtr senddata_udp, LogPtr log, CommandPtr command );
+	ProcessorForServer( ServerToClientDataUdpPtr senddata_udp, LogPtr log, CommandPtr command );
 	virtual ~ProcessorForServer( );
 
 public:
 	void update( );
 
+public:
+	void setPlayerPos( int player_num, Vector pos );
+
 private:
-	void packageData( );
-	void playerMove( );
-	void sendGameOver( );
+	void packageDataUdp( );
 	
 public:
 	PlayerConstPtr getPlayer0Ptr( ) const;
@@ -31,10 +31,7 @@ public:
 	TurnConstPtr getTurnPtr( ) const;
 
 private:
-	std::array< Vector, 2 > _player_init_pos;
-
 	ServerToClientDataUdpPtr _senddata_udp;
-	ClientToServerDataConstPtr _recv_data;
 	CommandPtr _command;
 	TurnPtr _turn;
 	PaintTilePtr _paint;
