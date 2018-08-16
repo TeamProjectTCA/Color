@@ -2,14 +2,13 @@
 #include "smart_ptr.h"
 #include "Area.h"
 #include "FieldProperty.h"
-#include "GameDrawer.h"
 #include <array>
 
 PTR( Field );
 PTR( Image );
 PTR( Tile );
 
-class Field : public Area, public GameDrawer {
+class Field : public Area {
 public:
 	Field( const Vector ORIGIN_POS );
 	virtual ~Field( );

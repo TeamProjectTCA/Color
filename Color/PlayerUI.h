@@ -1,8 +1,7 @@
 #pragma once
 #include "Area.h"
-#include "GameDrawer.h"
 
-class PlayerUI : public Area, public GameDrawer {
+class PlayerUI : public Area {
 public:
 	PlayerUI( const Vector ORIGIN_POS );
 	virtual ~PlayerUI( );
