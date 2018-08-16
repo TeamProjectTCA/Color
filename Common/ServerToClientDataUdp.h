@@ -16,11 +16,13 @@ public:
 	void setPlayerPos( int idx, Vector pos );
 	void setTurn( int turn );
 	void setColor( std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > color );
+	void setPaintCount( int idx, int paint_count );
 
 public:
 	Vector getPlayerPos( int idx ) const;
 	int getTurn( ) const;
 	std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > getColor( ) const;
+	int getPaintCount( int idx ) const;
 
 public:
 	int getSize( ) const;
@@ -33,6 +35,7 @@ private:
 		struct Player {
 			unsigned char x;
 			unsigned char y;
+			int paint_count;
 		};
 
 		Player player[ 2 ];

@@ -21,6 +21,7 @@ public:
 
 public:
 	void setPlayerPos( int player_num, Vector pos );
+	void setTileColor( int player_num, Vector pos );
 
 private:
 	void packageDataUdp( );
@@ -29,6 +30,7 @@ public:
 	PlayerConstPtr getPlayer0Ptr( ) const;
 	PlayerConstPtr getPlayer1Ptr( ) const;
 	TurnConstPtr getTurnPtr( ) const;
+	PaintTileConstPtr getPaintPtr( ) const;
 
 private:
 	ServerToClientDataUdpPtr _senddata_udp;

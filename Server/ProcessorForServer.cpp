@@ -18,6 +18,7 @@ _command( command ) {
 	_player[ 1 ] = PlayerPtr( new Player( 1, field_property->getPlayer1InitPos( ) ) );
 
 	_turn = TurnPtr( new Turn( _player ) );
+	_paint = PaintTilePtr( new PaintTile );
 }
 
 ProcessorForServer::~ProcessorForServer( ) {
@@ -26,7 +27,6 @@ ProcessorForServer::~ProcessorForServer( ) {
 void ProcessorForServer::update( ) {
 	_command->update( );
 	_turn->update( );
-
 	// ƒf[ƒ^‚ð‹l‚ß‚é
 	packageDataUdp( );
 }
@@ -36,10 +36,16 @@ void ProcessorForServer::packageDataUdp( ) {
 	_senddata_udp->setPlayerPos( 1, _player[ 1 ]->getPos( ) );
 	_senddata_udp->setTurn( _turn->getTurn( ) );
 	_senddata_udp->setColor( _paint->getTileColor( ) );
+	_senddata_udp->setPaintCount( 0, _paint->getPaintCount( 0 ) );
+	_senddata_udp->setPaintCount( 1, _paint->getPaintCount( 1 ) );
 }
 
 void ProcessorForServer::setPlayerPos( int player_num, Vector pos ) {
 	_player[ player_num ]->setPos( pos );
+}
+
+void ProcessorForServer::setTileColor( int player_num, Vector pos ) {
+	_paint->setTileColor( pos, player_num );
 }
 
 PlayerConstPtr ProcessorForServer::getPlayer0Ptr( ) const {
@@ -52,4 +58,8 @@ PlayerConstPtr ProcessorForServer::getPlayer1Ptr( ) const {
 
 TurnConstPtr ProcessorForServer::getTurnPtr( ) const {
 	return _turn;
+}
+
+PaintTileConstPtr ProcessorForServer::getPaintPtr( ) const {
+	return _paint;
 }

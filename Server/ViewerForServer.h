@@ -12,6 +12,7 @@ PTR( ViewCommand );
 PTR( ViewLog );
 PTR( ViewPlayer );
 PTR( ViewTurn );
+PTR( ViewPaint );
 
 class ViewerForServer {
 public:
@@ -29,5 +30,6 @@ private:
 	ViewPlayerPtr _player0;
 	ViewPlayerPtr _player1;
 	ViewTurnPtr _turn;
+	ViewPaintPtr _paint;
 };
 

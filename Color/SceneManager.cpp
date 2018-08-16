@@ -60,7 +60,7 @@ void SceneManager::changeScene( ) {
 		break;
 
 	case SCENE_GAME:
-		_scene = GamePtr( new Game( _recvdata_tcp, _recvdata_udp ) );
+		_scene = GamePtr( new Game( _recvdata_tcp, _recvdata_udp, _viewer ) );
 		break;
 
 	case SCENE_RESULT:

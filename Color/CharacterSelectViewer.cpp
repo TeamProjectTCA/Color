@@ -19,7 +19,4 @@ void CharacterSelectViewer::update( ) {
 		ImageConstPtr image = button->getImage( );
 		image->draw( );
 	}
-
-	DrawerPtr drawer = Drawer::getTask( );
-	drawer->flip( );
 }

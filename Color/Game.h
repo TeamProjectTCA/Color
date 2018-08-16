@@ -4,14 +4,14 @@
 
 PTR( Game );
 PTR( GameProcessor );
-PTR( GameViewer );
+PTR( Viewer );
 PTR( NetworkManager );
 PTR( ServerToClientDataUdp );
 PTR( ServerToClientDataTcp );
 
 class Game : public Scene {
 public:
-	Game( ServerToClientDataTcpConstPtr recvdata_tcp, ServerToClientDataUdpConstPtr recvdata_udp );
+	Game( ServerToClientDataTcpConstPtr recvdata_tcp, ServerToClientDataUdpConstPtr recvdata_udp, ViewerPtr viewer );
 	virtual ~Game( );
 
 public:
@@ -19,7 +19,6 @@ public:
 
 private:
 	GameProcessorPtr _process;
-	GameViewerPtr _viewer;
 	NetworkManagerPtr _network;
 	ServerToClientDataUdpConstPtr _recvdata_udp;
 	ServerToClientDataTcpConstPtr _recvdata_tcp;

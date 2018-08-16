@@ -1,5 +1,6 @@
 #include "Chara.h"
 #include "Field.h"
+#include "Drawer.h"
 
 Chara::Chara( FieldConstPtr field ) :
 _field( field ),
@@ -10,6 +11,13 @@ Chara::~Chara( ) {
 }
 
 void Chara::update( ) {
+}
+
+void Chara::draw( ) const {
+	DrawerPtr drawer = Drawer::getTask( );
+	Vector pos = getScreenPos( );
+
+	drawer->drawCircle( ( float ) pos.x, ( float ) pos.y, 10, 0xff0000, true );
 }
 
 void Chara::setFieldIdx( Vector pos ) {

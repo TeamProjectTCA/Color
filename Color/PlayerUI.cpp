@@ -1,5 +1,6 @@
 #include "PlayerUI.h"
 #include "Manager.h"
+#include "Drawer.h"
 
 const Vector DEFAULT_PLAYER_IMAGE = Vector( 150, 150 );
 
@@ -13,6 +14,13 @@ _full_hd( false ) {
 }
 
 PlayerUI::~PlayerUI( ) {
+}
+
+void PlayerUI::draw( ) const {
+	DrawerPtr drawer = Drawer::getTask( );
+	Vector pos = getPlayerImagePos( );
+
+	drawer->drawCircle( ( float ) pos.x, ( float ) pos.y, 10, 0x00ff00, true );
 }
 
 Vector PlayerUI::getPlayerImagePos( ) const {

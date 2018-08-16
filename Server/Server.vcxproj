@@ -173,6 +173,7 @@
     <ClCompile Include="ViewConnectorForServer.cpp" />
     <ClCompile Include="ViewerForServer.cpp" />
     <ClCompile Include="ViewLog.cpp" />
+    <ClCompile Include="ViewPaint.cpp" />
     <ClCompile Include="ViewPlayer.cpp" />
     <ClCompile Include="ViewTurn.cpp" />
   </ItemGroup>
@@ -202,6 +203,7 @@
     <ClInclude Include="ViewConnectorForServer.h" />
     <ClInclude Include="ViewerForServer.h" />
     <ClInclude Include="ViewLog.h" />
+    <ClInclude Include="ViewPaint.h" />
     <ClInclude Include="ViewPlayer.h" />
     <ClInclude Include="ViewTurn.h" />
   </ItemGroup>

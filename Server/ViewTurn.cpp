@@ -1,7 +1,6 @@
 #include "ViewTurn.h"
 #include "Turn.h"
 #include "Sheet.h"
-#include "Turn.h"
 
 const int SHEET_ROW = 2;
 const int SHEET_TAG_PITCH = 150;

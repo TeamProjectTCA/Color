@@ -41,6 +41,9 @@ void NetworkManager::recvUdp( ) {
 	_processor->setUserFieldIdx( _recvdata_udp->getPlayerPos( idx ) );
 	_processor->setEnemyFieldIdx( _recvdata_udp->getPlayerPos( ( idx + 1 ) % 2 ) );
 	_processor->setTurn( _recvdata_udp->getTurn( ) );
+	_processor->setColor( _recvdata_udp->getColor( ) );
+	_processor->setPaintCount( 0, _recvdata_udp->getPaintCount( 0 ) );
+	_processor->setPaintCount( 1, _recvdata_udp->getPaintCount( 1 ) );
 }
 
 void NetworkManager::recvTcp( ) {

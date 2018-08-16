@@ -23,9 +23,6 @@
     <ClCompile Include="GameProcessor.cpp">
       <Filter>Scene\Game</Filter>
     </ClCompile>
-    <ClCompile Include="GameViewer.cpp">
-      <Filter>Scene\Game</Filter>
-    </ClCompile>
     <ClCompile Include="ResultViewer.cpp">
       <Filter>Scene\Result</Filter>
     </ClCompile>
@@ -56,23 +53,14 @@
     <ClCompile Include="Area.cpp">
       <Filter>Scene\Game\Process\Area</Filter>
     </ClCompile>
-    <ClCompile Include="ViewField.cpp">
-      <Filter>Scene\Game\View</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerUI.cpp">
       <Filter>Scene\Game\Process\Area</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewPlayerUI.cpp">
-      <Filter>Scene\Game\View</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
       <Filter>Scene\Game\Process\Area\Field</Filter>
     </ClCompile>
     <ClCompile Include="Field.cpp">
       <Filter>Scene\Game\Process\Area\Field</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewChara.cpp">
-      <Filter>Scene\Game\View</Filter>
     </ClCompile>
     <ClCompile Include="NetworkManager.cpp">
       <Filter>Scene\Game\Network</Filter>
@@ -91,6 +79,12 @@
     </ClCompile>
     <ClCompile Include="Viewer.cpp">
       <Filter>Viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowTurn.cpp">
+      <Filter>Scene\Game\Process\Turn</Filter>
+    </ClCompile>
+    <ClCompile Include="PaintCount.cpp">
+      <Filter>Scene\Game\Process\PaintCount</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -113,9 +107,6 @@
       <Filter>Scene\NWOption</Filter>
     </ClInclude>
     <ClInclude Include="GameProcessor.h">
-      <Filter>Scene\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="GameViewer.h">
       <Filter>Scene\Game</Filter>
     </ClInclude>
     <ClInclude Include="ResultViewer.h">
@@ -148,23 +139,14 @@
     <ClInclude Include="Area.h">
       <Filter>Scene\Game\Process\Area</Filter>
     </ClInclude>
-    <ClInclude Include="ViewField.h">
-      <Filter>Scene\Game\View</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerUI.h">
       <Filter>Scene\Game\Process\Area</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewPlayerUI.h">
-      <Filter>Scene\Game\View</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
       <Filter>Scene\Game\Process\Area\Field</Filter>
     </ClInclude>
     <ClInclude Include="Field.h">
       <Filter>Scene\Game\Process\Area\Field</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewChara.h">
-      <Filter>Scene\Game\View</Filter>
     </ClInclude>
     <ClInclude Include="NetworkManager.h">
       <Filter>Scene\Game\Network</Filter>
@@ -186,6 +168,12 @@
     </ClInclude>
     <ClInclude Include="GameDrawer.h">
       <Filter>Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowTurn.h">
+      <Filter>Scene\Game\Process\Turn</Filter>
+    </ClInclude>
+    <ClInclude Include="PaintCount.h">
+      <Filter>Scene\Game\Process\PaintCount</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -222,9 +210,6 @@
     <Filter Include="Scene\Game\Process\Area">
       <UniqueIdentifier>{cd24c40e-a267-4e39-aa3e-a0a60575ed41}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\Game\View">
-      <UniqueIdentifier>{f2ee877b-b092-434a-b61e-79632f2bcb9d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene\Game\Process\Area\Field">
       <UniqueIdentifier>{ac7124b9-841e-4048-ba7c-cd3a133feda5}</UniqueIdentifier>
     </Filter>
@@ -236,6 +221,12 @@
     </Filter>
     <Filter Include="Viewer">
       <UniqueIdentifier>{f3975e2c-01de-4fea-a1eb-39558227c71e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Game\Process\Turn">
+      <UniqueIdentifier>{643d4f0b-f868-4aa9-8ac2-261e60ab9352}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Game\Process\PaintCount">
+      <UniqueIdentifier>{11e9f8e3-ea53-4d29-b9c4-04b1bd91bd3f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

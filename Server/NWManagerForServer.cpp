@@ -43,6 +43,7 @@ void NWManagerForServer::recv( ) {
 void NWManagerForServer::recvPlayerPos( ) {
 	int player_num = _recvdata->getPlayerNum( );
 	_processor->setPlayerPos( player_num, _recvdata->getClickMas( ) );
+	_processor->setTileColor ( player_num, _recvdata->getClickMas( ) );
 }
 
 ConnectorForServerConstPtr NWManagerForServer::getConnectorPtr( ) const {

@@ -159,7 +159,9 @@
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="Chara.cpp" />
+    <ClCompile Include="PaintCount.cpp" />
     <ClCompile Include="PlayerUI.cpp" />
+    <ClCompile Include="ShowTurn.cpp" />
     <ClCompile Include="SceneChanger.cpp" />
     <ClCompile Include="CharacterSelectProcessor.cpp" />
     <ClCompile Include="Connector.cpp" />
@@ -179,13 +181,9 @@
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="TitleProcessor.cpp" />
     <ClCompile Include="CharacterSelectViewer.cpp" />
-    <ClCompile Include="GameViewer.cpp" />
     <ClCompile Include="ResultViewer.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="Viewer.cpp" />
-    <ClCompile Include="ViewField.cpp" />
-    <ClCompile Include="ViewChara.cpp" />
-    <ClCompile Include="ViewPlayerUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Fundation2017\Fundation2017.vcxproj">
@@ -201,7 +199,9 @@
     <ClInclude Include="GameDrawer.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="Chara.h" />
+    <ClInclude Include="PaintCount.h" />
     <ClInclude Include="PlayerUI.h" />
+    <ClInclude Include="ShowTurn.h" />
     <ClInclude Include="SceneChanger.h" />
     <ClInclude Include="CharacterSelectProcessor.h" />
     <ClInclude Include="Connector.h" />
@@ -220,13 +220,9 @@
     <ClInclude Include="Title.h" />
     <ClInclude Include="TitleProcessor.h" />
     <ClInclude Include="CharacterSelectViewer.h" />
-    <ClInclude Include="GameViewer.h" />
     <ClInclude Include="ResultViewer.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="Viewer.h" />
-    <ClInclude Include="ViewField.h" />
-    <ClInclude Include="ViewChara.h" />
-    <ClInclude Include="ViewPlayerUI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

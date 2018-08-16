@@ -1,17 +1,21 @@
 #pragma once
 #include "smart_ptr.h"
 #include "Vector.h"
+#include "FieldProperty.h"
 
 PTR( GameProcessor );
+PTR( Viewer );
 PTR( Field );
 PTR( PlayerUI );
 PTR( Chara );
 PTR( User );
 PTR( Move );
+PTR( ShowTurn );
+PTR( PaintCount );
 
 class GameProcessor {
 public:
-	GameProcessor( );
+	GameProcessor( ViewerPtr viewer );
 	virtual ~GameProcessor( );
 
 public:
@@ -23,17 +27,19 @@ public:
 	void setPlayerNum( int player_num );
 	void setTurn( int turn );
 	void setGameOver( bool gameover );
+	void setColor( std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > color );
+	void setPaintCount( int player_num, int paint_count );
 
 public:
-	int getTurn( ) const;
 	FieldConstPtr getFieldPtr( ) const;
 	PlayerUIConstPtr getUserUIPtr( ) const;
 	PlayerUIConstPtr getEnemyUIPtr( ) const;
 	CharaConstPtr getUserPtr( ) const;
 	CharaConstPtr getEnemyPtr( ) const;
+	ShowTurnPtr getShowTurnPtr( ) const;
+	PaintCountPtr getPaintCountPtr( ) const;
 
 private:
-	int _turn;
 	bool _gameover;
 
 	FieldPtr _field;
@@ -42,4 +48,6 @@ private:
 	UserPtr _user;
 	CharaPtr _enemy;
 	MovePtr _move;
+	ShowTurnPtr _turn;
+	PaintCountPtr _paint_count;
 };

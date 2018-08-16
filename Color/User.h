@@ -1,6 +1,7 @@
 #pragma once
 #include "Chara.h"
 #include "smart_ptr.h"
+#include "GameDrawer.h"
 
 PTR( User );
 PTR( Field );
@@ -12,6 +13,7 @@ public:
 
 public:
 	void update( );
+	void draw( ) const;
 
 public:
 	void setPlayerNum( int player_num );

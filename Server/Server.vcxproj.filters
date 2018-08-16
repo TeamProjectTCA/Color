@@ -57,6 +57,9 @@
     <ClCompile Include="PaintTile.cpp">
       <Filter>Process</Filter>
     </ClCompile>
+    <ClCompile Include="ViewPaint.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServerController.h" />
@@ -113,6 +116,9 @@
     </ClInclude>
     <ClInclude Include="PaintTile.h">
       <Filter>Process</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewPaint.h">
+      <Filter>View</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

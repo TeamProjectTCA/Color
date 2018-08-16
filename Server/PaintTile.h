@@ -14,6 +14,9 @@ public:
 	void setTileColor( Vector pos, int player_num );
 
 public:
+	int getPaintCount( int player_num ) const;
+
+public:
 	std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > getTileColor( ) const;
 
 private:

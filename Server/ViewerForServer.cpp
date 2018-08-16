@@ -10,6 +10,7 @@
 #include "ViewLog.h"
 #include "ViewPlayer.h"
 #include "ViewTurn.h"
+#include "ViewPaint.h"
 
 ViewerForServer::ViewerForServer( ProcessorForServerConstPtr processor, NWManagerForServerConstPtr network_manager, LogConstPtr log, CommandConstPtr command ) {
 	_connector = ViewConnectorForServerPtr( new ViewConnectorForServer( network_manager->getConnectorPtr( ) ) );
@@ -18,13 +19,15 @@ ViewerForServer::ViewerForServer( ProcessorForServerConstPtr processor, NWManage
 	_player0 = ViewPlayerPtr( new ViewPlayer( processor->getPlayer0Ptr( ) ) );
 	_player1 = ViewPlayerPtr( new ViewPlayer( processor->getPlayer1Ptr( ) ) );
 	_turn = ViewTurnPtr( new ViewTurn( processor->getTurnPtr( ) ) );
+	_paint = ViewPaintPtr( new ViewPaint( processor->getPaintPtr( ) ) );
 
 	_table = TablePtr( new Table( ) );
 	_table->add( _connector->getSheetServer( ) , Table::NEXT_POS_DOWN );
 	_table->add( _connector->getSheetClient( ) , Table::NEXT_POS_RIGHT );
 	_table->add( _player0->getSheet( )         , Table::NEXT_POS_DOWN );
 	_table->add( _player1->getSheet( )         , Table::NEXT_POS_DOWN );
-	_table->add( _turn->getSheet( )            , Table::NEXT_POS_RIGHT );
+	_table->add( _turn->getSheet( )            , Table::NEXT_POS_DOWN );
+	_table->add( _paint->getSheet( )           , Table::NEXT_POS_RIGHT );
 	_table->add( _log->getSheet( )             , Table::NEXT_POS_DOWN );
 	_table->add( _command->getSheet( )         , Table::NEXT_POS_DOWN );
 }
@@ -39,6 +42,7 @@ void ViewerForServer::update( ) {
 	_player0->updateSheet( );
 	_player1->updateSheet( );
 	_turn->updateSheet( );
+	_paint->updateSheet( );
 
 	_table->draw( );
 

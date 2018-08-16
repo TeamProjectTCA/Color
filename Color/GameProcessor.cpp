@@ -1,14 +1,17 @@
 #include "GameProcessor.h"
 #include "SceneManager.h"
+#include "Viewer.h"
 #include "Field.h"
 #include "PlayerUI.h"
 #include "Manager.h"
 #include "Chara.h"
 #include "User.h"
 #include "Move.h"
+#include "ShowTurn.h"
+#include "PaintCount.h"
+#include "Drawer.h"
 
-GameProcessor::GameProcessor( ) :
-_turn( -1 ),
+GameProcessor::GameProcessor( ViewerPtr viewer ) :
 _gameover( false ) {
 	ManagerPtr manager = Manager::getInstance( );
 
@@ -26,6 +29,17 @@ _gameover( false ) {
 	_enemy = CharaPtr( new Chara( _field ) );
 
 	_move = MovePtr( new Move( _field, _user ) );
+	_turn = ShowTurnPtr( new ShowTurn );
+	_paint_count = PaintCountPtr( new PaintCount );
+
+	viewer->addDrawer( _field );
+	viewer->addDrawer( _user_ui );
+	viewer->addDrawer( _enemy_ui );
+	viewer->addDrawer( _user );
+	viewer->addDrawer( _enemy );
+	viewer->addDrawer( _turn );
+	viewer->addDrawer( _paint_count );
+
 }
 
 GameProcessor::~GameProcessor( ) {
@@ -52,15 +66,18 @@ void GameProcessor::setPlayerNum( int player_num ) {
 }
 
 void GameProcessor::setTurn( int turn ) {
-	_turn = turn;
+	_turn->setTurn( turn );
 }
 
 void GameProcessor::setGameOver( bool gameover ) {
 	_gameover = gameover;
 }
+void GameProcessor::setColor( std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > color ) {
+	_field->setColor( color );
+}
 
-int GameProcessor::getTurn( ) const {
-	return _turn;
+void GameProcessor::setPaintCount( int player_num, int paint_count ) {
+	_paint_count->setPaintCount( player_num, paint_count );
 }
 
 FieldConstPtr GameProcessor::getFieldPtr( ) const {
@@ -81,4 +98,12 @@ CharaConstPtr GameProcessor::getUserPtr( ) const {
 
 CharaConstPtr GameProcessor::getEnemyPtr( ) const {
 	return _enemy;
+}
+
+ShowTurnPtr GameProcessor::getShowTurnPtr( ) const {
+	return _turn;
+}
+
+PaintCountPtr GameProcessor::getPaintCountPtr( ) const {
+	return _paint_count;
 }
