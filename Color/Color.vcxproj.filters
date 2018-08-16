@@ -53,9 +53,6 @@
     <ClCompile Include="Area.cpp">
       <Filter>Scene\Game\Process\Area</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerUI.cpp">
-      <Filter>Scene\Game\Process\Area</Filter>
-    </ClCompile>
     <ClCompile Include="Tile.cpp">
       <Filter>Scene\Game\Process\Area\Field</Filter>
     </ClCompile>
@@ -80,11 +77,11 @@
     <ClCompile Include="Viewer.cpp">
       <Filter>Viewer</Filter>
     </ClCompile>
-    <ClCompile Include="ShowTurn.cpp">
-      <Filter>Scene\Game\Process\Turn</Filter>
+    <ClCompile Include="GlobalUI.cpp">
+      <Filter>Scene\Game\Process\Area\Field\UI</Filter>
     </ClCompile>
-    <ClCompile Include="PaintCount.cpp">
-      <Filter>Scene\Game\Process\PaintCount</Filter>
+    <ClCompile Include="PlayerUI.cpp">
+      <Filter>Scene\Game\Process\Area\Field\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -139,9 +136,6 @@
     <ClInclude Include="Area.h">
       <Filter>Scene\Game\Process\Area</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerUI.h">
-      <Filter>Scene\Game\Process\Area</Filter>
-    </ClInclude>
     <ClInclude Include="Tile.h">
       <Filter>Scene\Game\Process\Area\Field</Filter>
     </ClInclude>
@@ -169,11 +163,11 @@
     <ClInclude Include="GameDrawer.h">
       <Filter>Viewer</Filter>
     </ClInclude>
-    <ClInclude Include="ShowTurn.h">
-      <Filter>Scene\Game\Process\Turn</Filter>
+    <ClInclude Include="GlobalUI.h">
+      <Filter>Scene\Game\Process\Area\Field\UI</Filter>
     </ClInclude>
-    <ClInclude Include="PaintCount.h">
-      <Filter>Scene\Game\Process\PaintCount</Filter>
+    <ClInclude Include="PlayerUI.h">
+      <Filter>Scene\Game\Process\Area\Field\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -222,11 +216,8 @@
     <Filter Include="Viewer">
       <UniqueIdentifier>{f3975e2c-01de-4fea-a1eb-39558227c71e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\Game\Process\Turn">
-      <UniqueIdentifier>{643d4f0b-f868-4aa9-8ac2-261e60ab9352}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Game\Process\PaintCount">
-      <UniqueIdentifier>{11e9f8e3-ea53-4d29-b9c4-04b1bd91bd3f}</UniqueIdentifier>
+    <Filter Include="Scene\Game\Process\Area\Field\UI">
+      <UniqueIdentifier>{1a7f3f13-b7ea-4b15-86eb-b1eefb7b9642}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

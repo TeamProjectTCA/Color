@@ -41,9 +41,9 @@ void NetworkManager::recvUdp( ) {
 
 	_processor->setUserFieldIdx( _recvdata_udp->getPlayerPos( idx ) );
 	_processor->setEnemyFieldIdx( _recvdata_udp->getPlayerPos( ( idx + 1 ) % 2 ) );
+	_processor->setUserPaintCount( _recvdata_udp->getPaintCount( idx ) );
+	_processor->setEnemyPaintCount( _recvdata_udp->getPaintCount( ( idx + 1 ) % 2 ) );
 	_processor->setTurn( _recvdata_udp->getTurn( ) );
-	_processor->setPaintCount( 0, _recvdata_udp->getPaintCount( 0 ) );
-	_processor->setPaintCount( 1, _recvdata_udp->getPaintCount( 1 ) );
 
 	for ( int i = 0; i < FieldProperty::FIELD_ROW; i++ ) {
 		for ( int j = 0; j < FieldProperty::FIELD_COL; j++ ){

@@ -21,7 +21,7 @@ void ServerToClientDataUdp::setTileState( int x, int y, FieldProperty::TILE_STAT
 }
 
 void ServerToClientDataUdp::setPaintCount( int idx, int paint_count ) {
-	_data.player[ idx ].paint_count = paint_count;
+	_data.player[ idx ].paint_count = ( unsigned char ) paint_count;
 }
 
 Vector ServerToClientDataUdp::getPlayerPos( int idx ) const {

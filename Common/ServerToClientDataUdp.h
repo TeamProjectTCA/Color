@@ -35,7 +35,7 @@ private:
 		struct Player {
 			unsigned char x;
 			unsigned char y;
-			int paint_count;
+			unsigned char paint_count;
 		};
 
 		Player player[ 2 ];

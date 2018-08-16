@@ -7,21 +7,23 @@
 #include "Chara.h"
 #include "User.h"
 #include "Move.h"
-#include "ShowTurn.h"
-#include "PaintCount.h"
+#include "GlobalUI.h"
 #include "Drawer.h"
 
 GameProcessor::GameProcessor( ViewerPtr viewer ) :
 _gameover( false ) {
 	ManagerPtr manager = Manager::getInstance( );
 
-	int quarter_width  = manager->getScreenWidth( )  / 4;
+	int quarter_width = manager->getScreenWidth( ) / 4;
+	int height = manager->getScreenHeight( );
 
 	const Vector FIELD_ORIGIN = Vector( quarter_width, 0 );
+	const Vector GLOBAL_ORIGIN = Vector( );
 	const Vector PLAYER0_ORIGIN = Vector( );
 	const Vector PLAYER1_ORIGIN = Vector( quarter_width * 3, 0 );
 
 	_field = FieldPtr( new Field( FIELD_ORIGIN ) );
+	_global_ui = GlobalUIPtr( new GlobalUI( GLOBAL_ORIGIN ) );
 	_user_ui = PlayerUIPtr( new PlayerUI( PLAYER0_ORIGIN ) );
 	_enemy_ui = PlayerUIPtr( new PlayerUI( PLAYER1_ORIGIN ) );
 	
@@ -29,16 +31,13 @@ _gameover( false ) {
 	_enemy = CharaPtr( new Chara( _field ) );
 
 	_move = MovePtr( new Move( _field, _user ) );
-	_turn = ShowTurnPtr( new ShowTurn );
-	_paint_count = PaintCountPtr( new PaintCount );
 
 	viewer->addDrawer( _field );
+	viewer->addDrawer( _global_ui );
 	viewer->addDrawer( _user_ui );
 	viewer->addDrawer( _enemy_ui );
 	viewer->addDrawer( _user );
 	viewer->addDrawer( _enemy );
-	viewer->addDrawer( _turn );
-	viewer->addDrawer( _paint_count );
 
 }
 
@@ -61,12 +60,20 @@ void GameProcessor::setEnemyFieldIdx( Vector pos ) {
 	_enemy->setFieldIdx( pos );
 }
 
+void GameProcessor::setUserPaintCount( int paint_count ) {
+	_user_ui->setPaintCount( paint_count );
+}
+
+void GameProcessor::setEnemyPaintCount( int paint_count ) {
+	_enemy_ui->setPaintCount( paint_count );
+}
+
 void GameProcessor::setPlayerNum( int player_num ) {
 	_user->setPlayerNum( player_num );
 }
 
 void GameProcessor::setTurn( int turn ) {
-	_turn->setTurn( turn );
+	_global_ui->setTurn( turn );
 }
 
 void GameProcessor::setGameOver( bool gameover ) {
@@ -75,10 +82,6 @@ void GameProcessor::setGameOver( bool gameover ) {
 
 void GameProcessor::setTileState( int x, int y, FieldProperty::TILE_STATE state ) {
 	_field->setTileState( x, y, state );
-}
-
-void GameProcessor::setPaintCount( int player_num, int paint_count ) {
-	_paint_count->setPaintCount( player_num, paint_count );
 }
 
 FieldConstPtr GameProcessor::getFieldPtr( ) const {
@@ -101,10 +104,6 @@ CharaConstPtr GameProcessor::getEnemyPtr( ) const {
 	return _enemy;
 }
 
-ShowTurnPtr GameProcessor::getShowTurnPtr( ) const {
-	return _turn;
-}
-
-PaintCountPtr GameProcessor::getPaintCountPtr( ) const {
-	return _paint_count;
+GlobalUIPtr GameProcessor::getGlobalUIPtr( ) const {
+	return _global_ui;
 }

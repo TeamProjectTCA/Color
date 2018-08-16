@@ -16,7 +16,7 @@ void User::draw( ) const {
 	DrawerPtr drawer = Drawer::getTask( );
 	Vector pos = getScreenPos( );
 
-	drawer->drawCircle( ( float ) pos.x, ( float ) pos.y, 10, 0xff0000, true );
+	drawer->drawCircle( ( float ) pos.x, ( float ) pos.y, 10, 0x000000, true );
 }
 
 void User::setPlayerNum( int player_num ) {

@@ -159,9 +159,8 @@
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="Chara.cpp" />
-    <ClCompile Include="PaintCount.cpp" />
     <ClCompile Include="PlayerUI.cpp" />
-    <ClCompile Include="ShowTurn.cpp" />
+    <ClCompile Include="GlobalUI.cpp" />
     <ClCompile Include="SceneChanger.cpp" />
     <ClCompile Include="CharacterSelectProcessor.cpp" />
     <ClCompile Include="Connector.cpp" />
@@ -199,9 +198,8 @@
     <ClInclude Include="GameDrawer.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="Chara.h" />
-    <ClInclude Include="PaintCount.h" />
     <ClInclude Include="PlayerUI.h" />
-    <ClInclude Include="ShowTurn.h" />
+    <ClInclude Include="GlobalUI.h" />
     <ClInclude Include="SceneChanger.h" />
     <ClInclude Include="CharacterSelectProcessor.h" />
     <ClInclude Include="Connector.h" />
