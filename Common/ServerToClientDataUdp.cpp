@@ -16,8 +16,8 @@ void ServerToClientDataUdp::setTurn( int turn ) {
 	_data.turn = turn;
 }
 
-void ServerToClientDataUdp::setColor( std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > color ) {
-	_data.color = color;
+void ServerToClientDataUdp::setTileState( int x, int y, FieldProperty::TILE_STATE state ) {
+	_data.tile_state[ y ][ x ] = ( unsigned char )state;
 }
 
 void ServerToClientDataUdp::setPaintCount( int idx, int paint_count ) {
@@ -33,8 +33,8 @@ int ServerToClientDataUdp::getTurn( ) const {
 	return _data.turn;
 }
 
-std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > ServerToClientDataUdp::getColor( ) const {
-	return _data.color;
+FieldProperty::TILE_STATE ServerToClientDataUdp::getTileState( int x, int y ) const {
+	return ( FieldProperty::TILE_STATE )_data.tile_state[ y ][ x ];
 }
 
 int ServerToClientDataUdp::getPaintCount( int idx ) const {

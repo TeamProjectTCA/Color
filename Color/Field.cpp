@@ -25,9 +25,12 @@ Area( ORIGIN_POS ) {
 
 
 	DrawerPtr drawer = Drawer::getTask( );
-	_base_tile = drawer->getImage( WHITE_TILE );
-	_red_tile = drawer->getImage( RED_TILE );
-	_blue_tile = drawer->getImage( BLUE_TILE );
+	ImageConstPtr base_tile = drawer->getImage( WHITE_TILE );
+	ImageConstPtr red_tile  = drawer->getImage( RED_TILE );
+	ImageConstPtr blue_tile = drawer->getImage( BLUE_TILE );
+	_base_tile = base_tile->getHandle( );
+	_red_tile  = red_tile->getHandle( );
+	_blue_tile = blue_tile->getHandle( );
 }
 
 Field::~Field( ) {
@@ -39,15 +42,15 @@ void Field::draw( ) const {
 	for ( int i = 0; i < FieldProperty::FIELD_ROW; i++ ) {
 		for ( int j = 0; j < FieldProperty::FIELD_COL; j++ ) {
 			ImagePtr tile( new Image( ) );
-			switch ( ( Tile::TILE_STATE )_color[ i ][ j ] ) {
-			case Tile::TILE_STATE_NONE :
-				tile->setHandle( _base_tile->getHandle( ) );
+			switch ( _tile[ i ][ j ]->getState( ) ) {
+			case FieldProperty::TILE_STATE_NONE :
+				tile->setHandle( _base_tile );
 				break;
-			case Tile::TILE_STATE_PLAYER0:
-				tile->setHandle( _red_tile->getHandle( ) );
+			case FieldProperty::TILE_STATE_PLAYER0:
+				tile->setHandle( _red_tile );
 				break;
-			case Tile::TILE_STATE_PLAYER1:
-				tile->setHandle( _blue_tile->getHandle( ) );
+			case FieldProperty::TILE_STATE_PLAYER1:
+				tile->setHandle( _blue_tile );
 				break;
 			default:
 				break;
@@ -61,8 +64,8 @@ void Field::draw( ) const {
 	}
 }
 
-void Field::setColor( std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > color ) {
-	_color = color;
+void Field::setTileState( int x, int y, FieldProperty::TILE_STATE state ) {
+	_tile[ y ][ x ]->setState( state );
 }
 
 Vector Field::getCenterPos( ) const {

@@ -18,7 +18,7 @@ public:
 	void draw( ) const;
 
 public:
-	void setColor( std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > color );
+	void setTileState( int x, int y, FieldProperty::TILE_STATE state );
 
 public:
 	Vector getCenterPos( ) const;
@@ -28,8 +28,8 @@ public:
 private:
 	std::array< std::array< TilePtr, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > _tile;
 	std::array< std::array< int,     FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > _color;
-	ImagePtr _base_tile;
-	ImagePtr _red_tile;
-	ImagePtr _blue_tile;
+	int _base_tile;
+	int _red_tile;
+	int _blue_tile;
 };
 

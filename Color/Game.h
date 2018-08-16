@@ -20,6 +20,4 @@ public:
 private:
 	GameProcessorPtr _process;
 	NetworkManagerPtr _network;
-	ServerToClientDataUdpConstPtr _recvdata_udp;
-	ServerToClientDataTcpConstPtr _recvdata_tcp;
 };

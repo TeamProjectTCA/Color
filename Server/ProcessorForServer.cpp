@@ -35,9 +35,14 @@ void ProcessorForServer::packageDataUdp( ) {
 	_senddata_udp->setPlayerPos( 0, _player[ 0 ]->getPos( ) );
 	_senddata_udp->setPlayerPos( 1, _player[ 1 ]->getPos( ) );
 	_senddata_udp->setTurn( _turn->getTurn( ) );
-	_senddata_udp->setColor( _paint->getTileColor( ) );
 	_senddata_udp->setPaintCount( 0, _paint->getPaintCount( 0 ) );
 	_senddata_udp->setPaintCount( 1, _paint->getPaintCount( 1 ) );
+
+	for ( int i = 0; i < FieldProperty::FIELD_ROW; i++ ) {
+		for ( int j = 0; j < FieldProperty::FIELD_COL; j++ ){
+			_senddata_udp->setTileState( j, i, _paint->getState( j, i ) );
+		}
+	}
 }
 
 void ProcessorForServer::setPlayerPos( int player_num, Vector pos ) {
@@ -45,7 +50,7 @@ void ProcessorForServer::setPlayerPos( int player_num, Vector pos ) {
 }
 
 void ProcessorForServer::setTileColor( int player_num, Vector pos ) {
-	_paint->setTileColor( pos, player_num );
+	_paint->setTile( pos, player_num );
 }
 
 PlayerConstPtr ProcessorForServer::getPlayer0Ptr( ) const {

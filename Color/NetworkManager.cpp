@@ -6,6 +6,7 @@
 #include "ServerToClientDataUdp.h"
 #include "ServerToClientDataTcp.h"
 #include "ClientToServerData.h"
+#include "FieldProperty.h"
 
 NetworkManager::NetworkManager( ServerToClientDataTcpConstPtr recvdata_tcp, ServerToClientDataUdpConstPtr recvdata_udp, GameProcessorPtr processor ) :
 _recvdata_tcp( recvdata_tcp ),
@@ -41,9 +42,14 @@ void NetworkManager::recvUdp( ) {
 	_processor->setUserFieldIdx( _recvdata_udp->getPlayerPos( idx ) );
 	_processor->setEnemyFieldIdx( _recvdata_udp->getPlayerPos( ( idx + 1 ) % 2 ) );
 	_processor->setTurn( _recvdata_udp->getTurn( ) );
-	_processor->setColor( _recvdata_udp->getColor( ) );
 	_processor->setPaintCount( 0, _recvdata_udp->getPaintCount( 0 ) );
 	_processor->setPaintCount( 1, _recvdata_udp->getPaintCount( 1 ) );
+
+	for ( int i = 0; i < FieldProperty::FIELD_ROW; i++ ) {
+		for ( int j = 0; j < FieldProperty::FIELD_COL; j++ ){
+			_processor->setTileState( j, i, _recvdata_udp->getTileState( j, i ) );
+		}
+	}
 }
 
 void NetworkManager::recvTcp( ) {
@@ -55,18 +61,20 @@ void NetworkManager::recvTcp( ) {
 	unsigned char type = _recvdata_tcp->getType( );
 	switch ( type ) {
 	case ServerToClientDataTcp::DATA_TYPE_PLAYER:
-	{
-		std::string ip = client->getClientIP( );
-		int idx = _recvdata_tcp->getIdx( ip );
-		_processor->setPlayerNum( idx );
-	}
+		{
+			std::string ip = client->getClientIP( );
+			int idx = _recvdata_tcp->getIdx( ip );
+			_processor->setPlayerNum( idx );
+		}
 		break;
+
 	case ServerToClientDataTcp::DATA_TYPE_RESULT:
-	{
-		bool gameover = _recvdata_tcp->getGameOver( );
-		_processor->setGameOver( gameover );
-	}
-	break;
+		{
+			bool gameover = _recvdata_tcp->getGameOver( );
+			_processor->setGameOver( gameover );
+		}
+		break;
+
 	default:
 		break;
 	}

@@ -11,14 +11,14 @@ public:
 	virtual ~PaintTile( );
 
 public:
-	void setTileColor( Vector pos, int player_num );
+	void setTile( Vector pos, int player_num );
 
 public:
 	int getPaintCount( int player_num ) const;
 
 public:
-	std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > getTileColor( ) const;
+	FieldProperty::TILE_STATE getState( int x, int y ) const;
 
 private:
-	std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > _color;
+	std::array< std::array< FieldProperty::TILE_STATE, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > _state;
 };

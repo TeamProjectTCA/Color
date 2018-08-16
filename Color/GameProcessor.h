@@ -27,7 +27,7 @@ public:
 	void setPlayerNum( int player_num );
 	void setTurn( int turn );
 	void setGameOver( bool gameover );
-	void setColor( std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > color );
+	void setTileState( int x, int y, FieldProperty::TILE_STATE state );
 	void setPaintCount( int player_num, int paint_count );
 
 public:

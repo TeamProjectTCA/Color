@@ -4,11 +4,9 @@
 #include "NetworkManager.h"
 #include "ServerToClientDataUdp.h"
 
-Game::Game( ServerToClientDataTcpConstPtr recvdata_tcp, ServerToClientDataUdpConstPtr recvdata_udp, ViewerPtr viewer ) :
-_recvdata_tcp( recvdata_tcp ),
-_recvdata_udp( recvdata_udp ) {
+Game::Game( ServerToClientDataTcpConstPtr recvdata_tcp, ServerToClientDataUdpConstPtr recvdata_udp, ViewerPtr viewer ) {
 	_process  = GameProcessorPtr        ( new GameProcessor( viewer ) );
-	_network  = NetworkManagerPtr       ( new NetworkManager( _recvdata_tcp, _recvdata_udp, _process ) );
+	_network  = NetworkManagerPtr       ( new NetworkManager( recvdata_tcp, recvdata_udp, _process ) );
 }
 
 Game::~Game( ) {

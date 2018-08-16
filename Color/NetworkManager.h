@@ -19,7 +19,6 @@ public:
 private:
 	void recvUdp( );
 	void recvTcp( );
-	void sendTcp( );
 
 private:
 	ServerToClientDataUdpConstPtr _recvdata_udp;

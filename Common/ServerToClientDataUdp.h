@@ -15,13 +15,13 @@ public:
 public:
 	void setPlayerPos( int idx, Vector pos );
 	void setTurn( int turn );
-	void setColor( std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > color );
+	void setTileState( int x, int y, FieldProperty::TILE_STATE state );
 	void setPaintCount( int idx, int paint_count );
 
 public:
 	Vector getPlayerPos( int idx ) const;
 	int getTurn( ) const;
-	std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > getColor( ) const;
+	FieldProperty::TILE_STATE getTileState( int x, int y ) const;
 	int getPaintCount( int idx ) const;
 
 public:
@@ -39,8 +39,8 @@ private:
 		};
 
 		Player player[ 2 ];
-		int turn;
-		std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > color;
+		unsigned char turn;
+		unsigned char tile_state[ FieldProperty::FIELD_ROW ][ FieldProperty::FIELD_COL ];
 	};
 
 	#pragma pack( )

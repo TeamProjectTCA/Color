@@ -72,8 +72,9 @@ void GameProcessor::setTurn( int turn ) {
 void GameProcessor::setGameOver( bool gameover ) {
 	_gameover = gameover;
 }
-void GameProcessor::setColor( std::array< std::array< int, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW > color ) {
-	_field->setColor( color );
+
+void GameProcessor::setTileState( int x, int y, FieldProperty::TILE_STATE state ) {
+	_field->setTileState( x, y, state );
 }
 
 void GameProcessor::setPaintCount( int player_num, int paint_count ) {
