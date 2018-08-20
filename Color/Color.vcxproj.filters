@@ -23,9 +23,6 @@
     <ClCompile Include="GameProcessor.cpp">
       <Filter>Scene\Game</Filter>
     </ClCompile>
-    <ClCompile Include="ResultViewer.cpp">
-      <Filter>Scene\Result</Filter>
-    </ClCompile>
     <ClCompile Include="ResultProcessor.cpp">
       <Filter>Scene\Result</Filter>
     </ClCompile>
@@ -105,9 +102,6 @@
     </ClInclude>
     <ClInclude Include="GameProcessor.h">
       <Filter>Scene\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="ResultViewer.h">
-      <Filter>Scene\Result</Filter>
     </ClInclude>
     <ClInclude Include="ResultProcessor.h">
       <Filter>Scene\Result</Filter>

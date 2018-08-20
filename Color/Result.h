@@ -4,11 +4,11 @@
 
 PTR( Result );
 PTR( ResultProcessor );
-PTR( ResultViewer );
+PTR( Viewer );
 
 class Result : public Scene {
 public:
-	Result( );
+	Result( ViewerPtr viewer );
 	virtual ~Result( );
 
 public:
@@ -16,5 +16,4 @@ public:
 
 private:
 	ResultProcessorPtr _process;
-	ResultViewerPtr _viewer;
 };

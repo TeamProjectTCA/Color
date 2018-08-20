@@ -1,10 +1,10 @@
 #include "Result.h"
 #include "ResultProcessor.h"
-#include "ResultViewer.h"
+#include "Viewer.h"
 
-Result::Result( ) {
+Result::Result( ViewerPtr viewer ) {
 	_process = ResultProcessorPtr( new ResultProcessor( ) );
-	_viewer = ResultViewerPtr( new ResultViewer( _process ) );
+	viewer->addDrawer( _process );
 }
 
 Result::~Result( ) {
@@ -12,5 +12,4 @@ Result::~Result( ) {
 
 void Result::update( ) {
 	_process->update( );
-	_viewer->update( );
 }

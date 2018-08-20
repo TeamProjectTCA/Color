@@ -64,7 +64,7 @@ void SceneManager::changeScene( ) {
 		break;
 
 	case SCENE_RESULT:
-		_scene = ResultPtr( new Result( ) );
+		_scene = ResultPtr( new Result( _viewer ) );
 		break;
 
 	default:
