@@ -78,19 +78,3 @@ void ProcessorForServer::recvPlayer( ClientToServerDataConstPtr data ) {
 	_player[ player_idx ]->setPos( pos );
 	_paint->setTile( pos, player_idx );
 }
-
-PlayerConstPtr ProcessorForServer::getPlayer0Ptr( ) const {
-	return _player[ 0 ];
-}
-
-PlayerConstPtr ProcessorForServer::getPlayer1Ptr( ) const {
-	return _player[ 1 ];
-}
-
-TurnConstPtr ProcessorForServer::getTurnPtr( ) const {
-	return _turn;
-}
-
-PaintTileConstPtr ProcessorForServer::getPaintPtr( ) const {
-	return _paint;
-}

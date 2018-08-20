@@ -26,12 +26,6 @@ private:
 	void packageDataUdp( );
 	void recv( );
 	void recvPlayer( ClientToServerDataConstPtr data );
-	
-public:
-	PlayerConstPtr getPlayer0Ptr( ) const;
-	PlayerConstPtr getPlayer1Ptr( ) const;
-	TurnConstPtr getTurnPtr( ) const;
-	PaintTileConstPtr getPaintPtr( ) const;
 
 private:
 	static const int PLAYER_NUM = 2;
