@@ -4,21 +4,27 @@
 #include <array>
 
 PTR( Log );
+PTR( Sheet );
 
 class Log {
 public:
 	Log( );
 	virtual ~Log( );
 
+private:
+	void updateSheet( );
+
 public:
 	void add( std::string log );
 
 public:
 	int getRow( ) const;
-	std::string getLog( int idx ) const;
+	SheetPtr getSheet( ) const;
 
 private:
 	static const int ROW = 25;
-	std::array< std::string, ROW > _log;
-};
 
+private:
+	std::array< std::string, ROW > _log;
+	SheetPtr _sheet;
+};

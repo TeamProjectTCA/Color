@@ -1,9 +1,22 @@
 #include "Log.h"
+#include "Sheet.h"
+
+const short int COL_PITCH = 500;
 
 Log::Log( ) {
+	_sheet = SheetPtr( new Sheet( ROW, false ) );
+	_sheet->addCol( COL_PITCH );
+
+	updateSheet( );
 }
 
 Log::~Log( ) {
+}
+
+void Log::updateSheet( ) {
+	for ( int i = 0; i < ROW; i++ ) {
+		_sheet->write( 0, i, _log[ i ] );
+	}
 }
 
 void Log::add( std::string log ) {
@@ -17,19 +30,14 @@ void Log::add( std::string log ) {
 	}
 
 	_log[ ROW - 1 ] = log;
+
+	updateSheet( );
 }
 
 int Log::getRow( ) const {
 	return ROW;
 }
 
-std::string Log::getLog( int idx ) const {
-	std::string log;
-	if ( idx >= ROW ) {
-		log = "";
-	} else {
-		log = _log[ idx ];
-	}
-
-	return log;
+SheetPtr Log::getSheet( ) const {
+	return _sheet;
 }

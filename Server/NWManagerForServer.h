@@ -4,32 +4,28 @@
 PTR( NWManagerForServer );
 PTR( ClientToServerData );
 PTR( ServerToClientDataUdp );
-PTR( ProcessorForServer );
 PTR( Log );
 PTR( ConnectorForServer );
+PTR( Table );
 
 class NWManagerForServer {
 public:
-	NWManagerForServer( ClientToServerDataConstPtr recvdata, ServerToClientDataUdpPtr senddata_udp, ProcessorForServerPtr processor, LogPtr log );
+	NWManagerForServer( ClientToServerDataConstPtr recvdata, ServerToClientDataUdpPtr senddata_udp, LogPtr log, TablePtr viewer );
 	virtual ~NWManagerForServer( );
 
 public:
 	void update( );
 
 public:
-	void sendUdp( );
+	bool isRecieving( ) const;
+	ClientToServerDataConstPtr getRecvData( ) const;
 
 private:
-	void recv( );
-	void recvPlayerPos( );
-
-public:
-	ConnectorForServerConstPtr getConnectorPtr( ) const;
+	void sendUdp( );
 
 private:
 	ClientToServerDataConstPtr _recvdata;
 	ServerToClientDataUdpPtr _senddata_udp;
-	ProcessorForServerPtr _processor;
 	ConnectorForServerPtr _connector;
 };
 

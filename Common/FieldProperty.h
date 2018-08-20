@@ -21,7 +21,6 @@ public:
 	virtual ~FieldProperty( );
 
 public:
-	Vector getPlayer0InitPos( ) const;
-	Vector getPlayer1InitPos( ) const;
+	Vector getPlayerInitPos( int player_idx ) const;
 };
 

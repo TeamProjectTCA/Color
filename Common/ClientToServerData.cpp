@@ -13,9 +13,9 @@ void ClientToServerData::setClickMas( Vector mas_idx ) {
 	_data.player.mas.y = ( unsigned char )mas_idx.y;
 }
 
-void ClientToServerData::setPlayerNum( int num ) {
+void ClientToServerData::setPlayerIdx( int idx ) {
 	_data.data_type = DATA_TYPE_PLAYER;
-	_data.player.player_num = ( unsigned char )num;
+	_data.player.player_idx = ( unsigned char )idx;
 }
 
 unsigned char ClientToServerData::getDataType( ) const {
@@ -27,8 +27,8 @@ Vector ClientToServerData::getClickMas( ) const {
 	return mas;
 }
 
-int ClientToServerData::getPlayerNum( ) const {
-	return ( int )_data.player.player_num;
+int ClientToServerData::getPlayerIdx( ) const {
+	return ( int )_data.player.player_idx;
 }
 
 int ClientToServerData::getSize( ) const {

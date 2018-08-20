@@ -41,7 +41,7 @@ void Move::update( ) {
 	if ( ( abs( delta.x ) + abs( delta.y ) == 1 ) || ( abs( delta.x ) * abs( delta.y ) == 1 ) ) {
 		ClientToServerDataPtr send_data = ClientToServerDataPtr( new ClientToServerData );
 		send_data->setClickMas( mouse_idx );
-		send_data->setPlayerNum( _user->getPlayerNum( ) );
+		send_data->setPlayerIdx( _user->getPlayerIdx( ) );
 
 		ClientPtr client = Client::getTask( );
 		client->sendTcp( send_data );

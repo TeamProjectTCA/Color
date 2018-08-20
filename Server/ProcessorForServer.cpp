@@ -1,6 +1,5 @@
 #include "ProcessorForServer.h"
 #include "ServerToClientDataUdp.h"
-#include "ServerToClientDataTcp.h"
 #include "ClientToServerData.h"
 #include "Command.h"
 #include "Player.h"
@@ -8,17 +7,28 @@
 #include "Turn.h"
 #include "PaintTile.h"
 #include "Server.h"
+#include "Table.h"
+#include "Log.h"
+#include "NWManagerForServer.h"
 
-ProcessorForServer::ProcessorForServer( ServerToClientDataUdpPtr senddata_udp, LogPtr log, CommandPtr command ) :
+ProcessorForServer::ProcessorForServer( ServerToClientDataUdpPtr senddata_udp, NWManagerForServerConstPtr network, LogPtr log, CommandPtr command, TablePtr viewer ) :
 _senddata_udp( senddata_udp ),
-_command( command ) {
-	FieldPropertyPtr field_property( new FieldProperty );
-	
-	_player[ 0 ] = PlayerPtr( new Player( 0, field_property->getPlayer0InitPos( ) ) );
-	_player[ 1 ] = PlayerPtr( new Player( 1, field_property->getPlayer1InitPos( ) ) );
+_command( command ),
+_network( network ) {
+
+	for ( int i = 0; i < PLAYER_NUM; i++ ) {
+		_player[ i ] = PlayerPtr( new Player( i ) );
+	}
 
 	_turn = TurnPtr( new Turn( _player ) );
 	_paint = PaintTilePtr( new PaintTile );
+
+	viewer->add( _player[ 0 ]->getSheet( ), Table::NEXT_POS_DOWN );
+	viewer->add( _player[ 1 ]->getSheet( ), Table::NEXT_POS_DOWN );
+	viewer->add( _turn->getSheet( )       , Table::NEXT_POS_DOWN );
+	viewer->add( _paint->getSheet( )      , Table::NEXT_POS_RIGHT );
+	viewer->add( log->getSheet( )         , Table::NEXT_POS_DOWN );
+	viewer->add( _command->getSheet( )    , Table::NEXT_POS_DOWN );
 }
 
 ProcessorForServer::~ProcessorForServer( ) {
@@ -27,30 +37,46 @@ ProcessorForServer::~ProcessorForServer( ) {
 void ProcessorForServer::update( ) {
 	_command->update( );
 	_turn->update( );
+
 	// データを詰める
 	packageDataUdp( );
+
+	// データを受信
+	recv( );
 }
 
 void ProcessorForServer::packageDataUdp( ) {
-	_senddata_udp->setPlayerPos( 0, _player[ 0 ]->getPos( ) );
-	_senddata_udp->setPlayerPos( 1, _player[ 1 ]->getPos( ) );
-	_senddata_udp->setTurn( _turn->getTurn( ) );
-	_senddata_udp->setPaintCount( 0, _paint->getPaintCount( 0 ) );
-	_senddata_udp->setPaintCount( 1, _paint->getPaintCount( 1 ) );
+	for ( int i = 0; i < PLAYER_NUM; i++ ) {
+		_player[ i ]->package( _senddata_udp );
+	}
+	_turn->package( _senddata_udp );
+	_paint->package( _senddata_udp );
+}
 
-	for ( int i = 0; i < FieldProperty::FIELD_ROW; i++ ) {
-		for ( int j = 0; j < FieldProperty::FIELD_COL; j++ ){
-			_senddata_udp->setTileState( j, i, _paint->getState( j, i ) );
-		}
+void ProcessorForServer::recv( ) {
+	if ( !_network->isRecieving( ) ) { 
+		return;
+	}
+
+	ClientToServerDataConstPtr data = _network->getRecvData( );
+
+	switch ( data->getDataType( ) ) {
+	case ClientToServerData::DATA_TYPE_PLAYER:
+		recvPlayer( data );
+		break;
+
+	default:
+		int check = 0;
+		break;
 	}
 }
 
-void ProcessorForServer::setPlayerPos( int player_num, Vector pos ) {
-	_player[ player_num ]->setPos( pos );
-}
+void ProcessorForServer::recvPlayer( ClientToServerDataConstPtr data ) {
+	int player_idx = data->getPlayerIdx( );
+	Vector pos = data->getClickMas( );
 
-void ProcessorForServer::setTileColor( int player_num, Vector pos ) {
-	_paint->setTile( pos, player_num );
+	_player[ player_idx ]->setPos( pos );
+	_paint->setTile( pos, player_idx );
 }
 
 PlayerConstPtr ProcessorForServer::getPlayer0Ptr( ) const {

@@ -9,23 +9,11 @@
     <ClCompile Include="ProcessorForServer.cpp">
       <Filter>Process</Filter>
     </ClCompile>
-    <ClCompile Include="ViewerForServer.cpp">
-      <Filter>View</Filter>
-    </ClCompile>
-    <ClCompile Include="Sheet.cpp">
-      <Filter>View\Table</Filter>
-    </ClCompile>
-    <ClCompile Include="Table.cpp">
-      <Filter>View\Table</Filter>
-    </ClCompile>
     <ClCompile Include="ConnectorForServer.cpp">
       <Filter>Network</Filter>
     </ClCompile>
     <ClCompile Include="Log.cpp">
       <Filter>Process</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewConnectorForServer.cpp">
-      <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="Command.cpp">
       <Filter>Process\Command</Filter>
@@ -33,23 +21,11 @@
     <ClCompile Include="CommandWord.cpp">
       <Filter>Process\Command</Filter>
     </ClCompile>
-    <ClCompile Include="ViewCommand.cpp">
-      <Filter>View</Filter>
-    </ClCompile>
     <ClCompile Include="CommandListener.cpp">
       <Filter>Process\Command</Filter>
     </ClCompile>
-    <ClCompile Include="ViewLog.cpp">
-      <Filter>View</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Process</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewPlayer.cpp">
-      <Filter>View</Filter>
-    </ClCompile>
-    <ClCompile Include="ViewTurn.cpp">
-      <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="Turn.cpp">
       <Filter>Process</Filter>
@@ -57,7 +33,13 @@
     <ClCompile Include="PaintTile.cpp">
       <Filter>Process</Filter>
     </ClCompile>
-    <ClCompile Include="ViewPaint.cpp">
+    <ClCompile Include="Sheet.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="Table.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewerForServer.cpp">
       <Filter>View</Filter>
     </ClCompile>
   </ItemGroup>
@@ -69,23 +51,11 @@
     <ClInclude Include="ProcessorForServer.h">
       <Filter>Process</Filter>
     </ClInclude>
-    <ClInclude Include="ViewerForServer.h">
-      <Filter>View</Filter>
-    </ClInclude>
-    <ClInclude Include="Sheet.h">
-      <Filter>View\Table</Filter>
-    </ClInclude>
-    <ClInclude Include="Table.h">
-      <Filter>View\Table</Filter>
-    </ClInclude>
     <ClInclude Include="ConnectorForServer.h">
       <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="Log.h">
       <Filter>Process</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewConnectorForServer.h">
-      <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="Command.h">
       <Filter>Process\Command</Filter>
@@ -93,23 +63,11 @@
     <ClInclude Include="CommandWord.h">
       <Filter>Process\Command</Filter>
     </ClInclude>
-    <ClInclude Include="ViewCommand.h">
-      <Filter>View</Filter>
-    </ClInclude>
     <ClInclude Include="CommandListener.h">
       <Filter>Process\Command</Filter>
     </ClInclude>
-    <ClInclude Include="ViewLog.h">
-      <Filter>View</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Process</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewPlayer.h">
-      <Filter>View</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewTurn.h">
-      <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="Turn.h">
       <Filter>Process</Filter>
@@ -117,7 +75,13 @@
     <ClInclude Include="PaintTile.h">
       <Filter>Process</Filter>
     </ClInclude>
-    <ClInclude Include="ViewPaint.h">
+    <ClInclude Include="Sheet.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="Table.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewerForServer.h">
       <Filter>View</Filter>
     </ClInclude>
   </ItemGroup>
@@ -133,9 +97,6 @@
     </Filter>
     <Filter Include="View">
       <UniqueIdentifier>{e47dfb7b-f946-46cf-b493-4cac18a37e43}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="View\Table">
-      <UniqueIdentifier>{4921a9b4-0e07-4937-bb2c-68b3bbda8191}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

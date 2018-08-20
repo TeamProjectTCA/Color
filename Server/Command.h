@@ -7,6 +7,7 @@ PTR( Command );
 PTR( Log );
 PTR( CommandWord );
 PTR( CommandListener );
+PTR( Sheet );
 
 class Command {
 public:
@@ -18,12 +19,13 @@ public:
 
 private:
 	void executeCommand( );
+	void updateSheet( );
 
 public:
 	void addListener( CommandListenerPtr listener );
 
 public:
-	std::string getInputString( ) const;
+	SheetPtr getSheet( ) const;
 
 private:
 	std::string _input;
@@ -31,5 +33,5 @@ private:
 
 	CommandWordPtr _word;
 	LogPtr _log;
+	SheetPtr _sheet;
 };
-

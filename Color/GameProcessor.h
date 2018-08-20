@@ -26,7 +26,7 @@ public:
 	void setEnemyFieldIdx( Vector pos );
 	void setUserPaintCount( int paint_count );
 	void setEnemyPaintCount( int paint_count );
-	void setPlayerNum( int player_num );
+	void setPlayerIdx( int player_idx );
 	void setTurn( int turn );
 	void setGameOver( bool gameover );
 	void setTileState( int x, int y, FieldProperty::TILE_STATE state );

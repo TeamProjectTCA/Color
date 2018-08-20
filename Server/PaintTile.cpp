@@ -1,10 +1,31 @@
 #include "PaintTile.h"
+#include "Sheet.h"
+#include "ServerToClientDataUdp.h"
+
+const int SHEET_ROW = 3;
+const int SHEET_TAG_PITCH = 100;
+const int SHEET_VALUE_PITCH = 200;
 
 PaintTile::PaintTile( ) {
 	std::array< std::array< FieldProperty::TILE_STATE, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW >( ).swap( _state );
+	_sheet = SheetPtr( new Sheet( SHEET_ROW ) );
+	_sheet->addCol( SHEET_TAG_PITCH );
+	_sheet->addCol( SHEET_VALUE_PITCH );
+	_sheet->write( 0, 0, "PLAYER" );
+	_sheet->write( 0, 1, "0" );
+	_sheet->write( 0, 2, "1" );
+	_sheet->write( 1, 0, "PAINTCOUNT" );
+
+	updateSheet( );
 }
 
 PaintTile::~PaintTile( ) {
+}
+
+void PaintTile::updateSheet( ) {
+	for ( int i = 0; i < PLAYER_NUM; i++ ) {
+		_sheet->write( 1, 1 + i, std::to_string( getPaintCount( i ) ) );
+	}
 }
 
 void PaintTile::setTile( Vector pos, int player_num ) {
@@ -17,6 +38,20 @@ void PaintTile::setTile( Vector pos, int player_num ) {
 	}
 
 	_state[ ( int )pos.y ][ ( int )pos.x ] = state;
+
+	updateSheet( );
+}
+
+void PaintTile::package( ServerToClientDataUdpPtr senddata ) {
+	for ( int i = 0; i < PLAYER_NUM; i++ ) {
+		senddata->setPaintCount( i, getPaintCount( i ) );
+	}
+
+	for ( int y = 0; y < FieldProperty::FIELD_ROW; y++ ) {
+		for ( int x = 0; x < FieldProperty::FIELD_COL; x++ ) {
+			senddata->setTileState( x, y, _state[ y ][ x ] );
+		}
+	}
 }
 
 int PaintTile::getPaintCount( int player_num ) const {
@@ -39,6 +74,6 @@ int PaintTile::getPaintCount( int player_num ) const {
 	return count;
 }
 
-FieldProperty::TILE_STATE PaintTile::getState( int x, int y ) const {
-	return _state[ y ][ x ];
+SheetPtr PaintTile::getSheet( ) const {
+	return _sheet;
 }

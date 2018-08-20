@@ -3,6 +3,10 @@
 #include "CommandWord.h"
 #include "CommandListener.h"
 #include "Log.h"
+#include "Sheet.h"
+
+const int TAG_PITCH = 80;
+const int VALUE_PITCH = 420;
 
 const short int CONTINUITY_TIME = 30;
 const short int MAX_CHARACTER = 30;
@@ -10,6 +14,13 @@ const short int MAX_CHARACTER = 30;
 Command::Command( LogPtr log ) :
 _log( log ) {
 	_word = CommandWordPtr( new CommandWord( ) );
+
+	_sheet = SheetPtr( new Sheet( 1 ) );
+	_sheet->addCol( TAG_PITCH );
+	_sheet->addCol( VALUE_PITCH );
+	_sheet->write( 0, 0, "COMMAND" );
+
+	updateSheet( );
 }
 
 Command::~Command( ) {
@@ -41,6 +52,8 @@ void Command::update( ) {
 
 		executeCommand( );
 	}
+
+	updateSheet( );
 }
 
 void Command::executeCommand( ) {
@@ -63,10 +76,14 @@ void Command::executeCommand( ) {
 	_log->add( _word->makeUnknownError( ) );
 }
 
+void Command::updateSheet( ) {
+	_sheet->write( 1, 0, _input );
+}
+
 void Command::addListener( CommandListenerPtr listener ) {
 	_listener.push_back( listener );
 }
 
-std::string Command::getInputString( ) const {
-	return _input;
+SheetPtr Command::getSheet( ) const {
+	return _sheet;
 }

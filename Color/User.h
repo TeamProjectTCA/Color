@@ -16,12 +16,12 @@ public:
 	void draw( ) const;
 
 public:
-	void setPlayerNum( int player_num );
+	void setPlayerIdx( int player_idx );
 
 public:
-	int getPlayerNum( ) const;
+	int getPlayerIdx( ) const;
 
 private:
-	int _player_num;
+	int _player_idx;
 };
 

@@ -7,7 +7,9 @@ PTR( ClientToServerData );
 
 class ClientToServerData : public Data {
 public:
-	static const unsigned char DATA_TYPE_PLAYER = 0x01;
+	enum DATA_TYPE {
+		DATA_TYPE_PLAYER,
+	};
 
 public:
 	ClientToServerData( );
@@ -15,12 +17,12 @@ public:
 
 public:
 	void setClickMas( Vector mas_idx );
-	void setPlayerNum( int num );
+	void setPlayerIdx( int idx );
 
 public:
 	unsigned char getDataType( ) const;
 	Vector getClickMas( ) const;
-	int getPlayerNum( ) const;
+	int getPlayerIdx( ) const;
 
 public:
 	int getSize( ) const;
@@ -37,7 +39,7 @@ private:
 
 		// union Œ^ //
 		struct Player {
-			unsigned char player_num;
+			unsigned char player_idx;
 			ClickMas mas;
 		};
 

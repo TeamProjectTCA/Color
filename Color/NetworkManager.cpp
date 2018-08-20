@@ -64,7 +64,7 @@ void NetworkManager::recvTcp( ) {
 		{
 			std::string ip = client->getClientIP( );
 			int idx = _recvdata_tcp->getIdx( ip );
-			_processor->setPlayerNum( idx );
+			_processor->setPlayerIdx( idx );
 		}
 		break;
 

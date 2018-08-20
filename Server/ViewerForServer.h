@@ -1,35 +1,17 @@
 #pragma once
 #include "smart_ptr.h"
 
-PTR( ViewerForServer );
-PTR( ProcessorForServer );
-PTR( NWManagerForServer );
 PTR( Table );
-PTR( Log );
-PTR( Command );
-PTR( ViewConnectorForServer );
-PTR( ViewCommand );
-PTR( ViewLog );
-PTR( ViewPlayer );
-PTR( ViewTurn );
-PTR( ViewPaint );
 
 class ViewerForServer {
 public:
-	ViewerForServer( ProcessorForServerConstPtr processor, NWManagerForServerConstPtr network_manager, LogConstPtr log, CommandConstPtr command );
+	ViewerForServer( TableConstPtr table );
 	virtual ~ViewerForServer( );
 
 public:
 	void update( );
 
 private:
-	TablePtr _table;
-	ViewConnectorForServerPtr _connector;
-	ViewCommandPtr _command;
-	ViewLogPtr _log;
-	ViewPlayerPtr _player0;
-	ViewPlayerPtr _player1;
-	ViewTurnPtr _turn;
-	ViewPaintPtr _paint;
+	TableConstPtr _table;
 };
 

@@ -8,6 +8,7 @@ PTR( ClientToServerData );
 PTR( NWManagerForServer );
 PTR( ProcessorForServer );
 PTR( ViewerForServer );
+PTR( Table );
 
 class ServerController : public Base {
 public:
@@ -23,9 +24,9 @@ public:
 	void update( );
 
 private:
-	NWManagerForServerPtr _network_manager;
+	NWManagerForServerPtr _network;
 	ProcessorForServerPtr _processor;
-	ViewerForServerPtr    _viewer;
 	ClientToServerDataConstPtr _recvdata;
+	ViewerForServerPtr _viewer;
 };
 

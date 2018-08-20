@@ -68,8 +68,8 @@ void GameProcessor::setEnemyPaintCount( int paint_count ) {
 	_enemy_ui->setPaintCount( paint_count );
 }
 
-void GameProcessor::setPlayerNum( int player_num ) {
-	_user->setPlayerNum( player_num );
+void GameProcessor::setPlayerIdx( int player_idx ) {
+	_user->setPlayerIdx( player_idx );
 }
 
 void GameProcessor::setTurn( int turn ) {

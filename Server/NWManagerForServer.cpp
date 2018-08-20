@@ -4,12 +4,15 @@
 #include "ProcessorForServer.h"
 #include "ConnectorForServer.h"
 #include "Server.h"
+#include "Table.h"
 
-NWManagerForServer::NWManagerForServer( ClientToServerDataConstPtr recvdata, ServerToClientDataUdpPtr senddata_udp, ProcessorForServerPtr processor, LogPtr log ) :
+NWManagerForServer::NWManagerForServer( ClientToServerDataConstPtr recvdata, ServerToClientDataUdpPtr senddata_udp, LogPtr log, TablePtr viewer ) :
 _recvdata( recvdata ),
-_senddata_udp( senddata_udp ),
-_processor( processor ) {
+_senddata_udp( senddata_udp ) {
 	_connector = ConnectorForServerPtr( new ConnectorForServer( log ) );
+
+	viewer->add( _connector->getSheetServer( ) , Table::NEXT_POS_DOWN );
+	viewer->add( _connector->getSheetClient( ) , Table::NEXT_POS_RIGHT );
 }
 
 NWManagerForServer::~NWManagerForServer( ) {
@@ -18,34 +21,19 @@ NWManagerForServer::~NWManagerForServer( ) {
 void NWManagerForServer::update( ) {
 	_connector->update( );
 
-	recv( );
 	sendUdp( );
+}
+
+bool NWManagerForServer::isRecieving( ) const {
+	ServerConstPtr server = Server::getTask( );
+	return ( server->getRecievingIdx( ) != -1 );
+}
+
+ClientToServerDataConstPtr NWManagerForServer::getRecvData( ) const {
+	return _recvdata;
 }
 
 void NWManagerForServer::sendUdp( ) {
 	ServerPtr server = Server::getTask( );
 	server->sendUdp( _senddata_udp );
-}
-
-void NWManagerForServer::recv( ) {
-	ServerPtr server = Server::getTask( );
-	if ( server->getRecievingIdx( ) == -1 ) {
-		return;
-	}
-
-	switch ( _recvdata->getDataType( ) ) {
-	case ClientToServerData::DATA_TYPE_PLAYER:
-		recvPlayerPos( );
-		break;
-	}
-}
-
-void NWManagerForServer::recvPlayerPos( ) {
-	int player_num = _recvdata->getPlayerNum( );
-	_processor->setPlayerPos( player_num, _recvdata->getClickMas( ) );
-	_processor->setTileColor ( player_num, _recvdata->getClickMas( ) );
-}
-
-ConnectorForServerConstPtr NWManagerForServer::getConnectorPtr( ) const {
-	return _connector;
 }
