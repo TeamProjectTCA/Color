@@ -1,17 +1,20 @@
 #include "BattleField.h"
 #include "Sheet.h"
 #include "ServerToClientDataUdp.h"
+#include "CommandWord.h"
+#include "Log.h"
 
 const int SHEET_ROW = 3;
 const int SHEET_TAG_PITCH = 100;
 const int SHEET_VALUE_PITCH = 200;
 
-BattleField::BattleField( ) {
+BattleField::BattleField( LogPtr log ) :
+_log( log ),
+_click_idx( ) {
 	std::array< std::array< Tile, FieldProperty::FIELD_COL >, FieldProperty::FIELD_ROW >( ).swap( _field );
 
-	FieldPropertyPtr field_property( new FieldProperty );
 	for ( int i = 0; i < PLAYER_NUM; i++ ) {
-		_player_pos[ i ] = field_property->getPlayerInitPos( i );
+		_players_pos[ i ] = FieldProperty::getPlayerInitPos( i );
 	}
 
 	_sheet = SheetPtr( new Sheet( SHEET_ROW ) );
@@ -28,10 +31,63 @@ BattleField::BattleField( ) {
 BattleField::~BattleField( ) {
 }
 
+void BattleField::update( ) {
+	resetAct( );
+}
+
 void BattleField::updateSheet( ) {
 	for ( int i = 0; i < PLAYER_NUM; i++ ) {
 		_sheet->write( 1, 1 + i, std::to_string( getPaintCount( i ) ) );
 	}
+}
+
+void BattleField::resetAct( ) {
+
+}
+
+bool BattleField::respawn( int x, int y, int player_idx ) {
+	// リスポーンするかどうか
+	int respawn_idx = -1;
+	for ( int i = 0; i < PLAYER_NUM; i++ ) {
+		Vector pos = _players_pos[ i ];
+		int enemy_x = ( int )pos.x;
+		int enemy_y = ( int )pos.y;
+
+		// リスポーンする
+		if ( enemy_x == x && enemy_y == y ) {
+			int my_count = getPaintCount( player_idx );
+			int enemy_count = getPaintCount( i );
+
+			// 同数なら仕掛けたほうがリスポーン
+			if ( my_count == enemy_count ) {
+				respawn_idx = player_idx;
+				break;
+			}
+
+			if ( my_count > enemy_count ) {
+				respawn_idx = player_idx;
+			} else {
+				respawn_idx = i;
+			}
+			break;
+		}
+	}
+
+	// リスポーン処理なしを返す
+	if ( respawn_idx == -1 ) {
+		return false;
+	}
+
+	Vector init_pos = FieldProperty::getPlayerInitPos( respawn_idx );
+	if ( respawn_idx == player_idx ) {
+		_players_pos[ respawn_idx ] = init_pos;
+	} else {
+		_players_pos[ player_idx ] = Vector( x, y );
+		_players_pos[ respawn_idx ] = init_pos;
+	}
+
+	// リスポーン処理ありを返す
+	return true;
 }
 
 void BattleField::package( ServerToClientDataUdpPtr senddata ) {
@@ -47,6 +103,8 @@ void BattleField::package( ServerToClientDataUdpPtr senddata ) {
 }
 
 void BattleField::setPlayerPos( int x, int y, int player_idx ) {
+	_click_idx = Vector( x, y );
+
 	FieldProperty::TILE_STATE state;
 	if ( player_idx == 0 ) {
 		state = FieldProperty::TILE_STATE_PLAYER0;
@@ -55,10 +113,15 @@ void BattleField::setPlayerPos( int x, int y, int player_idx ) {
 		state = FieldProperty::TILE_STATE_PLAYER1;
 	}
 
-	_field[ y ][ x ].state = state;
+	bool is_respawn = respawn( x, y, player_idx );
 
-	Vector pos = Vector( x, y );
-	_player_pos[ player_idx ] = pos;
+	// リスポーン処理なし
+	if ( !is_respawn ) {
+		_field[ y ][ x ].state = state;
+
+		Vector pos = Vector( x, y );
+		_players_pos[ player_idx ] = pos;
+	}
 }
 
 int BattleField::getPaintCount( int player_idx ) const {
@@ -81,8 +144,12 @@ int BattleField::getPaintCount( int player_idx ) const {
 	return count;
 }
 
+Vector BattleField::getClickIdx( ) const {
+	return _click_idx;
+}
+
 Vector BattleField::getPlayerPos( int player_idx ) const {
-	return _player_pos[ player_idx ];
+	return _players_pos[ player_idx ];
 }
 
 FieldProperty::TILE_STATE BattleField::getTileState( int x, int y ) const {
@@ -91,4 +158,41 @@ FieldProperty::TILE_STATE BattleField::getTileState( int x, int y ) const {
 
 SheetPtr BattleField::getSheet( ) const {
 	return _sheet;
+}
+
+CommandListener::RESULT BattleField::command( CommandWordConstPtr word ) {
+	if ( word->getTokenCount( ) < 5 ) {
+		return RESULT_THROW;
+	}
+
+	if ( word->getTokenString( 0 ) != "player" ) {
+		return RESULT_THROW;
+	}
+
+	int player_idx = word->getTokenValue( 1 );
+	if ( player_idx >= PLAYER_NUM || player_idx < 0 ) {
+		addErrorLog( word->makeError( 1, " [ " + std::to_string( player_idx ) + " ] is out of range" ) );
+		return RESULT_ERROR;
+	}
+
+	std::string word2 = word->getTokenString( 2 );
+	if ( word2 != "move" ) {
+		addErrorLog( word->makeError( 2, " [ " + word2 + " ] is spell miss" ) );
+		return RESULT_ERROR;
+	}
+
+	int x = word->getTokenValue( 3 );
+	int y = word->getTokenValue( 4 );
+	if ( x >= FieldProperty::FIELD_COL ) {
+		addErrorLog( word->makeError( 3, " [ " + std::to_string( x ) + " ] is out of range" ) );
+		return RESULT_ERROR;
+	} 
+	if ( y >= FieldProperty::FIELD_ROW ) {
+		addErrorLog( word->makeError( 4, " [ " + std::to_string( y ) + " ] is out of range" ) );
+		return RESULT_ERROR;
+	}
+
+	setPlayerPos( x, y, player_idx );
+	_log->add( "player " + std::to_string( player_idx ) + " move " + std::to_string( x ) + ", " + std::to_string( y ) );
+	return RESULT_DONE;
 }

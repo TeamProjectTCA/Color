@@ -6,7 +6,7 @@ FieldProperty::FieldProperty( ) {
 FieldProperty::~FieldProperty( ) {
 }
 
-Vector FieldProperty::getPlayerInitPos( int player_idx ) const {
+Vector FieldProperty::getPlayerInitPos( int player_idx ) {
 	Vector pos = Vector( );
 	
 	if ( player_idx == 0 ) {

@@ -7,7 +7,7 @@ PTR( ProcessorForServer );
 PTR( ServerToClientDataUdp );
 PTR( Log );
 PTR( Command );
-PTR( Player );
+PTR( Players );
 PTR( Turn );
 PTR( Table );
 PTR( NWManagerForServer );
@@ -28,13 +28,10 @@ private:
 	void recvPlayer( ClientToServerDataConstPtr data );
 
 private:
-	static const int PLAYER_NUM = 2;
-
-private:
 	ServerToClientDataUdpPtr _senddata_udp;
 	CommandPtr _command;
 	TurnPtr _turn;
-	std::array< PlayerPtr, PLAYER_NUM > _player;
+	PlayersPtr _players;
 	BattleFieldPtr _field;
 
 	NWManagerForServerConstPtr _network;

@@ -164,6 +164,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NWManagerForServer.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Players.cpp" />
     <ClCompile Include="ProcessorForServer.cpp" />
     <ClCompile Include="ServerController.cpp" />
     <ClCompile Include="Sheet.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="Log.h" />
     <ClInclude Include="NWManagerForServer.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Players.h" />
     <ClInclude Include="ProcessorForServer.h" />
     <ClInclude Include="ServerController.h" />
     <ClInclude Include="Sheet.h" />

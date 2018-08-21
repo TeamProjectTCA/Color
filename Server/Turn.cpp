@@ -4,19 +4,19 @@
 #include "ServerToClientDataTcp.h"
 #include "ServerToClientDataUdp.h"
 #include "Sheet.h"
+#include "Players.h"
 
 const int SHEET_ROW = 2;
 const int SHEET_TAG_PITCH = 150;
 const int SHEET_VALUE_PITCH = 150;
 
-Turn::Turn( const std::array< PlayerPtr, PLAYER_NUM > &player ) :
+Turn::Turn( PlayersConstPtr players ) :
 _turn( TURN_MAX ),
-_active_player( 0 ) {
-	_player[ 0 ] = player[ 0 ];
-	_player[ 1 ] = player[ 1 ];
-
-	for ( int i = 0; i < PLAYER_NUM; i++ ) {
-		_past_pos[ i ] = _player[ i ]->getPos( );
+_players( players ),
+_PLAYER_NUM( _players->getPlayerNum( ) ) {
+	_move.reserve( _PLAYER_NUM );
+	for ( int i = 0; i < _PLAYER_NUM; i++ ) {
+		_move.push_back( false );
 	}
 
 	_sheet = SheetPtr( new Sheet( SHEET_ROW ) );
@@ -32,21 +32,21 @@ Turn::~Turn( ) {
 }
 
 void Turn::update( ) {
-	for ( int i = 0; i < PLAYER_NUM; i++ ) {
-		Vector pos = _player[ i ]->getPos( );
-		if ( pos == _past_pos[ i ] ) {
-			continue;
-		}
-
-		_past_pos[ i ] = pos;
-
-		_active_player++;
-		// プレイヤー全てが更新したらターンを減らす
-		if ( _active_player == _player.size( ) ) {
-			_active_player = 0;
-			countTurn( );
+	for ( int i = 0; i < _PLAYER_NUM; i++ ) {
+		PlayerConstPtr player = _players->getPlayer( i );
+		if ( player->isMove( ) ) {
+			_move[ i ] = true;	
 		}
 	}
+
+	// 全員動いたかどうか
+	for ( int i = 0; i < _PLAYER_NUM; i++ ) {
+		if ( !_move[ i ] ) {
+			return;
+		}
+	}
+
+	countTurn( );
 
 	if ( _turn == 0 ) {
 		ServerToClientDataTcpPtr senddata( new ServerToClientDataTcp );
@@ -62,12 +62,13 @@ void Turn::updateSheet( ) {
 	_sheet->write( 1, 1, std::to_string( TURN_MAX ) );
 }
 
-int Turn::getActivePlayer( ) const {
-	return _active_player;
-}
-
 void Turn::countTurn( ) {
 	_turn--;
+
+	for ( int i = 0; i < _PLAYER_NUM; i++ ) {
+		_move[ i ] = false;
+	}
+
 	updateSheet( );
 }
 

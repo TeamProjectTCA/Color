@@ -40,6 +40,7 @@
       <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="BattleField.cpp" />
+    <ClCompile Include="Players.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServerController.h" />
@@ -80,6 +81,7 @@
       <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="BattleField.h" />
+    <ClInclude Include="Players.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Network">

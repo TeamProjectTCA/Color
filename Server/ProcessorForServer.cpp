@@ -2,7 +2,7 @@
 #include "ServerToClientDataUdp.h"
 #include "ClientToServerData.h"
 #include "Command.h"
-#include "Player.h"
+#include "Players.h"
 #include "FieldProperty.h"
 #include "Turn.h"
 #include "Server.h"
@@ -17,16 +17,15 @@ ProcessorForServer::ProcessorForServer( ServerToClientDataUdpPtr senddata_udp, N
 _senddata_udp( senddata_udp ),
 _command( command ),
 _network( network ) {
-	_field = BattleFieldPtr( new BattleField );
+	_field = BattleFieldPtr( new BattleField( log ) );
+	_players = PlayersPtr( new Players( _field, viewer ) );
 
-	for ( int i = 0; i < PLAYER_NUM; i++ ) {
-		_player[ i ] = PlayerPtr( new Player( i, _field ) );
-	}
+	_turn = TurnPtr( new Turn( _players ) );
 
-	_turn = TurnPtr( new Turn( _player ) );
+	// command
+	_command->addListener( _field );
 
-	viewer->add( _player[ 0 ]->getSheet( ), Table::NEXT_POS_DOWN );
-	viewer->add( _player[ 1 ]->getSheet( ), Table::NEXT_POS_DOWN );
+	// view
 	viewer->add( _turn->getSheet( )       , Table::NEXT_POS_DOWN );
 	viewer->add( _field->getSheet( )      , Table::NEXT_POS_RIGHT );
 	viewer->add( log->getSheet( )         , Table::NEXT_POS_DOWN );
@@ -39,10 +38,7 @@ ProcessorForServer::~ProcessorForServer( ) {
 void ProcessorForServer::update( ) {
 	_command->update( );
 	_turn->update( );
-
-	for ( PlayerPtr player : _player ) {
-		player->update( );
-	}
+	_players->update( );
 
 	// ÉfÅ[É^ÇãlÇﬂÇÈ
 	packageDataUdp( );
@@ -52,9 +48,7 @@ void ProcessorForServer::update( ) {
 }
 
 void ProcessorForServer::packageDataUdp( ) {
-	for ( int i = 0; i < PLAYER_NUM; i++ ) {
-		_player[ i ]->package( _senddata_udp );
-	}
+	_players->package( _senddata_udp );
 	_turn->package( _senddata_udp );
 	_field->package( _senddata_udp );
 }
