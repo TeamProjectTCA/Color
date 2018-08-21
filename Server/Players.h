@@ -6,6 +6,7 @@ PTR( Player );
 PTR( BattleField );
 PTR( Table );
 PTR( ServerToClientDataUdp );
+PTR( Sheet );
 
 class Players {
 public:
@@ -18,6 +19,10 @@ public:
 public:
 	void package( ServerToClientDataUdpPtr senddata );
 
+private:
+	void gameset( );
+	void updateSheet( );
+
 public:
 	int getPlayerNum( ) const;
 	PlayerConstPtr getPlayer( int player_idx ) const;
@@ -28,5 +33,6 @@ private:
 private:
 	int _respawn_count;
 	std::array< PlayerPtr, PLAYER_NUM > _players;
+	SheetPtr _sheet_respawn;
 };
 
