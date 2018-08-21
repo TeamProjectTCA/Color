@@ -5,18 +5,21 @@
 PTR( Player );
 PTR( Sheet );
 PTR( ServerToClientDataUdp );
+PTR( BattleField );
 
 class Player {
 public:
-	Player( const int PLAYER_IDX );
+	Player( const int PLAYER_IDX, BattleFieldConstPtr field );
 	virtual ~Player( );
+
+public:
+	void update( );
 
 private:
 	void updateSheet( );
 
 public:
 	void package( ServerToClientDataUdpPtr senddata );
-	void setPos( Vector pos );
 
 public:
 	Vector getPos( ) const;
@@ -27,5 +30,6 @@ private:
 	Vector _pos;
 
 	SheetPtr _sheet;
+	BattleFieldConstPtr _field;
 };
 

@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BattleField.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="CommandListener.cpp" />
     <ClCompile Include="CommandWord.cpp" />
@@ -162,7 +163,6 @@
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NWManagerForServer.cpp" />
-    <ClCompile Include="PaintTile.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ProcessorForServer.cpp" />
     <ClCompile Include="ServerController.cpp" />
@@ -180,13 +180,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BattleField.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommandListener.h" />
     <ClInclude Include="CommandWord.h" />
     <ClInclude Include="ConnectorForServer.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="NWManagerForServer.h" />
-    <ClInclude Include="PaintTile.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ProcessorForServer.h" />
     <ClInclude Include="ServerController.h" />

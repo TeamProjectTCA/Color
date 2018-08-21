@@ -30,9 +30,6 @@
     <ClCompile Include="Turn.cpp">
       <Filter>Process</Filter>
     </ClCompile>
-    <ClCompile Include="PaintTile.cpp">
-      <Filter>Process</Filter>
-    </ClCompile>
     <ClCompile Include="Sheet.cpp">
       <Filter>View</Filter>
     </ClCompile>
@@ -42,6 +39,7 @@
     <ClCompile Include="ViewerForServer.cpp">
       <Filter>View</Filter>
     </ClCompile>
+    <ClCompile Include="BattleField.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServerController.h" />
@@ -72,9 +70,6 @@
     <ClInclude Include="Turn.h">
       <Filter>Process</Filter>
     </ClInclude>
-    <ClInclude Include="PaintTile.h">
-      <Filter>Process</Filter>
-    </ClInclude>
     <ClInclude Include="Sheet.h">
       <Filter>View</Filter>
     </ClInclude>
@@ -84,6 +79,7 @@
     <ClInclude Include="ViewerForServer.h">
       <Filter>View</Filter>
     </ClInclude>
+    <ClInclude Include="BattleField.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Network">

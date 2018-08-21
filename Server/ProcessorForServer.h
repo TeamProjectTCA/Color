@@ -9,10 +9,10 @@ PTR( Log );
 PTR( Command );
 PTR( Player );
 PTR( Turn );
-PTR( PaintTile );
 PTR( Table );
 PTR( NWManagerForServer );
 PTR( ClientToServerData );
+PTR( BattleField );
 
 class ProcessorForServer {
 public:
@@ -34,8 +34,8 @@ private:
 	ServerToClientDataUdpPtr _senddata_udp;
 	CommandPtr _command;
 	TurnPtr _turn;
-	PaintTilePtr _paint;
 	std::array< PlayerPtr, PLAYER_NUM > _player;
+	BattleFieldPtr _field;
 
 	NWManagerForServerConstPtr _network;
 };
