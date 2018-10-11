@@ -8,12 +8,10 @@ PTR( Viewer );
 
 class Result : public Scene {
 public:
-	Result( ViewerPtr viewer );
+	Result( );
 	virtual ~Result( );
 
 public:
 	void update( );
-
-private:
-	ResultProcessorPtr _process;
+	void draw( ) const;
 };

@@ -1,14 +1,14 @@
 #include "SceneChanger.h"
 #include "SceneManager.h"
 
-SceneChanger::SceneChanger( SCENE scene ) :
-_scene( scene ) {
+SceneChanger::SceneChanger( SCENE next ) :
+_next( next ) {
 }
 
 SceneChanger::~SceneChanger( ) {
 }
 
-void SceneChanger::start( ) {
+void SceneChanger::activate( ) {
 	SceneManagerPtr scene = SceneManager::getTask( );
-	scene->setNextScene( _scene );
+	scene->setNextScene( _next );
 }

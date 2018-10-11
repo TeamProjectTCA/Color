@@ -1,6 +1,5 @@
 #include "GameProcessor.h"
 #include "SceneManager.h"
-#include "Viewer.h"
 #include "Field.h"
 #include "PlayerUI.h"
 #include "Manager.h"
@@ -10,7 +9,7 @@
 #include "GlobalUI.h"
 #include "Drawer.h"
 
-GameProcessor::GameProcessor( ViewerPtr viewer ) :
+GameProcessor::GameProcessor( ) :
 _gameover( false ) {
 	ManagerPtr manager = Manager::getInstance( );
 
@@ -31,14 +30,6 @@ _gameover( false ) {
 	_enemy = CharaPtr( new Chara( _field ) );
 
 	_move = MovePtr( new Move( _field, _user ) );
-
-	viewer->addDrawer( _field );
-	viewer->addDrawer( _global_ui );
-	viewer->addDrawer( _user_ui );
-	viewer->addDrawer( _enemy_ui );
-	viewer->addDrawer( _user );
-	viewer->addDrawer( _enemy );
-
 }
 
 GameProcessor::~GameProcessor( ) {

@@ -7,13 +7,13 @@ PTR( SceneChanger );
 
 class SceneChanger : public Event {
 public:
-	SceneChanger( SCENE scene );
+	SceneChanger( SCENE next );
 	virtual ~SceneChanger( );
 
 public:
-	void start( );
+	void activate( );
 
 private:
-	SCENE _scene;
+	SCENE _next;
 };
 

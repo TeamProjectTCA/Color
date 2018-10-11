@@ -2,17 +2,11 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Scene.cpp">
-      <Filter>SceneManager</Filter>
-    </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>SceneManager\SceneManager</Filter>
     </ClCompile>
     <ClCompile Include="Connector.cpp">
       <Filter>Scene\Game\Network</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleProcessor.cpp">
-      <Filter>Scene\Title</Filter>
     </ClCompile>
     <ClCompile Include="NWOptionProcessor.cpp">
       <Filter>Scene\NWOption</Filter>
@@ -24,25 +18,25 @@
       <Filter>Scene\Game</Filter>
     </ClCompile>
     <ClCompile Include="ResultProcessor.cpp">
-      <Filter>Scene\Result</Filter>
+      <Filter>Scene\Game\Result</Filter>
     </ClCompile>
     <ClCompile Include="CharacterSelectProcessor.cpp">
-      <Filter>Scene\CharacterSelect</Filter>
+      <Filter>Scene\Game\CharacterSelect</Filter>
     </ClCompile>
     <ClCompile Include="CharacterSelectViewer.cpp">
-      <Filter>Scene\CharacterSelect</Filter>
+      <Filter>Scene\Game\CharacterSelect</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Scene\Game</Filter>
     </ClCompile>
     <ClCompile Include="CharacterSelect.cpp">
-      <Filter>Scene\CharacterSelect</Filter>
+      <Filter>Scene\Game\CharacterSelect</Filter>
     </ClCompile>
     <ClCompile Include="NWOption.cpp">
       <Filter>Scene\NWOption</Filter>
     </ClCompile>
     <ClCompile Include="Result.cpp">
-      <Filter>Scene\Result</Filter>
+      <Filter>Scene\Game\Result</Filter>
     </ClCompile>
     <ClCompile Include="Title.cpp">
       <Filter>Scene\Title</Filter>
@@ -71,14 +65,14 @@
     <ClCompile Include="SceneChanger.cpp">
       <Filter>SceneManager</Filter>
     </ClCompile>
-    <ClCompile Include="Viewer.cpp">
-      <Filter>Viewer</Filter>
-    </ClCompile>
     <ClCompile Include="GlobalUI.cpp">
       <Filter>Scene\Game\Process\Area\Field\UI</Filter>
     </ClCompile>
     <ClCompile Include="PlayerUI.cpp">
       <Filter>Scene\Game\Process\Area\Field\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>SceneManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -91,9 +85,6 @@
     <ClInclude Include="Connector.h">
       <Filter>Scene\Game\Network</Filter>
     </ClInclude>
-    <ClInclude Include="TitleProcessor.h">
-      <Filter>Scene\Title</Filter>
-    </ClInclude>
     <ClInclude Include="NWOptionProcessor.h">
       <Filter>Scene\NWOption</Filter>
     </ClInclude>
@@ -104,25 +95,25 @@
       <Filter>Scene\Game</Filter>
     </ClInclude>
     <ClInclude Include="ResultProcessor.h">
-      <Filter>Scene\Result</Filter>
+      <Filter>Scene\Game\Result</Filter>
     </ClInclude>
     <ClInclude Include="CharacterSelectProcessor.h">
-      <Filter>Scene\CharacterSelect</Filter>
+      <Filter>Scene\Game\CharacterSelect</Filter>
     </ClInclude>
     <ClInclude Include="CharacterSelectViewer.h">
-      <Filter>Scene\CharacterSelect</Filter>
+      <Filter>Scene\Game\CharacterSelect</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Scene\Game</Filter>
     </ClInclude>
     <ClInclude Include="CharacterSelect.h">
-      <Filter>Scene\CharacterSelect</Filter>
+      <Filter>Scene\Game\CharacterSelect</Filter>
     </ClInclude>
     <ClInclude Include="NWOption.h">
       <Filter>Scene\NWOption</Filter>
     </ClInclude>
     <ClInclude Include="Result.h">
-      <Filter>Scene\Result</Filter>
+      <Filter>Scene\Game\Result</Filter>
     </ClInclude>
     <ClInclude Include="Title.h">
       <Filter>Scene\Title</Filter>
@@ -151,12 +142,6 @@
     <ClInclude Include="SceneChanger.h">
       <Filter>SceneManager</Filter>
     </ClInclude>
-    <ClInclude Include="Viewer.h">
-      <Filter>Viewer</Filter>
-    </ClInclude>
-    <ClInclude Include="GameDrawer.h">
-      <Filter>Viewer</Filter>
-    </ClInclude>
     <ClInclude Include="GlobalUI.h">
       <Filter>Scene\Game\Process\Area\Field\UI</Filter>
     </ClInclude>
@@ -176,12 +161,6 @@
     </Filter>
     <Filter Include="Scene\Game">
       <UniqueIdentifier>{7618e9f9-261a-471e-ac79-de77189b0772}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Result">
-      <UniqueIdentifier>{9c20b92a-6898-4c8e-9293-10fe8250bb47}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\CharacterSelect">
-      <UniqueIdentifier>{7191bb1b-0413-4aa5-8c7a-ebf1a7269a3b}</UniqueIdentifier>
     </Filter>
     <Filter Include="SceneManager">
       <UniqueIdentifier>{b859ccb4-4c8e-4493-8e8a-3e2e6187d9a5}</UniqueIdentifier>
@@ -207,11 +186,14 @@
     <Filter Include="Scene\Game\Process\Chara\Move">
       <UniqueIdentifier>{fa0a1b6d-98e6-4ed5-a63f-577542869a60}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Viewer">
-      <UniqueIdentifier>{f3975e2c-01de-4fea-a1eb-39558227c71e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene\Game\Process\Area\Field\UI">
       <UniqueIdentifier>{1a7f3f13-b7ea-4b15-86eb-b1eefb7b9642}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Game\CharacterSelect">
+      <UniqueIdentifier>{7191bb1b-0413-4aa5-8c7a-ebf1a7269a3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Game\Result">
+      <UniqueIdentifier>{9c20b92a-6898-4c8e-9293-10fe8250bb47}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

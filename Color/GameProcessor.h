@@ -4,7 +4,6 @@
 #include "FieldProperty.h"
 
 PTR( GameProcessor );
-PTR( Viewer );
 PTR( Field );
 PTR( PlayerUI );
 PTR( Chara );
@@ -15,7 +14,7 @@ PTR( PaintCount );
 
 class GameProcessor {
 public:
-	GameProcessor( ViewerPtr viewer );
+	GameProcessor( );
 	virtual ~GameProcessor( );
 
 public:

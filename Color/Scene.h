@@ -10,7 +10,6 @@ enum SCENE {
 	SCENE_CHARACTERSELECT,
 	SCENE_GAME,
 	SCENE_RESULT,
-	SCENE_SCENE_MAX,
 };
 
 class Scene {
@@ -19,10 +18,9 @@ public:
 	virtual ~Scene( );
 
 public:
-	virtual void update( ) = 0;
-	void setNextScene( SCENE next_scene );
-	SCENE getNextScene( ) const;
+	void onUpdate( );
 
 private:
-	SCENE _next_scene;
+	virtual void update( ) = 0;
+	virtual void draw( ) const = 0;
 };

@@ -1,8 +1,7 @@
 #pragma once
 #include "Vector.h"
-#include "GameDrawer.h"
 
-class Area : public GameDrawer {
+class Area {
 public:
 	Area( const Vector ORIGIN_POS );
 	virtual ~Area( );

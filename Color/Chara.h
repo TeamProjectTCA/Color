@@ -1,12 +1,11 @@
 #pragma once
 #include "smart_ptr.h"
 #include "Vector.h"
-#include "GameDrawer.h"
 
 PTR( Chara );
 PTR( Field );
 
-class Chara : public GameDrawer {
+class Chara {
 public:
 	Chara( FieldConstPtr field );
 	virtual ~Chara( );

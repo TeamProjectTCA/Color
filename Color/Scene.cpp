@@ -1,16 +1,16 @@
 #include "Scene.h"
+#include "Drawer.h"
 
 Scene::Scene( ) {
-	_next_scene = SCENE_CONTINUE;
 }
 
 Scene::~Scene( ) {
 }
 
-void Scene::setNextScene( SCENE next_scene ) {
-	_next_scene = next_scene;
-}
+void Scene::onUpdate( ) {
+	update( );
+	draw( );
 
-SCENE Scene::getNextScene( ) const {
-	return _next_scene;
+	DrawerPtr drawer = Drawer::getTask( );
+	drawer->flip( );
 }

@@ -1,7 +1,6 @@
 #pragma once
 #include "Chara.h"
 #include "smart_ptr.h"
-#include "GameDrawer.h"
 
 PTR( User );
 PTR( Field );

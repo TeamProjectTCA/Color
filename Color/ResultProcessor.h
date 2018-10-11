@@ -1,11 +1,10 @@
 #pragma once
 #include "smart_ptr.h"
-#include "GameDrawer.h"
 
 PTR( ResultProcessor );
 PTR( SceneManager );
 
-class ResultProcessor : public GameDrawer {
+class ResultProcessor {
 public:
 	ResultProcessor( );
 	virtual ~ResultProcessor( );

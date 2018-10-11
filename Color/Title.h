@@ -1,19 +1,22 @@
 #pragma once
 #include "Scene.h"
-#include "smart_ptr.h"
+#include <vector>
 
 PTR( Title );
-PTR( TitleProcessor );
-PTR( Viewer );
+PTR( Button );
+PTR( Image );
 
 class Title : public Scene {
 public:
-	Title( ViewerPtr viewer );
+	Title( );
 	virtual ~Title( );
 
 public:
 	void update( );
+	void draw( ) const;
 
 private:
-	TitleProcessorPtr _process;
+	ImagePtr _bg;
+	ImagePtr _logo;
+	std::vector< ButtonPtr > _button;
 };
